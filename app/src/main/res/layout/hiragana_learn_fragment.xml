@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hiraganalearn"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.hiraganalearn.HiraganaLearnFragment"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/textviewhiragana"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hiragana"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/toLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textviewhiragana"
+        android:background="@color/colorButton"
+        android:text="left"
+        android:layout_toLeftOf="@id/toRight"
+        />
+
+
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:id="@+id/toRight"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textviewhiragana"
+        android:background="@color/colorButton"
+        android:text="right"
+        android:layout_marginLeft="50dp"/>
+
+</RelativeLayout>
