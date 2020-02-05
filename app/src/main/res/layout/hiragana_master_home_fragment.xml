@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hiraganamasterhome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.hiraganamasterhome.HiraganaMasterHomeFragment">
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Hiragana Master"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/login"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/learntv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Time to learn"
+            android:textSize="20dp"
+
+            />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/learnbtn"
+
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:text="Get to the learning page"
+            app:cardCornerRadius="15dp"
+            android:elevation="10dp"
+            app:cardBackgroundColor="@color/colorcardview"
+            android:layout_marginBottom="10dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get me to the learning page"
+                android:textSize="17dp"
+                android:textColor="@color/colorcardtext"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/testtv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="You want to test your skills?"
+            android:textSize="20dp"
+            />
+        <Button
+            android:id="@+id/testbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get to test myself"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:id="@+id/favoritestv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Let me see my favorite characters"
+            android:textSize="20dp"
+            />
+        <Button
+            android:id="@+id/favoritesbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get to see my favorite characters"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:id="@+id/settingstv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textSize="20dp"
+            />
+        <Button
+            android:id="@+id/settingsbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="get me to my settings"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:id="@+id/sharetv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Time to share this program to my friends"
+            android:textSize="20dp"
+            />
+        <Button
+            android:id="@+id/sharebtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Share with my frinds"
+            android:layout_marginBottom="10dp"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_below="@+id/message"
+        android:id="@+id/login"
+        />
+
+</RelativeLayout>
