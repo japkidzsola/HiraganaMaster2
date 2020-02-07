@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.hiraganamaster.HiraganaLearn;
 import com.example.hiraganamaster.R;
 import com.example.hiraganamaster.ui.hiraganalearn.HiraganaLearnFragment;
 
@@ -32,6 +33,7 @@ public class LearnFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.learn_fragment, container, false);
+
     }
 
     @Override
@@ -39,13 +41,15 @@ public class LearnFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(LearnViewModel.class);
 
-        /*a.setOnClickListener(new View.OnClickListener() {
+        a = getView().findViewById(R.id.a);
+        a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LearnFragment.this, HiraganaLearnFragment.class);
+                Intent intent = new Intent(getContext(), HiraganaLearn.class);
+                intent.putExtra("betu", "a");
                 startActivity(intent);
             }
-        });*/
+        });
     }
 
 }

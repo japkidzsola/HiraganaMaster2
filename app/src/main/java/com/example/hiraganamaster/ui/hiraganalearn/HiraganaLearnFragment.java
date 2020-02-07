@@ -11,14 +11,18 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.hiraganamaster.R;
 
 public class HiraganaLearnFragment extends Fragment {
 
     private HiraganaLearnViewModel mViewModel;
+    private static String betu;
 
-    public static HiraganaLearnFragment newInstance() {
+
+    public static HiraganaLearnFragment newInstance(String betu) {
+        HiraganaLearnFragment.betu = betu;
         return new HiraganaLearnFragment();
     }
 
@@ -26,6 +30,7 @@ public class HiraganaLearnFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
         return inflater.inflate(R.layout.hiragana_learn_fragment, container, false);
     }
 
@@ -34,6 +39,8 @@ public class HiraganaLearnFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(HiraganaLearnViewModel.class);
         // TODO: Use the ViewModel
+        TextView tw = getView().findViewById(R.id.textviewhiragana);
+        tw.setText(betu);
     }
 
 }
