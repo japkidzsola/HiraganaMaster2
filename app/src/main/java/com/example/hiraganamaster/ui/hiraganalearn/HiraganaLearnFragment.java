@@ -11,8 +11,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hiraganamaster.R;
 
@@ -20,10 +22,13 @@ public class HiraganaLearnFragment extends Fragment {
 
     private HiraganaLearnViewModel mViewModel;
     private static String betu;
-    private String a = "";
+    private static String balra;
+    private static String jobbra;
 
-    public static HiraganaLearnFragment newInstance(String betu) {
+    public static HiraganaLearnFragment newInstance(String betu, String balra, String jobbra) {
         HiraganaLearnFragment.betu = betu;
+        HiraganaLearnFragment.balra = balra;
+        HiraganaLearnFragment.jobbra = jobbra;
         return new HiraganaLearnFragment();
     }
 
@@ -43,17 +48,17 @@ public class HiraganaLearnFragment extends Fragment {
         TextView tw = getView().findViewById(R.id.textviewhiragana);
         tw.setText(betu);
 
-        String a = betu.toString();
-
-        if(betu.equals("Hiragana a"))
+        if(betu.equals("Hiragana a") || jobbra.equals("a") || balra.equals("a"))
         {
             ImageView ivLearn = getView().findViewById(R.id.ivLearn);
             ivLearn.setImageResource(R.drawable.a);
+            tw.setText(betu);
         }
-        else if(betu.equals("Hiragana i"))
+        else if(betu.equals("Hiragana i") || jobbra.equals("i") || balra.equals("i"))
         {
             ImageView ivLearn = getView().findViewById(R.id.ivLearn);
             ivLearn.setImageResource(R.drawable.i);
+            tw.setText(betu);
         }
         else if(betu.equals("Hiragana u"))
         {
@@ -284,6 +289,84 @@ public class HiraganaLearnFragment extends Fragment {
             ImageView ivLearn = getView().findViewById(R.id.ivLearn);
             ivLearn.setImageResource(R.drawable.n);
         }
+
+        Button toLeft = getView().findViewById(R.id.toLeft);
+        Button toRight = getView().findViewById(R.id.toRight);
+
+        toRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(jobbra.equals("nincs"))
+                {
+                    Toast.makeText(getContext(), "Hiba", Toast.LENGTH_SHORT).show();
+                }
+                else if(jobbra.equals("i"))
+                {
+                    betu.replace("Hiragana a","Hiragana i");
+                    ImageView ivLearn = getView().findViewById(R.id.ivLearn);
+                    ivLearn.setImageResource(R.drawable.i);
+                }
+                else if(jobbra.equals("u"))
+                {
+                    betu.replace("Hiragana i","Hiragana u");
+                    ImageView ivLearn = getView().findViewById(R.id.ivLearn);
+                    ivLearn.setImageResource(R.drawable.u);
+                }
+                else if(jobbra.equals("e"))
+                {
+                    ImageView ivLearn = getView().findViewById(R.id.ivLearn);
+                    ivLearn.setImageResource(R.drawable.e);
+                }
+                else if(jobbra.equals("o"))
+                {
+                    ImageView ivLearn = getView().findViewById(R.id.ivLearn);
+                    ivLearn.setImageResource(R.drawable.o);
+                }
+                else if(jobbra.equals("ka"))
+                {
+                    ImageView ivLearn = getView().findViewById(R.id.ivLearn);
+                    ivLearn.setImageResource(R.drawable.ka);
+                }
+            }
+        });
+
+        toLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(balra.equals("nincs"))
+                {
+                    Toast.makeText(getContext(), "Hiba", Toast.LENGTH_SHORT).show();
+                }
+                else if(balra.equals("a"))
+                {
+                    betu.replace("Hiragana i","Hiragana a");
+                    ImageView ivLearn = getView().findViewById(R.id.ivLearn);
+                    ivLearn.setImageResource(R.drawable.a);
+                }
+                else if(balra.equals("i"))
+                {
+                    betu.replace("Hiragana u","Hiragana i");
+                    ImageView ivLearn = getView().findViewById(R.id.ivLearn);
+                    ivLearn.setImageResource(R.drawable.i);
+                }
+                else if(balra.equals("u"))
+                {
+                    ImageView ivLearn = getView().findViewById(R.id.ivLearn);
+                    ivLearn.setImageResource(R.drawable.u);
+                }
+                else if(balra.equals("e"))
+                {
+                    ImageView ivLearn = getView().findViewById(R.id.ivLearn);
+                    ivLearn.setImageResource(R.drawable.e);
+                }
+                else if(balra.equals("o"))
+                {
+                    ImageView ivLearn = getView().findViewById(R.id.ivLearn);
+                    ivLearn.setImageResource(R.drawable.o);
+                }
+
+            }
+        });
 
     }
 

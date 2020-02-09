@@ -13,9 +13,11 @@ public class HiraganaLearn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hiragana_learn_activity);
         String betu = getIntent().getStringExtra("betu");
+        String balra = getIntent().getStringExtra("balra");
+        String jobbra = getIntent().getStringExtra("jobbra");
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, HiraganaLearnFragment.newInstance(betu))
+                    .replace(R.id.container, HiraganaLearnFragment.newInstance(betu, balra, jobbra))
                     .commitNow();
         }
     }
