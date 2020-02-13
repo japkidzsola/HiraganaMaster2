@@ -2,6 +2,7 @@ package com.example.hiraganamaster.ui.hiraganamasterhome;
 
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,11 +14,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.hiraganamaster.Login;
 import com.example.hiraganamaster.R;
 
 public class HiraganaMasterHomeFragment extends Fragment {
 
-    Button login;
+    private Button login;
 
     private HiraganaMasterHomeViewModel mViewModel;
 
@@ -36,7 +38,15 @@ public class HiraganaMasterHomeFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(HiraganaMasterHomeViewModel.class);
-        // TODO: Use the ViewModel
+
+        login = getView().findViewById(R.id.login);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), Login.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }

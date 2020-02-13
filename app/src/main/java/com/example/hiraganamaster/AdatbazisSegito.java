@@ -12,16 +12,15 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
 
     public static User loggedinuser;
     private static final int DBversion = 1;
-    private static final String DBname = "adattar.db";
+    private static final String DBname = "tanulok.db";
 
-    private static final String TABLE_NAME = "felhasznalok";
+    private static final String TABLE_NAME = "tanulok";
 
     private static final String COL_ID = "id";
+    private static final String COL_NEV = "nev";
     private static final String COL_EMAIL = "email";
-    private static final String COL_FELHASZ = "felhasz";
     private static final String COL_JELSZO = "jelszo";
-    private static final String COL_TELJESNEV = "teljesnev";
-    private static final String COL_KEDVENCEK = "kedvencek";
+    //private static final String COL_KEDVENCEK = "kedvencek";
 
     public AdatbazisSegito(Context context) {super(context,DBname,null,DBversion); }
 
@@ -30,11 +29,10 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createTables = "CREATE TABLE IF NOT EXISTS "+TABLE_NAME + "(" +
                 COL_ID+" INTEGER PRIMARY KEY AUTOINCREMENT," +
-                COL_EMAIL+" VARCHAR(30)," +
-                COL_FELHASZ+ " VARCHAR(30)," +
-                COL_JELSZO+ " VARCHAR(30)," +
-                COL_TELJESNEV+ " VARCHAR(30)," +
-                COL_KEDVENCEK+ " VARCHAR(30))" ;
+                COL_NEV+" VARCHAR(30)," +
+                COL_EMAIL+ " VARCHAR(30)," +
+                COL_JELSZO+ " VARCHAR(30))" /*+
+                COL_KEDVENCEK+ " VARCHAR(30))"*/ ;
         db.execSQL(createTables);
     }
 
@@ -44,13 +42,12 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean adatFelvetel(String email, String felhasz, String jelszo, String teljesnev){
+    public boolean adatFelvetel(String nev, String email, String jelszo){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
+        values.put(COL_NEV, nev);
         values.put(COL_EMAIL, email);
-        values.put(COL_FELHASZ, felhasz);
         values.put(COL_JELSZO, jelszo);
-        values.put(COL_TELJESNEV, teljesnev);
 
         //return db.insert(TABLE_NAME, null, values) != -1;
         long erintettSorok = db.insert(TABLE_NAME, null, values);
@@ -89,6 +86,11 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
     {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT felhasz,jelszo FROM "+TABLE_NAME +" WHERE felhasz ='"+felhasznalonev+"'", null);
+    }
+
+    public Cursor Bejelentkezes(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM "+TABLE_NAME, null);
     }
 
     String nev;

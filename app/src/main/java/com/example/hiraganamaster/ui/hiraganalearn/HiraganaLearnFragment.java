@@ -22,6 +22,8 @@ public class HiraganaLearnFragment extends Fragment {
 
     private HiraganaLearnViewModel mViewModel;
     private static String betu;
+    public String betu2 = betu;
+    public String seged = betu2;
     private static String balra;
     private static String jobbra;
 
@@ -46,24 +48,25 @@ public class HiraganaLearnFragment extends Fragment {
         mViewModel = ViewModelProviders.of(this).get(HiraganaLearnViewModel.class);
         // TODO: Use the ViewModel
         TextView tw = getView().findViewById(R.id.textviewhiragana);
-        tw.setText(betu);
+        tw.setText(seged);
 
-        if(betu.equals("Hiragana a") || jobbra.equals("a") || balra.equals("a"))
+        if(seged.equals("Hiragana a"))
         {
             ImageView ivLearn = getView().findViewById(R.id.ivLearn);
             ivLearn.setImageResource(R.drawable.a);
-            tw.setText(betu);
+            tw.setText(seged);
         }
-        else if(betu.equals("Hiragana i") || jobbra.equals("i") || balra.equals("i"))
+        else if(seged.equals("Hiragana i"))
         {
             ImageView ivLearn = getView().findViewById(R.id.ivLearn);
             ivLearn.setImageResource(R.drawable.i);
-            tw.setText(betu);
+            tw.setText(seged);
         }
-        else if(betu.equals("Hiragana u"))
+        else if(seged.equals("Hiragana u"))
         {
             ImageView ivLearn = getView().findViewById(R.id.ivLearn);
             ivLearn.setImageResource(R.drawable.u);
+            tw.setText(seged);
         }
         else if(betu.equals("Hiragana e"))
         {
@@ -296,21 +299,24 @@ public class HiraganaLearnFragment extends Fragment {
         toRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                TextView tw = getView().findViewById(R.id.textviewhiragana);
                 if(jobbra.equals("nincs"))
                 {
                     Toast.makeText(getContext(), "Hiba", Toast.LENGTH_SHORT).show();
                 }
                 else if(jobbra.equals("i"))
                 {
-                    betu.replace("Hiragana a","Hiragana i");
+                    seged=("Hiragana i");
                     ImageView ivLearn = getView().findViewById(R.id.ivLearn);
                     ivLearn.setImageResource(R.drawable.i);
+                    tw.setText(seged);
                 }
                 else if(jobbra.equals("u"))
                 {
-                    betu.replace("Hiragana i","Hiragana u");
+                    seged=("Hiragana u");
                     ImageView ivLearn = getView().findViewById(R.id.ivLearn);
                     ivLearn.setImageResource(R.drawable.u);
+                    tw.setText(seged);
                 }
                 else if(jobbra.equals("e"))
                 {
@@ -333,15 +339,17 @@ public class HiraganaLearnFragment extends Fragment {
         toLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                TextView tw = getView().findViewById(R.id.textviewhiragana);
                 if(balra.equals("nincs"))
                 {
                     Toast.makeText(getContext(), "Hiba", Toast.LENGTH_SHORT).show();
                 }
                 else if(balra.equals("a"))
                 {
-                    betu.replace("Hiragana i","Hiragana a");
+                    seged.replace("Hiragana i","Hiragana a");
                     ImageView ivLearn = getView().findViewById(R.id.ivLearn);
                     ivLearn.setImageResource(R.drawable.a);
+                    tw.setText(seged);
                 }
                 else if(balra.equals("i"))
                 {
