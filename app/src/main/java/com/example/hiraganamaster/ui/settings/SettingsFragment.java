@@ -39,7 +39,7 @@ public class SettingsFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(SettingsViewModel.class);
 
-        btnprofile = getView().findViewById(R.id.login);
+        btnprofile = getView().findViewById(R.id.btnprofile);
         btnprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

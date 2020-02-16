@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.hiraganamaster.ui.hiraganamasterhome.HiraganaMasterHomeFragment;
 import com.example.hiraganamaster.ui.settings.SettingsFragment;
 
 public class Modification extends AppCompatActivity {
@@ -35,7 +36,7 @@ public class Modification extends AppCompatActivity {
                 }
                 /*adatModosit(nev, email, jelszo);*/
                 Intent vissza =
-                        new Intent(Modification.this,SettingsFragment.class);
+                        new Intent(Modification.this,HiraganaMasterHomeFragment.class);
                 startActivity(vissza);
                 finish();
             }
@@ -46,7 +47,6 @@ public class Modification extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Modification.this, SettingsFragment.class);
                 startActivity(intent);
-                finish();
             }
         });
     }

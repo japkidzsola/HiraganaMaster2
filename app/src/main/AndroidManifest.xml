@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Modification"></activity>
+        <activity android:name=".ui.settings.SettingsFragment"></activity>
         <activity android:name=".Registration" />
         <activity android:name=".Login" />
         <activity android:name=".HiraganaMasterHome" />
