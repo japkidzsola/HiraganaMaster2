@@ -2,6 +2,7 @@ package com.example.hiraganamaster.ui.settings;
 
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,10 +12,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.hiraganamaster.Modification;
 import com.example.hiraganamaster.R;
 
 public class SettingsFragment extends Fragment {
+
+    private Button btnprofile;
 
     private SettingsViewModel mViewModel;
 
@@ -33,7 +38,15 @@ public class SettingsFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(SettingsViewModel.class);
-        // TODO: Use the ViewModel
+
+        btnprofile = getView().findViewById(R.id.login);
+        btnprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), Modification.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }

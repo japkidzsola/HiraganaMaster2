@@ -46,7 +46,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana a");
+                intent.putExtra("betu", "a");
                 intent.putExtra("balra", "nincs");
                 intent.putExtra("jobbra", "i");
                 startActivity(intent);
@@ -57,7 +57,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana i");
+                intent.putExtra("betu", "i");
                 intent.putExtra("balra", "a");
                 intent.putExtra("jobbra", "u");
                 startActivity(intent);
@@ -68,7 +68,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana u");
+                intent.putExtra("betu", "u");
                 intent.putExtra("balra", "i");
                 intent.putExtra("jobbra", "e");
                 startActivity(intent);
@@ -79,7 +79,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana e");
+                intent.putExtra("betu", "e");
                 intent.putExtra("balra", "u");
                 intent.putExtra("jobbra", "o");
                 startActivity(intent);
@@ -90,7 +90,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana o");
+                intent.putExtra("betu", "o");
                 intent.putExtra("balra", "e");
                 intent.putExtra("jobbra", "nincs");
                 startActivity(intent);

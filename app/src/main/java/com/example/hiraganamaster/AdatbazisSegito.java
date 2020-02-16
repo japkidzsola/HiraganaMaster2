@@ -58,6 +58,16 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
         }
     }
 
+   /* public long adatModositas(String nev, String email, String jelszo){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_NEV, nev);
+        values.put(COL_EMAIL, email);
+        values.put(COL_JELSZO, jelszo);
+
+        return db.update(TABLE_NAME,values,COL_ID+" = ?",new String[]{id});
+    }*/
+
     public boolean Bejelentkezes(String felhasznalonev,String jelszo){
         SQLiteDatabase db = this.getReadableDatabase();
         User u= new User();
