@@ -102,7 +102,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ka");
+                intent.putExtra("betu", "ka");
                 startActivity(intent);
             }
         });
@@ -111,7 +111,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ki");
+                intent.putExtra("betu", "ki");
                 startActivity(intent);
             }
         });
@@ -120,7 +120,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ku");
+                intent.putExtra("betu", "ku");
                 startActivity(intent);
             }
         });
@@ -129,7 +129,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ke");
+                intent.putExtra("betu", "ke");
                 startActivity(intent);
             }
         });
@@ -138,7 +138,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ko");
+                intent.putExtra("betu", "ko");
                 startActivity(intent);
             }
         });
@@ -148,7 +148,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana sa");
+                intent.putExtra("betu", "sa");
                 startActivity(intent);
             }
         });
@@ -157,7 +157,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana shi");
+                intent.putExtra("betu", "shi");
                 startActivity(intent);
             }
         });
@@ -166,7 +166,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana su");
+                intent.putExtra("betu", "su");
                 startActivity(intent);
             }
         });
@@ -175,7 +175,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana se");
+                intent.putExtra("betu", "se");
                 startActivity(intent);
             }
         });
@@ -184,7 +184,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana so");
+                intent.putExtra("betu", "so");
                 startActivity(intent);
             }
         });
@@ -194,7 +194,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ta");
+                intent.putExtra("betu", "ta");
                 startActivity(intent);
             }
         });
@@ -203,7 +203,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana chi");
+                intent.putExtra("betu", "chi");
                 startActivity(intent);
             }
         });
@@ -212,7 +212,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana tsu");
+                intent.putExtra("betu", "tsu");
                 startActivity(intent);
             }
         });
@@ -221,7 +221,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana te");
+                intent.putExtra("betu", "te");
                 startActivity(intent);
             }
         });
@@ -230,7 +230,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana to");
+                intent.putExtra("betu", "to");
                 startActivity(intent);
             }
         });
@@ -240,7 +240,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana na");
+                intent.putExtra("betu", "na");
                 startActivity(intent);
             }
         });
@@ -249,7 +249,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ni");
+                intent.putExtra("betu", "ni");
                 startActivity(intent);
             }
         });
@@ -258,7 +258,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana nu");
+                intent.putExtra("betu", "nu");
                 startActivity(intent);
             }
         });
@@ -267,7 +267,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ne");
+                intent.putExtra("betu", "ne");
                 startActivity(intent);
             }
         });
@@ -276,7 +276,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana no");
+                intent.putExtra("betu", "no");
                 startActivity(intent);
             }
         });
@@ -286,7 +286,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ha");
+                intent.putExtra("betu", "ha");
                 startActivity(intent);
             }
         });
@@ -295,7 +295,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana hi");
+                intent.putExtra("betu", "hi");
                 startActivity(intent);
             }
         });
@@ -304,7 +304,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana fu");
+                intent.putExtra("betu", "fu");
                 startActivity(intent);
             }
         });
@@ -313,7 +313,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana he");
+                intent.putExtra("betu", "he");
                 startActivity(intent);
             }
         });
@@ -322,7 +322,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ho");
+                intent.putExtra("betu", "ho");
                 startActivity(intent);
             }
         });
@@ -332,7 +332,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ma");
+                intent.putExtra("betu", "ma");
                 startActivity(intent);
             }
         });
@@ -341,7 +341,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana mi");
+                intent.putExtra("betu", "mi");
                 startActivity(intent);
             }
         });
@@ -350,7 +350,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana mu");
+                intent.putExtra("betu", "mu");
                 startActivity(intent);
             }
         });
@@ -359,7 +359,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana me");
+                intent.putExtra("betu", "me");
                 startActivity(intent);
             }
         });
@@ -368,7 +368,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana mo");
+                intent.putExtra("betu", "mo");
                 startActivity(intent);
             }
         });
@@ -378,7 +378,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ya");
+                intent.putExtra("betu", "ya");
                 startActivity(intent);
             }
         });
@@ -387,7 +387,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana yu");
+                intent.putExtra("betu", "yu");
                 startActivity(intent);
             }
         });
@@ -396,7 +396,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana yo");
+                intent.putExtra("betu", "yo");
                 startActivity(intent);
             }
         });
@@ -406,7 +406,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ra");
+                intent.putExtra("betu", "ra");
                 startActivity(intent);
             }
         });
@@ -415,7 +415,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ri");
+                intent.putExtra("betu", "ri");
                 startActivity(intent);
             }
         });
@@ -424,7 +424,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ru");
+                intent.putExtra("betu", "ru");
                 startActivity(intent);
             }
         });
@@ -433,7 +433,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana re");
+                intent.putExtra("betu", "re");
                 startActivity(intent);
             }
         });
@@ -442,7 +442,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana ro");
+                intent.putExtra("betu", "ro");
                 startActivity(intent);
             }
         });
@@ -452,7 +452,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana aw");
+                intent.putExtra("betu", "wa");
                 startActivity(intent);
             }
         });
@@ -461,7 +461,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana wo");
+                intent.putExtra("betu", "wo");
                 startActivity(intent);
             }
         });
@@ -470,7 +470,7 @@ public class LearnFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HiraganaLearn.class);
-                intent.putExtra("betu", "Hiragana n");
+                intent.putExtra("betu", "n");
                 startActivity(intent);
             }
         });
