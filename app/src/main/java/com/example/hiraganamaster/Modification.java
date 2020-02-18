@@ -35,9 +35,6 @@ public class Modification extends AppCompatActivity {
                     return;
                 }
                 /*adatModosit(nev, email, jelszo);*/
-                Intent vissza =
-                        new Intent(Modification.this,HiraganaMasterHomeFragment.class);
-                startActivity(vissza);
                 finish();
             }
         });
@@ -45,8 +42,7 @@ public class Modification extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Modification.this, SettingsFragment.class);
-                startActivity(intent);
+                finish();
             }
         });
     }

@@ -2,6 +2,7 @@ package com.example.hiraganamaster.ui.hiraganalearn;
 
 import androidx.lifecycle.ViewModelProviders;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,10 @@ public class HiraganaLearnFragment extends Fragment {
 
     private HiraganaLearnViewModel mViewModel;
     private static String betu;
+
+    private Button btnplay;
+
+    MediaPlayer mp;
 
     public String seged = "";
 
@@ -54,6 +59,14 @@ public class HiraganaLearnFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(HiraganaLearnViewModel.class);
         // TODO: Use the ViewModel
+
+        final MediaPlayer playA = MediaPlayer.create(getContext(), R.raw.a);
+        final MediaPlayer playI = MediaPlayer.create(getContext(), R.raw.i);
+        final MediaPlayer playU = MediaPlayer.create(getContext(), R.raw.u);
+        final MediaPlayer playE = MediaPlayer.create(getContext(), R.raw.e);
+        final MediaPlayer playO = MediaPlayer.create(getContext(), R.raw.o);
+
+
         TextView tw = getView().findViewById(R.id.textviewhiragana);
         ImageView ivLearn = getView().findViewById(R.id.ivLearn);
         tw.setText("Hiragana");
@@ -166,6 +179,43 @@ public class HiraganaLearnFragment extends Fragment {
                 ivLearn.setImageResource(R.drawable.n);
             }
         }
+
+        Button btnplay = getView().findViewById(R.id.btnplay);
+
+        btnplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(seged == "") {
+                    if (betu.equals("a")) {
+                        playA.start();
+                    } else if (betu.equals("i")) {
+                        playI.start();
+                    } else if (betu.equals("u")) {
+                        playU.start();
+                    } else if (betu.equals("e")) {
+                        playE.start();
+                    } else if (betu.equals("o")) {
+                        playO.start();
+                    }
+                }else if(seged.equals("a"))
+                {
+                    playA.start();
+                }else if(seged.equals("i"))
+                {
+                    playI.start();
+                }else if(seged.equals("u"))
+                {
+                    playU.start();
+                }else if(seged.equals("e"))
+                {
+                    playE.start();
+                }else if(seged.equals("o"))
+                {
+                    playO.start();
+                }
+            }
+        });
+
 
         Button toLeft = getView().findViewById(R.id.toLeft);
         final Button toRight = getView().findViewById(R.id.toRight);
