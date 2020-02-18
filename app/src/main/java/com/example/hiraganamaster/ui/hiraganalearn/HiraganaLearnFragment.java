@@ -87,96 +87,175 @@ public class HiraganaLearnFragment extends Fragment {
             } else if (betu.equals("e")) {
                 ivLearn.setImageResource(R.drawable.e);
                 tw.setText("Hiragana "+betu);
+                seged = "e";
             } else if (betu.equals("o")) {
                 ivLearn.setImageResource(R.drawable.o);
                 tw.setText("Hiragana "+betu);
-            } else if (betu.equals("Hiragana ka")) {
+                seged = "o";
+            } else if (betu.equals("ka")) {
                 ivLearn.setImageResource(R.drawable.ka);
                 tw.setText("Hiragana "+betu);
-            } else if (betu.equals("Hiragana ki")) {
+                seged = "ka";
+            } else if (betu.equals("ki")) {
                 ivLearn.setImageResource(R.drawable.ki);
                 tw.setText("Hiragana "+betu);
-            } else if (betu.equals("Hiragana ku")) {
+                seged = "ki";
+            } else if (betu.equals("ku")) {
                 ivLearn.setImageResource(R.drawable.ku);
                 tw.setText("Hiragana "+betu);
-            } else if (betu.equals("Hiragana ke")) {
+                seged = "ku";
+            } else if (betu.equals("ke")) {
                 ivLearn.setImageResource(R.drawable.ke);
                 tw.setText("Hiragana "+betu);
-            } else if (betu.equals("Hiragana ko")) {
+                seged = "ke";
+            } else if (betu.equals("ko")) {
                 ivLearn.setImageResource(R.drawable.ko);
                 tw.setText("Hiragana "+betu);
-            } else if (betu.equals("Hiragana sa")) {
+                seged = "ko";
+            } else if (betu.equals("sa")) {
                 ivLearn.setImageResource(R.drawable.sa);
-            } else if (betu.equals("Hiragana shi")) {
+                tw.setText("Hiragana "+betu);
+                seged = "sa";
+            } else if (betu.equals("shi")) {
                 ivLearn.setImageResource(R.drawable.shi);
-            } else if (betu.equals("Hiragana su")) {
+                tw.setText("Hiragana "+betu);
+                seged = "shi";
+            } else if (betu.equals("su")) {
                 ivLearn.setImageResource(R.drawable.su);
-            } else if (betu.equals("Hiragana se")) {
+                tw.setText("Hiragana "+betu);
+                seged = "su";
+            } else if (betu.equals("se")) {
                 ivLearn.setImageResource(R.drawable.se);
-            } else if (betu.equals("Hiragana so")) {
+                tw.setText("Hiragana "+betu);
+                seged = "se";
+            } else if (betu.equals("so")) {
                 ivLearn.setImageResource(R.drawable.so);
-            } else if (betu.equals("Hiragana ta")) {
+                tw.setText("Hiragana "+betu);
+                seged = "so";
+            } else if (betu.equals("ta")) {
                 ivLearn.setImageResource(R.drawable.ta);
-            } else if (betu.equals("Hiragana chi")) {
+                tw.setText("Hiragana "+betu);
+                seged = "ta";
+            } else if (betu.equals("chi")) {
                 ivLearn.setImageResource(R.drawable.chi);
-            } else if (betu.equals("Hiragana tsu")) {
+                tw.setText("Hiragana "+betu);
+                seged = "chi";
+            } else if (betu.equals("tsu")) {
                 ivLearn.setImageResource(R.drawable.tsu);
-            } else if (betu.equals("Hiragana te")) {
+                tw.setText("Hiragana "+betu);
+                seged = "stu";
+            } else if (betu.equals("te")) {
                 ivLearn.setImageResource(R.drawable.te);
-            } else if (betu.equals("Hiragana to")) {
+                tw.setText("Hiragana "+betu);
+                seged = "te";
+            } else if (betu.equals("to")) {
                 ivLearn.setImageResource(R.drawable.to);
-            } else if (betu.equals("Hiragana na")) {
+                tw.setText("Hiragana "+betu);
+                seged = "to";
+            } else if (betu.equals("na")) {
                 ivLearn.setImageResource(R.drawable.na);
-            } else if (betu.equals("Hiragana ni")) {
+                tw.setText("Hiragana "+betu);
+                seged = "na";
+            } else if (betu.equals("ni")) {
                 ivLearn.setImageResource(R.drawable.ni);
-            } else if (betu.equals("Hiragana nu")) {
+                tw.setText("Hiragana "+betu);
+                seged = "ni";
+            } else if (betu.equals("nu")) {
                 ivLearn.setImageResource(R.drawable.nu);
-            } else if (betu.equals("Hiragana ne")) {
+                tw.setText("Hiragana "+betu);
+                seged = "nu";
+            } else if (betu.equals("ne")) {
                 ivLearn.setImageResource(R.drawable.ne);
-            } else if (betu.equals("Hiragana no")) {
+                tw.setText("Hiragana "+betu);
+                seged = "ne";
+            } else if (betu.equals("no")) {
                 ivLearn.setImageResource(R.drawable.mo);
-            } else if (betu.equals("Hiragana ha")) {
+                tw.setText("Hiragana "+betu);
+                seged = "no";
+            } else if (betu.equals("ha")) {
                 ivLearn.setImageResource(R.drawable.ha);
-            } else if (betu.equals("Hiragana hi")) {
+                tw.setText("Hiragana "+betu);
+                seged = "ha";
+            } else if (betu.equals("hi")) {
                 ivLearn.setImageResource(R.drawable.hi);
-            } else if (betu.equals("Hiragana hu")) {
+                tw.setText("Hiragana "+betu);
+                seged = "hi";
+            } else if (betu.equals("fu")) {
                 ivLearn.setImageResource(R.drawable.fu);
-            } else if (betu.equals("Hiragana he")) {
+                tw.setText("Hiragana "+betu);
+                seged = "fu";
+            } else if (betu.equals("he")) {
                 ivLearn.setImageResource(R.drawable.he);
-            } else if (betu.equals("Hiragana ho")) {
+                tw.setText("Hiragana "+betu);
+                seged = "he";
+            } else if (betu.equals("ho")) {
                 ivLearn.setImageResource(R.drawable.ho);
-            } else if (betu.equals("Hiragana ma")) {
+                tw.setText("Hiragana "+betu);
+                seged = "ho";
+            } else if (betu.equals("ma")) {
                 ivLearn.setImageResource(R.drawable.ma);
-            } else if (betu.equals("Hiragana mi")) {
+                tw.setText("Hiragana "+betu);
+                seged = "ma";
+            } else if (betu.equals("mi")) {
                 ivLearn.setImageResource(R.drawable.mi);
-            } else if (betu.equals("Hiragana mu")) {
+                tw.setText("Hiragana "+betu);
+                seged = "mi";
+            } else if (betu.equals("mu")) {
                 ivLearn.setImageResource(R.drawable.mu);
-            } else if (betu.equals("Hiragana me")) {
+                tw.setText("Hiragana "+betu);
+                seged = "mu";
+            } else if (betu.equals("me")) {
                 ivLearn.setImageResource(R.drawable.me);
-            } else if (betu.equals("Hiragana mo")) {
+                tw.setText("Hiragana "+betu);
+                seged = "me";
+            } else if (betu.equals("mo")) {
                 ivLearn.setImageResource(R.drawable.mo);
-            } else if (betu.equals("Hiragana ya")) {
+                tw.setText("Hiragana "+betu);
+                seged = "mo";
+            } else if (betu.equals("ya")) {
                 ivLearn.setImageResource(R.drawable.ya);
-            } else if (betu.equals("Hiragana yu")) {
+                tw.setText("Hiragana "+betu);
+                seged = "ya";
+            } else if (betu.equals("yu")) {
                 ivLearn.setImageResource(R.drawable.yu);
-            } else if (betu.equals("Hiragana yo")) {
+                tw.setText("Hiragana "+betu);
+                seged = "yu";
+            } else if (betu.equals("yo")) {
                 ivLearn.setImageResource(R.drawable.yo);
-            } else if (betu.equals("Hiragana ra")) {
+                tw.setText("Hiragana "+betu);
+                seged = "yo";
+            } else if (betu.equals("ra")) {
                 ivLearn.setImageResource(R.drawable.ra);
-            } else if (betu.equals("Hiragana ri")) {
+                tw.setText("Hiragana "+betu);
+                seged = "ra";
+            } else if (betu.equals("ri")) {
                 ivLearn.setImageResource(R.drawable.ri);
-            } else if (betu.equals("Hiragana ru")) {
+                tw.setText("Hiragana "+betu);
+                seged = "ri";
+            } else if (betu.equals("ru")) {
                 ivLearn.setImageResource(R.drawable.ru);
-            } else if (betu.equals("Hiragana re")) {
+                tw.setText("Hiragana "+betu);
+                seged = "ru";
+            } else if (betu.equals("re")) {
                 ivLearn.setImageResource(R.drawable.re);
-            } else if (betu.equals("Hiragana ro")) {
+                tw.setText("Hiragana "+betu);
+                seged = "re";
+            } else if (betu.equals("ro")) {
                 ivLearn.setImageResource(R.drawable.ro);
-            } else if (betu.equals("Hiragana wa")) {
+                tw.setText("Hiragana "+betu);
+                seged = "ro";
+            } else if (betu.equals("wa")) {
                 ivLearn.setImageResource(R.drawable.wa);
-            } else if (betu.equals("Hiragana wo")) {
+                tw.setText("Hiragana "+betu);
+                seged = "wa";
+            } else if (betu.equals("wo")) {
                 ivLearn.setImageResource(R.drawable.wo);
-            } else if (betu.equals("Hiragana n")) {
+                tw.setText("Hiragana "+betu);
+                seged = "wo";
+            } else if (betu.equals("n")) {
                 ivLearn.setImageResource(R.drawable.n);
+                tw.setText("Hiragana "+betu);
+                seged = "n";
             }
         }
 
@@ -263,6 +342,246 @@ public class HiraganaLearnFragment extends Fragment {
                     seged = "ka";
                     tw.setText("Hiaragana ka");
                 }
+                else if(seged.equals("ka"))
+                {
+                    ivLearn.setImageResource(R.drawable.ki);
+                    seged = "ki";
+                    tw.setText("Hiaragana ki");
+                }
+                else if(seged.equals("ki"))
+                {
+                    ivLearn.setImageResource(R.drawable.ku);
+                    seged = "ku";
+                    tw.setText("Hiaragana ku");
+                }
+                else if(seged.equals("ku"))
+                {
+                    ivLearn.setImageResource(R.drawable.ke);
+                    seged = "ke";
+                    tw.setText("Hiaragana ke");
+                }
+                else if(seged.equals("ke"))
+                {
+                    ivLearn.setImageResource(R.drawable.ko);
+                    seged = "ko";
+                    tw.setText("Hiaragana ko");
+                }
+                else if(seged.equals("ko"))
+                {
+                    ivLearn.setImageResource(R.drawable.sa);
+                    seged = "sa";
+                    tw.setText("Hiaragana sa");
+                }
+                else if(seged.equals("sa"))
+                {
+                    ivLearn.setImageResource(R.drawable.shi);
+                    seged = "shi";
+                    tw.setText("Hiaragana shi");
+                }
+                else if(seged.equals("shi"))
+                {
+                    ivLearn.setImageResource(R.drawable.su);
+                    seged = "su";
+                    tw.setText("Hiaragana su");
+                }
+                else if(seged.equals("su"))
+                {
+                    ivLearn.setImageResource(R.drawable.se);
+                    seged = "se";
+                    tw.setText("Hiaragana se");
+                }
+                else if(seged.equals("se"))
+                {
+                    ivLearn.setImageResource(R.drawable.so);
+                    seged = "so";
+                    tw.setText("Hiaragana so");
+                }
+                else if(seged.equals("so"))
+                {
+                    ivLearn.setImageResource(R.drawable.ta);
+                    seged = "ta";
+                    tw.setText("Hiaragana ta");
+                }
+                else if(seged.equals("ta"))
+                {
+                    ivLearn.setImageResource(R.drawable.chi);
+                    seged = "chi";
+                    tw.setText("Hiaragana chi");
+                }
+                else if(seged.equals("chi"))
+                {
+                    ivLearn.setImageResource(R.drawable.tsu);
+                    seged = "tsu";
+                    tw.setText("Hiaragana tsu");
+                }
+                else if(seged.equals("tsu"))
+                {
+                    ivLearn.setImageResource(R.drawable.te);
+                    seged = "te";
+                    tw.setText("Hiaragana te");
+                }
+                else if(seged.equals("te"))
+                {
+                    ivLearn.setImageResource(R.drawable.to);
+                    seged = "to";
+                    tw.setText("Hiaragana to");
+                }
+                else if(seged.equals("to"))
+                {
+                    ivLearn.setImageResource(R.drawable.na);
+                    seged = "na";
+                    tw.setText("Hiaragana na");
+                }
+                else if(seged.equals("na"))
+                {
+                    ivLearn.setImageResource(R.drawable.ni);
+                    seged = "ni";
+                    tw.setText("Hiaragana ni");
+                }
+                else if(seged.equals("ni"))
+                {
+                    ivLearn.setImageResource(R.drawable.nu);
+                    seged = "nu";
+                    tw.setText("Hiaragana nu");
+                }
+                else if(seged.equals("nu"))
+                {
+                    ivLearn.setImageResource(R.drawable.ne);
+                    seged = "ne";
+                    tw.setText("Hiaragana ne");
+                }
+                else if(seged.equals("ne"))
+                {
+                    ivLearn.setImageResource(R.drawable.no);
+                    seged = "no";
+                    tw.setText("Hiaragana no");
+                }
+                else if(seged.equals("no"))
+                {
+                    ivLearn.setImageResource(R.drawable.ha);
+                    seged = "ha";
+                    tw.setText("Hiaragana ha");
+                }
+                else if(seged.equals("ha"))
+                {
+                    ivLearn.setImageResource(R.drawable.hi);
+                    seged = "hi";
+                    tw.setText("Hiaragana hi");
+                }
+                else if(seged.equals("hi"))
+                {
+                    ivLearn.setImageResource(R.drawable.hu);
+                    seged = "hu";
+                    tw.setText("Hiaragana hu");
+                }
+                else if(seged.equals("hu"))
+                {
+                    ivLearn.setImageResource(R.drawable.he);
+                    seged = "he";
+                    tw.setText("Hiaragana he");
+                }
+                else if(seged.equals("he"))
+                {
+                    ivLearn.setImageResource(R.drawable.ho);
+                    seged = "ho";
+                    tw.setText("Hiaragana ho");
+                }
+                else if(seged.equals("ho"))
+                {
+                    ivLearn.setImageResource(R.drawable.ma);
+                    seged = "ma";
+                    tw.setText("Hiaragana ma");
+                }
+                else if(seged.equals("ma"))
+                {
+                    ivLearn.setImageResource(R.drawable.mi);
+                    seged = "mi";
+                    tw.setText("Hiaragana mi");
+                }
+                else if(seged.equals("mi"))
+                {
+                    ivLearn.setImageResource(R.drawable.mu);
+                    seged = "mu";
+                    tw.setText("Hiaragana mu");
+                }
+                else if(seged.equals("mu"))
+                {
+                    ivLearn.setImageResource(R.drawable.me);
+                    seged = "me";
+                    tw.setText("Hiaragana me");
+                }
+                else if(seged.equals("me"))
+                {
+                    ivLearn.setImageResource(R.drawable.mo);
+                    seged = "mo";
+                    tw.setText("Hiaragana mo");
+                }
+                else if(seged.equals("mo"))
+                {
+                    ivLearn.setImageResource(R.drawable.ya);
+                    seged = "ya";
+                    tw.setText("Hiaragana ya");
+                }
+                else if(seged.equals("ya"))
+                {
+                    ivLearn.setImageResource(R.drawable.yu);
+                    seged = "yu";
+                    tw.setText("Hiaragana yu");
+                }
+                else if(seged.equals("yu"))
+                {
+                    ivLearn.setImageResource(R.drawable.yo);
+                    seged = "yo";
+                    tw.setText("Hiaragana yo");
+                }
+                else if(seged.equals("yo"))
+                {
+                    ivLearn.setImageResource(R.drawable.ra);
+                    seged = "ra";
+                    tw.setText("Hiaragana ra");
+                }
+                else if(seged.equals("ra"))
+                {
+                    ivLearn.setImageResource(R.drawable.ri);
+                    seged = "ri";
+                    tw.setText("Hiaragana ri");
+                }
+                else if(seged.equals("ri"))
+                {
+                    ivLearn.setImageResource(R.drawable.ru);
+                    seged = "ru";
+                    tw.setText("Hiaragana ru");
+                }
+                else if(seged.equals("ru"))
+                {
+                    ivLearn.setImageResource(R.drawable.re);
+                    seged = "re";
+                    tw.setText("Hiaragana re");
+                }
+                else if(seged.equals("re"))
+                {
+                    ivLearn.setImageResource(R.drawable.ro);
+                    seged = "ro";
+                    tw.setText("Hiaragana ro");
+                }
+                else if(seged.equals("ro"))
+                {
+                    ivLearn.setImageResource(R.drawable.wa);
+                    seged = "wa";
+                    tw.setText("Hiaragana wa");
+                }
+                else if(seged.equals("wa"))
+                {
+                    ivLearn.setImageResource(R.drawable.wo);
+                    seged = "wo";
+                    tw.setText("Hiaragana wo");
+                }
+                else if(seged.equals("wo"))
+                {
+                    ivLearn.setImageResource(R.drawable.n);
+                    seged = "n";
+                    tw.setText("Hiaragana n");
+                }
                 else if(seged.equals("n"))
                 {
                     Toast.makeText(getContext(), "Hiba", Toast.LENGTH_SHORT).show();
@@ -285,25 +604,25 @@ public class HiraganaLearnFragment extends Fragment {
                 {
                     ivLearn.setImageResource(R.drawable.a);
                     seged = "a";
-                    tw.setText("a");
+                    tw.setText("Hiragana a");
                 }
                 else if(seged.equals("u"))
                 {
                     ivLearn.setImageResource(R.drawable.i);
                     seged = "i";
-                    tw.setText("i");
+                    tw.setText("Hiragana i");
                 }
                 else if(seged.equals("e"))
                 {
                     ivLearn.setImageResource(R.drawable.u);
                     seged = "u";
-                    tw.setText("u");
+                    tw.setText("Hiragana u");
                 }
                 else if(seged.equals("o"))
                 {
                     ivLearn.setImageResource(R.drawable.e);
                     seged = "e";
-                    tw.setText("e");
+                    tw.setText("Hiragana e");
                 }
             }
         });
