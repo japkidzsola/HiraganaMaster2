@@ -470,11 +470,11 @@ public class HiraganaLearnFragment extends Fragment {
                 }
                 else if(seged.equals("hi"))
                 {
-                    ivLearn.setImageResource(R.drawable.hu);
-                    seged = "hu";
-                    tw.setText("Hiaragana hu");
+                    ivLearn.setImageResource(R.drawable.fu);
+                    seged = "fu";
+                    tw.setText("Hiaragana fu");
                 }
-                else if(seged.equals("hu"))
+                else if(seged.equals("fu"))
                 {
                     ivLearn.setImageResource(R.drawable.he);
                     seged = "he";
