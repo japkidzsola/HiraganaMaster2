@@ -2,7 +2,9 @@ package com.example.hiraganamaster;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -68,6 +70,10 @@ public class Login extends AppCompatActivity {
                     String bejelentkezofelhasz = dbhelper.Bejelentkezoneve(bejelentkezoneve);
                     /*Intent intent = new Intent(Login.this, HiraganaMasterHomeFragment.class);
                     startActivity(intent);*/
+                    SharedPreferences sharedPreferences = getSharedPreferences("felhasznalo", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("felhnev", etName.getText().toString());
+                    editor.apply();
                     finish();
                 }
                 else

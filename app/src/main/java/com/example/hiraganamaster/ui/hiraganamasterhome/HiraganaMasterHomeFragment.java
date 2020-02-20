@@ -2,7 +2,10 @@ package com.example.hiraganamaster.ui.hiraganamasterhome;
 
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -38,6 +41,11 @@ public class HiraganaMasterHomeFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(HiraganaMasterHomeViewModel.class);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("felhasznalo", Context.MODE_PRIVATE);
+        String felhasznalonev = sharedPreferences.getString("felhnev", "");
+
+        Cursor eredmeny = db.selectTeljesNev(felhasznalonev);
 
         login = getView().findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {

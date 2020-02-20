@@ -65,6 +65,16 @@ public class HiraganaLearnFragment extends Fragment {
         final MediaPlayer playU = MediaPlayer.create(getContext(), R.raw.u);
         final MediaPlayer playE = MediaPlayer.create(getContext(), R.raw.e);
         final MediaPlayer playO = MediaPlayer.create(getContext(), R.raw.o);
+        final MediaPlayer playKa = MediaPlayer.create(getContext(), R.raw.ka);
+        final MediaPlayer playKi = MediaPlayer.create(getContext(), R.raw.ki);
+        final MediaPlayer playKu = MediaPlayer.create(getContext(), R.raw.ku);
+        final MediaPlayer playKe = MediaPlayer.create(getContext(), R.raw.ke);
+        final MediaPlayer playKo = MediaPlayer.create(getContext(), R.raw.ko);
+        final MediaPlayer playSa = MediaPlayer.create(getContext(), R.raw.sa);
+        final MediaPlayer playShi = MediaPlayer.create(getContext(), R.raw.shi);
+        final MediaPlayer playSu = MediaPlayer.create(getContext(), R.raw.su);
+        final MediaPlayer playSe = MediaPlayer.create(getContext(), R.raw.se);
+        final MediaPlayer playSo = MediaPlayer.create(getContext(), R.raw.so);
 
 
         TextView tw = getView().findViewById(R.id.textviewhiragana);
@@ -275,6 +285,16 @@ public class HiraganaLearnFragment extends Fragment {
                         playE.start();
                     } else if (betu.equals("o")) {
                         playO.start();
+                    } else if (betu.equals("ka")) {
+                        playKa.start();
+                    } else if (betu.equals("ki")) {
+                        playKi.start();
+                    } else if (betu.equals("ku")) {
+                        playKu.start();
+                    } else if (betu.equals("ke")) {
+                        playKe.start();
+                    } else if (betu.equals("ko")) {
+                        playKo.start();
                     }
                 }else if(seged.equals("a"))
                 {
@@ -291,6 +311,21 @@ public class HiraganaLearnFragment extends Fragment {
                 }else if(seged.equals("o"))
                 {
                     playO.start();
+                }else if(seged.equals("ka"))
+                {
+                    playKa.start();
+                }else if(seged.equals("ki"))
+                {
+                    playKi.start();
+                }else if(seged.equals("ku"))
+                {
+                    playKu.start();
+                }else if(seged.equals("ke"))
+                {
+                    playKe.start();
+                }else if(seged.equals("ko"))
+                {
+                    playKo.start();
                 }
             }
         });
@@ -623,6 +658,42 @@ public class HiraganaLearnFragment extends Fragment {
                     ivLearn.setImageResource(R.drawable.e);
                     seged = "e";
                     tw.setText("Hiragana e");
+                }
+                else if(seged.equals("ka"))
+                {
+                    ivLearn.setImageResource(R.drawable.o);
+                    seged = "o";
+                    tw.setText("Hiragana o");
+                }
+                else if(seged.equals("ki"))
+                {
+                    ivLearn.setImageResource(R.drawable.ka);
+                    seged = "ka";
+                    tw.setText("Hiragana ka");
+                }
+                else if(seged.equals("ku"))
+                {
+                    ivLearn.setImageResource(R.drawable.ki);
+                    seged = "ki";
+                    tw.setText("Hiragana ki");
+                }
+                else if(seged.equals("ke"))
+                {
+                    ivLearn.setImageResource(R.drawable.ku);
+                    seged = "ku";
+                    tw.setText("Hiragana ku");
+                }
+                else if(seged.equals("ko"))
+                {
+                    ivLearn.setImageResource(R.drawable.ke);
+                    seged = "ke";
+                    tw.setText("Hiragana ke");
+                }
+                else if(seged.equals("sa"))
+                {
+                    ivLearn.setImageResource(R.drawable.ko);
+                    seged = "ko";
+                    tw.setText("Hiragana ko");
                 }
             }
         });

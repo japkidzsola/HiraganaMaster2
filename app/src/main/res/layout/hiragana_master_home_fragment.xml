@@ -8,16 +8,16 @@
     tools:context=".ui.hiraganamasterhome.HiraganaMasterHomeFragment">
 
     <TextView
-        android:id="@+id/message"
+        android:id="@+id/welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Welcome to Hiragana Master"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linear"
@@ -129,7 +129,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:layout_below="@+id/message"
+        android:layout_below="@+id/welcome"
         android:id="@+id/login"
         />
 

@@ -92,6 +92,13 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
         return false;
     }
 
+    public Cursor selectNev(String felhasznalonev)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor eredmeny = db.rawQuery("SELECT nev FROM " + TABLE_NAME + " WHERE felhasz = '" + felhasznalonev + "'", null);
+        return eredmeny;
+    }
+
     public Cursor getFelhasznaloAdat(String felhasznalonev)
     {
         SQLiteDatabase db = this.getReadableDatabase();
