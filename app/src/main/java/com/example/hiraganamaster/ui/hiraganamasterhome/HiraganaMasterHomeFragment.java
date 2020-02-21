@@ -3,6 +3,7 @@ package com.example.hiraganamaster.ui.hiraganamasterhome;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -42,10 +43,10 @@ public class HiraganaMasterHomeFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(HiraganaMasterHomeViewModel.class);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("felhasznalo", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = new ContextWrapper(getActivity()).getSharedPreferences("felhasznalo", Context.MODE_PRIVATE);
         String felhasznalonev = sharedPreferences.getString("felhnev", "");
 
-        Cursor eredmeny = db.selectTeljesNev(felhasznalonev);
+        //Cursor eredmeny = db.selectTeljesNev(felhasznalonev);
 
         login = getView().findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
