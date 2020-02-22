@@ -74,6 +74,8 @@ public class Login extends AppCompatActivity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("felhnev", etName.getText().toString());
                     editor.apply();
+                    bejelentkezett();
+
                     finish();
                 }
                 else
@@ -100,5 +102,10 @@ public class Login extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnRegistration = findViewById(R.id.btnRegistration);
+    }
+
+    public boolean bejelentkezett()
+    {
+        return true;
     }
 }

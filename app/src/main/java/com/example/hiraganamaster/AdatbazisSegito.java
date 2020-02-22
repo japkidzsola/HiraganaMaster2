@@ -20,7 +20,7 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
     private static final String COL_NEV = "nev";
     private static final String COL_EMAIL = "email";
     private static final String COL_JELSZO = "jelszo";
-    //private static final String COL_KEDVENCEK = "kedvencek";
+    private static final String COL_KEDVENCEK = "kedvencek";
 
     public AdatbazisSegito(Context context) {super(context,DBname,null,DBversion); }
 
@@ -31,8 +31,8 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
                 COL_ID+" INTEGER PRIMARY KEY AUTOINCREMENT," +
                 COL_NEV+" VARCHAR(30)," +
                 COL_EMAIL+ " VARCHAR(30)," +
-                COL_JELSZO+ " VARCHAR(30))" /*+
-                COL_KEDVENCEK+ " VARCHAR(30))"*/ ;
+                COL_JELSZO+ " VARCHAR(30)," +
+                COL_KEDVENCEK+ " VARCHAR(30))";
         db.execSQL(createTables);
     }
 
@@ -58,15 +58,27 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
         }
     }
 
-   /* public long adatModositas(String nev, String email, String jelszo){
+    public Cursor adatLekerdezes(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM "+TABLE_NAME, null);
+    }
+
+    public Cursor idLekerdez()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT id FROM " + TABLE_NAME, null);
+    }
+
+    public long adatModositas(String id, String nev, String email, String jelszo){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COL_NEV, nev);
         values.put(COL_EMAIL, email);
         values.put(COL_JELSZO, jelszo);
 
+
         return db.update(TABLE_NAME,values,COL_ID+" = ?",new String[]{id});
-    }*/
+    }
 
     public boolean Bejelentkezes(String felhasznalonev,String jelszo){
         SQLiteDatabase db = this.getReadableDatabase();
@@ -92,11 +104,16 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
         return false;
     }
 
-    public Cursor selectNev(String felhasznalonev)
+    public Cursor selectTeljesNev(String felhasznalonev)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor eredmeny = db.rawQuery("SELECT nev FROM " + TABLE_NAME + " WHERE felhasz = '" + felhasznalonev + "'", null);
+        Cursor eredmeny = db.rawQuery("SELECT nev FROM " + TABLE_NAME + " WHERE nev = '" + felhasznalonev + "'", null);
         return eredmeny;
+    }
+
+    public boolean bejelentkezett(boolean sikeres)
+    {
+        return true;
     }
 
     public Cursor getFelhasznaloAdat(String felhasznalonev)
@@ -114,13 +131,5 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
     public String Bejelentkezoneve(String s) {
         nev+= s;
         return s;
-    }
-    public String Bejelentk() {
-        return nev;
-    }
-
-    public Cursor Bejelentkezo(){
-        SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery("SELECT teljesnev FROM "+TABLE_NAME +" WHERE felhasz='"+loggedinuser.getFelhasznalonev()+"'", null);
     }
 }

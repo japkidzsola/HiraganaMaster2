@@ -17,13 +17,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.hiraganamaster.AdatbazisSegito;
 import com.example.hiraganamaster.Login;
 import com.example.hiraganamaster.R;
 
 public class HiraganaMasterHomeFragment extends Fragment {
 
     private Button login;
+    private AdatbazisSegito db;
 
     private HiraganaMasterHomeViewModel mViewModel;
 
@@ -42,11 +45,8 @@ public class HiraganaMasterHomeFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(HiraganaMasterHomeViewModel.class);
-
-        SharedPreferences sharedPreferences = new ContextWrapper(getActivity()).getSharedPreferences("felhasznalo", Context.MODE_PRIVATE);
-        String felhasznalonev = sharedPreferences.getString("felhnev", "");
-
-        //Cursor eredmeny = db.selectTeljesNev(felhasznalonev);
+        db = new AdatbazisSegito(getContext());
+        TextView tw = getView().findViewById(R.id.welcome);
 
         login = getView().findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +56,40 @@ public class HiraganaMasterHomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        if(bejelentkezett() == true) {
+            tw.setText("Welcome "+getTeljesNev());
+        }
+        else
+        {
+            tw.setText("Welcom to Hiragana Master");
+        }
+
+    }
+
+    private boolean bejelentkezett()
+    {
+        return true;
+    }
+
+    private String getTeljesNev()
+    {
+        SharedPreferences sharedPreferences = new ContextWrapper(getActivity()).getSharedPreferences("felhasznalo", Context.MODE_PRIVATE);
+        String felhasznalonev = sharedPreferences.getString("felhnev", "");
+
+        Cursor eredmeny = db.selectTeljesNev(felhasznalonev);
+        StringBuffer stringBuffer = new StringBuffer();
+        if (eredmeny != null && eredmeny.getCount() > 0)
+        {
+            while (eredmeny.moveToNext())
+            {
+                stringBuffer.append(eredmeny.getString(0));
+            }
+            return stringBuffer.toString();
+        }
+        else
+        {
+            return null;
+        }
     }
 
 }

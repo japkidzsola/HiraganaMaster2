@@ -31,12 +31,21 @@
         android:layout_centerInParent="true"
         android:background="@drawable/ic_play"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnfavorite"
+        android:layout_below="@+id/btnplay"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ic_favorite_border_black"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:layout_below="@+id/btnplay">
+        android:layout_below="@+id/btnfavorite">
 
         <Button
             android:id="@+id/toLeft"
