@@ -53,6 +53,21 @@
             android:layout_marginBottom="10dp"
             />
 
+        <TextView
+        android:id="@+id/tvlogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Want to logout from this profile?"
+        android:textSize="20dp"
+        />
+        <Button
+            android:id="@+id/btnlogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout from profile here"
+            android:layout_marginBottom="10dp"
+            />
+
     </LinearLayout>
 
 </RelativeLayout>

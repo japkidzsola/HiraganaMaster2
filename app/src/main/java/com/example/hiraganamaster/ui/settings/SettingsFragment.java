@@ -2,7 +2,10 @@ package com.example.hiraganamaster.ui.settings;
 
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,13 +16,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.hiraganamaster.Modification;
 import com.example.hiraganamaster.R;
 
 public class SettingsFragment extends Fragment {
 
-    private Button btnprofile;
+    private Button btnprofile, btnlogout;
 
     private SettingsViewModel mViewModel;
 
@@ -45,6 +49,17 @@ public class SettingsFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), Modification.class);
                 startActivity(intent);
+            }
+        });
+
+        btnlogout = getView().findViewById(R.id.btnprofile);
+        btnlogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences preferences = new ContextWrapper(getActivity()).getSharedPreferences("felhasznalo", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.clear();
+                editor.commit();
             }
         });
     }
