@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 public class AdatbazisSegito extends SQLiteOpenHelper {
 
     public static User loggedinuser;
-    private static final int DBversion = 1;
+    private static final int DBversion = 2;
     private static final String DBname = "tanulok.db";
 
     private static final String TABLE_NAME = "tanulok";
@@ -131,5 +131,20 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
     public String Bejelentkezoneve(String s) {
         nev+= s;
         return s;
+    }
+
+    public boolean insertFavorite(/*int id, */String favorite)
+    {
+        SQLiteDatabase db =this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_KEDVENCEK,favorite);
+
+        //return db.insert(TABLE_NAME, null, values) != -1;
+        long erintettSorok = db.insert(TABLE_NAME, null, contentValues);
+        if (erintettSorok == -1){
+            return false;
+        }else{
+            return true;
+        }
     }
 }

@@ -45,10 +45,16 @@ public class Modification extends AppCompatActivity {
             stringBuffer.append(cursorAdatok.getString(2));
             etEmail.setText(cursorAdatok.getString(2));
             stringBuffer.append("password: "+cursorAdatok.getString(3) + "\r\n");
+            if(cursorAdatok.isNull(4)) {
+                Toast.makeText(this, "no favorites proba", Toast.LENGTH_SHORT).show();
+            }else
+            {
+                stringBuffer.append("favorites: " + cursorAdatok.getString(4) + "\r\n");
+            }
             stringBuffer.append("\r\n");
         }
         TextView tw = findViewById(R.id.textAdatok);
-        //tw.setText(stringBuffer.toString());
+        tw.setText(stringBuffer.toString());
 
 
         btnEdit.setOnClickListener(new View.OnClickListener() {

@@ -2,6 +2,7 @@ package com.example.hiraganamaster.ui.hiraganalearn;
 
 import androidx.lifecycle.ViewModelProviders;
 
+import android.database.Cursor;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
@@ -17,7 +18,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hiraganamaster.AdatbazisSegito;
+import com.example.hiraganamaster.Modification;
 import com.example.hiraganamaster.R;
+import com.example.hiraganamaster.ui.hiraganamasterhome.HiraganaMasterHomeFragment;
 
 public class HiraganaLearnFragment extends Fragment {
 
@@ -393,9 +397,16 @@ public class HiraganaLearnFragment extends Fragment {
                 if(seged == "") {
                     if (betu.equals("a")) {
                         fav.setBackgroundResource(R.drawable.ic_favorite_black_24dp);
+                        Favorite();
                     } else if(betu.equals("i")) {
-
+                        fav.setBackgroundResource(R.drawable.ic_favorite_black_24dp);
+                        Favorite();
                     }
+                }
+                else if(seged.equals("a"))
+                {
+                    fav.setBackgroundResource(R.drawable.ic_favorite_black_24dp);
+                    Favorite();
                 }
             }
         });
@@ -829,5 +840,32 @@ public class HiraganaLearnFragment extends Fragment {
                 }
             }
         });
+    }
+    final AdatbazisSegito dbhelper = new AdatbazisSegito(getContext());
+    private void Favorite()
+    {
+        final AdatbazisSegito db = new AdatbazisSegito(getContext());
+       /* Cursor cursorAdatok = dbhelper.idLekerdez();
+        StringBuffer stringBuffer = new StringBuffer();
+        int id = 0;
+        while (cursorAdatok.moveToNext()) {
+            //stringBuffer.append(cursorAdatok.getString(0));
+            id = cursorAdatok.getInt(0);
+        }*/
+        TextView tw = getView().findViewById(R.id.textviewname);
+        String felvetel = tw.getText().toString();
+
+        tw.setText("proba"+felvetel);
+
+        boolean eredmeny = db.insertFavorite(/*id,*/felvetel);
+        if (eredmeny)
+        {
+            Toast.makeText(getActivity(), "Successfully added to favorites!", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Toast.makeText(getActivity(), "Unsuccessful via server error", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }

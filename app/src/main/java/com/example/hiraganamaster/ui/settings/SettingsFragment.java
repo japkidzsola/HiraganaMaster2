@@ -49,10 +49,11 @@ public class SettingsFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), Modification.class);
                 startActivity(intent);
+                Toast.makeText(getActivity(), "u suck", Toast.LENGTH_SHORT).show();
             }
         });
 
-        btnlogout = getView().findViewById(R.id.btnprofile);
+        btnlogout = getView().findViewById(R.id.btnlogout);
         btnlogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +61,7 @@ public class SettingsFragment extends Fragment {
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.clear();
                 editor.commit();
+                Toast.makeText(getActivity(), "proba", Toast.LENGTH_SHORT).show();
             }
         });
     }
