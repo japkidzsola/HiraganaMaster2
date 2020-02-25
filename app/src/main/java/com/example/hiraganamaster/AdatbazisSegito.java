@@ -133,14 +133,14 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
         return s;
     }
 
-    public boolean insertFavorite(/*int id, */String favorite)
+    public boolean insertFavorite(int id, String favorite)
     {
         SQLiteDatabase db =this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_KEDVENCEK,favorite);
 
         //return db.insert(TABLE_NAME, null, values) != -1;
-        long erintettSorok = db.insert(TABLE_NAME, null, contentValues);
+        long erintettSorok = db.update(TABLE_NAME,contentValues,"WHERE id =" + id,null);
         if (erintettSorok == -1){
             return false;
         }else{

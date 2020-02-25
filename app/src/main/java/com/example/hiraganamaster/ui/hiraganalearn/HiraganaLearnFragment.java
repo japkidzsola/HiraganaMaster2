@@ -845,19 +845,19 @@ public class HiraganaLearnFragment extends Fragment {
     private void Favorite()
     {
         final AdatbazisSegito db = new AdatbazisSegito(getContext());
-       /* Cursor cursorAdatok = dbhelper.idLekerdez();
+        Cursor cursorAdatok = dbhelper.idLekerdez();
         StringBuffer stringBuffer = new StringBuffer();
         int id = 0;
         while (cursorAdatok.moveToNext()) {
-            //stringBuffer.append(cursorAdatok.getString(0));
+            stringBuffer.append(cursorAdatok.getInt(0));
             id = cursorAdatok.getInt(0);
-        }*/
+        }
         TextView tw = getView().findViewById(R.id.textviewname);
         String felvetel = tw.getText().toString();
 
         tw.setText("proba"+felvetel);
 
-        boolean eredmeny = db.insertFavorite(/*id,*/felvetel);
+        boolean eredmeny = db.insertFavorite(id,felvetel);
         if (eredmeny)
         {
             Toast.makeText(getActivity(), "Successfully added to favorites!", Toast.LENGTH_SHORT).show();
