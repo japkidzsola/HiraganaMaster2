@@ -11,21 +11,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/beginnerrelative">
-    <TextView
-        android:id="@+id/beginnertv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Beginner test"
-        android:textSize="25dp"
-        android:gravity="center"/>
+        <TextView
+            android:id="@+id/beginnertv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Beginner test"
+            android:textSize="25dp"
+            android:gravity="center"/>
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="100">
+        android:layout_weight="100"
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
 
-
+        <ImageView
+            android:id="@+id/begginerimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/qa"
+            />
     </RelativeLayout>
 
     <LinearLayout
@@ -36,8 +43,41 @@
         android:layout_weight="1">
 
         <Button
+            android:id="@+id/first"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="first"
+            />
+        <Button
+            android:id="@+id/second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="second"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:layout_weight="0">
+
+        <Button
+            android:id="@+id/third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="third"
+            />
+        <Button
+            android:id="@+id/fourth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="4th"
             />
 
     </LinearLayout>

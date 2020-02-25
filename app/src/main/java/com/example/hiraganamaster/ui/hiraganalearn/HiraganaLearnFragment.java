@@ -922,6 +922,43 @@ public class HiraganaLearnFragment extends Fragment {
                     seged = "ne";
                     tw.setText("Hiragana ne");
                 }
+                else if(seged.equals("ha"))
+                {
+                    ivLearn.setImageResource(R.drawable.qno);
+                    seged = "no";
+                    tw.setText("Hiragana no");
+                }
+                else if(seged.equals("hi"))
+                {
+                    ivLearn.setImageResource(R.drawable.qha);
+                    seged = "ha";
+                    tw.setText("Hiragana ha");
+                }
+                else if(seged.equals("fu"))
+                {
+                    ivLearn.setImageResource(R.drawable.qhi);
+                    seged = "hi";
+                    tw.setText("Hiragana hi");
+                }
+                else if(seged.equals("he"))
+                {
+                    ivLearn.setImageResource(R.drawable.qfu);
+                    seged = "fu";
+                    tw.setText("Hiragana fu");
+                }
+                else if(seged.equals("ho"))
+                {
+                    ivLearn.setImageResource(R.drawable.qhe);
+                    seged = "he";
+                    tw.setText("Hiragana he");
+                }
+                else if(seged.equals("ma"))
+                {
+                    ivLearn.setImageResource(R.drawable.qho);
+                    seged = "ho";
+                    tw.setText("Hiragana ho");
+                }
+
             }
         });
     }
