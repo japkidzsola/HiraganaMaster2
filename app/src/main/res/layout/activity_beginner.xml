@@ -7,6 +7,10 @@
     tools:context=".Beginner"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/beginnerrelative">
     <TextView
         android:id="@+id/beginnertv"
         android:layout_width="match_parent"
@@ -14,12 +18,22 @@
         android:text="Beginner test"
         android:textSize="25dp"
         android:gravity="center"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="100">
+
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:gravity="bottom">
+        android:gravity="bottom"
+        android:layout_weight="1">
 
         <Button
             android:layout_width="wrap_content"
