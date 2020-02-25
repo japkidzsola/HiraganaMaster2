@@ -838,6 +838,90 @@ public class HiraganaLearnFragment extends Fragment {
                     seged = "ko";
                     tw.setText("Hiragana ko");
                 }
+                else if(seged.equals("shi"))
+                {
+                    ivLearn.setImageResource(R.drawable.qsa);
+                    seged = "sa";
+                    tw.setText("Hiragana sa");
+                }
+                else if(seged.equals("su"))
+                {
+                    ivLearn.setImageResource(R.drawable.qshi);
+                    seged = "shi";
+                    tw.setText("Hiragana shi");
+                }
+                else if(seged.equals("se"))
+                {
+                    ivLearn.setImageResource(R.drawable.qsu);
+                    seged = "su";
+                    tw.setText("Hiragana su");
+                }
+                else if(seged.equals("so"))
+                {
+                    ivLearn.setImageResource(R.drawable.qse);
+                    seged = "se";
+                    tw.setText("Hiragana se");
+                }
+                else if(seged.equals("ta"))
+                {
+                    ivLearn.setImageResource(R.drawable.qso);
+                    seged = "so";
+                    tw.setText("Hiragana so");
+                }
+                else if(seged.equals("chi"))
+                {
+                    ivLearn.setImageResource(R.drawable.qta);
+                    seged = "ta";
+                    tw.setText("Hiragana ta");
+                }
+                else if(seged.equals("tsu"))
+                {
+                    ivLearn.setImageResource(R.drawable.qchi);
+                    seged = "chi";
+                    tw.setText("Hiragana chi");
+                }
+                else if(seged.equals("te"))
+                {
+                    ivLearn.setImageResource(R.drawable.qtsu);
+                    seged = "tsu";
+                    tw.setText("Hiragana tsu");
+                }
+                else if(seged.equals("to"))
+                {
+                    ivLearn.setImageResource(R.drawable.qte);
+                    seged = "te";
+                    tw.setText("Hiragana te");
+                }
+                else if(seged.equals("na"))
+                {
+                    ivLearn.setImageResource(R.drawable.qte);
+                    seged = "te";
+                    tw.setText("Hiragana te");
+                }
+                else if(seged.equals("ni"))
+                {
+                    ivLearn.setImageResource(R.drawable.qna);
+                    seged = "na";
+                    tw.setText("Hiragana na");
+                }
+                else if(seged.equals("nu"))
+                {
+                    ivLearn.setImageResource(R.drawable.qni);
+                    seged = "ni";
+                    tw.setText("Hiragana ni");
+                }
+                else if(seged.equals("ne"))
+                {
+                    ivLearn.setImageResource(R.drawable.qnu);
+                    seged = "nu";
+                    tw.setText("Hiragana nu");
+                }
+                else if(seged.equals("no"))
+                {
+                    ivLearn.setImageResource(R.drawable.qne);
+                    seged = "ne";
+                    tw.setText("Hiragana ne");
+                }
             }
         });
     }
