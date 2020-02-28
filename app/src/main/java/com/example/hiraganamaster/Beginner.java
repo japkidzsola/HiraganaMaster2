@@ -34,14 +34,14 @@ public class Beginner extends AppCompatActivity {
 
         final int seged = 0;
 
-        randomHiragana = new ArrayList<>();
+      /*  randomHiragana = new ArrayList<>();
         voltmar = new ArrayList<>();
 
         randomHiragana.add("A");
         randomHiragana.add("I");
         randomHiragana.add("U");
         randomHiragana.add("E");
-        randomHiragana.add("O");
+        randomHiragana.add("O");*/
       /*   randomHiragana.add("ka");
         randomHiragana.add("ki");
         randomHiragana.add("ku");
@@ -166,6 +166,15 @@ public class Beginner extends AppCompatActivity {
 
     public String general()
     {
+        randomHiragana = new ArrayList<>();
+        voltmar = new ArrayList<>();
+
+        randomHiragana.add("A");
+        randomHiragana.add("I");
+        randomHiragana.add("U");
+        randomHiragana.add("E");
+        randomHiragana.add("O");
+
         String megoldas = null;
         int randoms = Integer.parseInt(randomgenerator());
         final String kiir = Integer.toString(randoms);
