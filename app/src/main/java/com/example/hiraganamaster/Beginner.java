@@ -180,10 +180,10 @@ public class Beginner extends AppCompatActivity {
         final String kiir = Integer.toString(randoms);
         beginnertv.setText(kiir);
 
-       /* for (int i = 0; i < 6; i++)
-        {*/
-           /* if(i == randoms)
-            {*/
+        for (int i = 0; i < randomHiragana.size(); i++)
+        {
+            if(i == randoms)
+            {
 
                 if (randoms == 1) {
                     beginnerimg.setImageResource(R.drawable.qa);
@@ -253,9 +253,9 @@ public class Beginner extends AppCompatActivity {
                 }
                 else{ beginnertv.setText("not these");
                     megoldas = null;}
-           /* }*//*else {
+            }/*else {
             beginnertv.setText("it is not possible");}*/
-        /*}*/
+        }
         return megoldas;
     }
 
