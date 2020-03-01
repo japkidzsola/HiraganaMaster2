@@ -34,10 +34,9 @@ public class Beginner extends AppCompatActivity {
 
         final int seged = 0;
 
-      /*  randomHiragana = new ArrayList<>();
-        voltmar = new ArrayList<>();
 
-        randomHiragana.add("A");
+
+     /*   randomHiragana.add("A");
         randomHiragana.add("I");
         randomHiragana.add("U");
         randomHiragana.add("E");
@@ -58,7 +57,20 @@ public class Beginner extends AppCompatActivity {
         randomHiragana.add("te");
         randomHiragana.add("to");*/
 
-        general();
+        for (int i = 0; i < randomHiragana.size(); i++) {
+            pointsneeded.setText("végigment");
+        }
+
+        int k = randomHiragana.size();
+        String po = Integer.toString(k);
+        points.setText(po);
+
+        if (randomHiragana.isEmpty())
+        {
+            pointsneeded.setText("ez üres gecc");
+        }
+
+        //general();
         elhelyez();
 
         int place = randomplace();
@@ -166,15 +178,19 @@ public class Beginner extends AppCompatActivity {
 
     public String general()
     {
+        //randomHiragana = new ArrayList<>();
+
         randomHiragana = new ArrayList<>();
         voltmar = new ArrayList<>();
+
+
+        //voltmar = new ArrayList<>();
 
         randomHiragana.add("A");
         randomHiragana.add("I");
         randomHiragana.add("U");
         randomHiragana.add("E");
         randomHiragana.add("O");
-
         String megoldas = null;
         int randoms = Integer.parseInt(randomgenerator());
         final String kiir = Integer.toString(randoms);
@@ -255,6 +271,8 @@ public class Beginner extends AppCompatActivity {
                     megoldas = null;}
             }/*else {
             beginnertv.setText("it is not possible");}*/
+
+
         }
         return megoldas;
     }
