@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.hiraganamaster.Beginner;
+import com.example.hiraganamaster.Medium;
 import com.example.hiraganamaster.R;
 
 public class TestFragment extends Fragment {
@@ -41,13 +42,21 @@ public class TestFragment extends Fragment {
         // TODO: Use the ViewModel
 
         beginnerbtn = getView().findViewById(R.id.beginnerbtn);
-        mediumbtn = getView().findViewById(R.id.beginnerbtn);
-        hardcorebtn = getView().findViewById(R.id.beginnerbtn);
+        mediumbtn = getView().findViewById(R.id.mediumbtn);
+        hardcorebtn = getView().findViewById(R.id.hardcorebtn);
 
         beginnerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), Beginner.class);
+                startActivity(intent);
+            }
+        });
+
+        mediumbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), Medium.class);
                 startActivity(intent);
             }
         });

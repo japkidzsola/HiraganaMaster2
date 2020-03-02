@@ -34,7 +34,7 @@ public class Beginner extends AppCompatActivity {
 
         final int seged = 0;
 
-
+        //randomHiragana = new ArrayList<>();
 
      /*   randomHiragana.add("A");
         randomHiragana.add("I");
@@ -57,7 +57,7 @@ public class Beginner extends AppCompatActivity {
         randomHiragana.add("te");
         randomHiragana.add("to");*/
 
-        for (int i = 0; i < randomHiragana.size(); i++) {
+        /*for (int i = 0; i < randomHiragana.size(); i++) {
             pointsneeded.setText("végigment");
         }
 
@@ -68,7 +68,7 @@ public class Beginner extends AppCompatActivity {
         if (randomHiragana.isEmpty())
         {
             pointsneeded.setText("ez üres gecc");
-        }
+        }*/
 
         //general();
         elhelyez();
@@ -128,9 +128,10 @@ public class Beginner extends AppCompatActivity {
                     //randomgenerator();
                     //beginnertv.setText(randomgenerator());
                     //beginnertv.setText(kiir);
-                    if (megold.equals(first.getText().toString())) {
+                    if (megold.equals(first.getText().toString().toLowerCase())) {
                         Toast.makeText(Beginner.this, "Good job", Toast.LENGTH_SHORT).show();
-                        //general();
+                        general();
+                        elhelyez();
                         String pont = points.getText().toString();
                         int pont1 = Integer.parseInt(pont);
                         points.setText(pont1+1);
@@ -142,9 +143,13 @@ public class Beginner extends AppCompatActivity {
             second.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (megold.equals(second.getText().toString())) {
+                    if (megold.equals(second.getText().toString().toLowerCase())) {
                         Toast.makeText(Beginner.this, "Good job", Toast.LENGTH_SHORT).show();
-                       // general();
+                        general();
+                        elhelyez();
+                        String pont = points.getText().toString();
+                        int pont1 = Integer.parseInt(pont);
+                        points.setText(pont1+1);
                     } else {
                         Toast.makeText(Beginner.this, "Try again", Toast.LENGTH_SHORT).show();
                     }
@@ -153,9 +158,13 @@ public class Beginner extends AppCompatActivity {
             third.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (megold.equals(third.getText().toString())) {
+                    if (megold.equals(third.getText().toString().toLowerCase())) {
                         Toast.makeText(Beginner.this, "Good job", Toast.LENGTH_SHORT).show();
-                        //general();
+                        general();
+                        elhelyez();
+                        String pont = points.getText().toString();
+                        int pont1 = Integer.parseInt(pont);
+                        points.setText(pont1+1);
                     } else {
                         Toast.makeText(Beginner.this, "Try again", Toast.LENGTH_SHORT).show();
                     }
@@ -164,9 +173,13 @@ public class Beginner extends AppCompatActivity {
             fourth.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (megold.equals(fourth.getText().toString())) {
+                    if (megold.equals(fourth.getText().toString().toLowerCase())) {
                         Toast.makeText(Beginner.this, "Good job", Toast.LENGTH_SHORT).show();
-                        //general();
+                        general();
+                        elhelyez();
+                        String pont = points.getText().toString();
+                        int pont1 = Integer.parseInt(pont);
+                        points.setText(pont1+1);
                     } else {
                         Toast.makeText(Beginner.this, "Try again", Toast.LENGTH_SHORT).show();
                     }
@@ -178,7 +191,7 @@ public class Beginner extends AppCompatActivity {
 
     public String general()
     {
-        //randomHiragana = new ArrayList<>();
+
 
         randomHiragana = new ArrayList<>();
         voltmar = new ArrayList<>();
@@ -186,11 +199,11 @@ public class Beginner extends AppCompatActivity {
 
         //voltmar = new ArrayList<>();
 
-        randomHiragana.add("A");
-        randomHiragana.add("I");
-        randomHiragana.add("U");
-        randomHiragana.add("E");
-        randomHiragana.add("O");
+        randomHiragana.add("a");
+        randomHiragana.add("i");
+        randomHiragana.add("u");
+        randomHiragana.add("e");
+        randomHiragana.add("o");
         String megoldas = null;
         int randoms = Integer.parseInt(randomgenerator());
         final String kiir = Integer.toString(randoms);
@@ -205,74 +218,26 @@ public class Beginner extends AppCompatActivity {
                     beginnerimg.setImageResource(R.drawable.qa);
                     megoldas = "a";
                     //voltmar.add("a");
-                   /* if (place == 1) {
-                        first.setText("a");
-                    } else if (place == 2) {
-                        second.setText("a");
-                    } else if (place == 3) {
-                        third.setText("a");
-                    } else if (place == 4) {
-                        fourth.setText("a");
-                    }*/
                 } else if (randoms == 2) {
                     beginnerimg.setImageResource(R.drawable.qi);
                     megoldas = "i";
                     //voltmar.add("i");
-                   /* if (place == 1) {
-                        first.setText("i");
-                    } else if (place == 2) {
-                        second.setText("i");
-                    } else if (place == 3) {
-                        third.setText("i");
-                    } else if (place == 4) {
-                        fourth.setText("i");
-                    }*/
                 } else if (randoms == 3) {
                     beginnerimg.setImageResource(R.drawable.qu);
                     megoldas = "u";
                     //voltmar.add("u");
-                  /*  if (place == 1) {
-                        first.setText("u");
-                    } else if (place == 2) {
-                        second.setText("u");
-                    } else if (place == 3) {
-                        third.setText("u");
-                    } else if (place == 4) {
-                        fourth.setText("u");
-                    }*/
                 } else if (randoms == 4) {
                     beginnerimg.setImageResource(R.drawable.qe);
                     megoldas = "e";
                     //voltmar.add("e");
-                   /* if (place == 1) {
-                        first.setText("e");
-                    } else if (place == 2) {
-                        second.setText("e");
-                    } else if (place == 3) {
-                        third.setText("e");
-                    } else if (place == 4) {
-                        fourth.setText("e");
-                    }*/
                 } else if (randoms == 5) {
                     beginnerimg.setImageResource(R.drawable.qo);
                     megoldas = "o";
                     //voltmar.add("o");
-                  /*  if (place == 1) {
-                        first.setText("o");
-                    } else if (place == 2) {
-                        second.setText("o");
-                    } else if (place == 3) {
-                        third.setText("o");
-                    } else if (place == 4) {
-                        fourth.setText("o");
-                    }*/
                 }
                 else{ beginnertv.setText("not these");
                     megoldas = null;}
-            }/*else {
-            beginnertv.setText("it is not possible");}*/
-
-
+            }
         }
         return megoldas;
     }
