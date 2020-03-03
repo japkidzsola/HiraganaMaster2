@@ -21,7 +21,8 @@ public class Medium extends AppCompatActivity {
     private long timeLeftInMilliseconds = 60000;
     private boolean timerRunning;
 
-    private int pointtt = 0;
+    public int pontokk = 0;
+    //public
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,22 +30,41 @@ public class Medium extends AppCompatActivity {
         setContentView(R.layout.activity_medium);
         init();
 
+        final String[] megoldas = {general()};
+        final int[] pointtt = {0};
+
+        // general();.Resources$NotFoundException: String resource ID #0x1
         do {
-            final String megoldas = general();
 
             final String seged = points.getText().toString();
             final int pontok = Integer.parseInt(seged);
             final int seged2 = pontok;
             points.setText(seged);
 
+            /*
+
+            random(1-6) szam
+            ciklus(1-6;i<=6,i++){
+                if(i==szam){
+                jofunction(+1 betolt)
+                }
+                else{
+                function(betolt)
+                }
+            }
+
+             */
+
             first.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (megoldas.equals(first.getText().toString().toLowerCase())) {
+                    if (megoldas[0].equals(first.getText().toString().toLowerCase())){
                         Toast.makeText(Medium.this, "done", Toast.LENGTH_SHORT).show();
-                        //sikeres(seged2);
-                        pointtt++;
-                        points.setText(pointtt);
+                        int kiir = sikeres(pontokk);
+                        points.setText(kiir);
+                        /*pointtt[0]++;
+                        points.setText(pointtt[0]);*/
+                        //megoldas[0] = general();
                     } else {
                         Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
                     }
@@ -54,11 +74,12 @@ public class Medium extends AppCompatActivity {
             second.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (megoldas.equals(second.getText().toString().toLowerCase())) {
+                    if (megoldas[0].equals(second.getText().toString().toLowerCase())) {
                         Toast.makeText(Medium.this, "done", Toast.LENGTH_SHORT).show();
                         //sikeres(seged2);
-                        pointtt++;
-                        points.setText(pointtt);
+                        /*pointtt++;
+                        points.setText(pointtt);*/
+                        megoldas[0] = general();
                     } else {
                         Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
                     }
@@ -68,11 +89,12 @@ public class Medium extends AppCompatActivity {
             third.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (megoldas.equals(third.getText().toString().toLowerCase())) {
+                    if (megoldas[0].equals(third.getText().toString().toLowerCase())) {
                         Toast.makeText(Medium.this, "done", Toast.LENGTH_SHORT).show();
                         //sikeres(seged2);
-                        pointtt++;
-                        points.setText(pointtt);
+                        /*pointtt++;
+                        points.setText(pointtt);*/
+                        megoldas[0] = general();
                     } else {
                         Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
                     }
@@ -82,11 +104,12 @@ public class Medium extends AppCompatActivity {
             fourth.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (megoldas.equals(fourth.getText().toString().toLowerCase())) {
+                    if (megoldas[0].equals(fourth.getText().toString().toLowerCase())) {
                         Toast.makeText(Medium.this, "done", Toast.LENGTH_SHORT).show();
                         //sikeres(seged2);
-                        pointtt++;
-                        points.setText(pointtt);
+                       /* pointtt++;
+                        points.setText(pointtt);*/
+                        megoldas[0] = general();
                     } else {
                         Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
                     }
@@ -96,11 +119,12 @@ public class Medium extends AppCompatActivity {
             fifth.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (megoldas.equals(fifth.getText().toString().toLowerCase())) {
+                    if (megoldas[0].equals(fifth.getText().toString().toLowerCase())) {
                         Toast.makeText(Medium.this, "done", Toast.LENGTH_SHORT).show();
                         //sikeres(seged2);
-                        pointtt++;
-                        points.setText(pointtt);
+                        /*pointtt++;
+                        points.setText(pointtt);*/
+                        megoldas[0] = general();
                     } else {
                         Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
                     }
@@ -110,11 +134,12 @@ public class Medium extends AppCompatActivity {
             sixth.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (megoldas.equals(sixth.getText().toString().toLowerCase())) {
+                    if (megoldas[0].equals(sixth.getText().toString().toLowerCase())) {
                         Toast.makeText(Medium.this, "done", Toast.LENGTH_SHORT).show();
                         //sikeres(seged2);
-                        pointtt++;
-                        points.setText(pointtt);
+                        /*pointtt++;
+                        points.setText(pointtt);/*/
+                        megoldas[0] = general();
                     } else {
                         Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
                     }
@@ -141,9 +166,9 @@ public class Medium extends AppCompatActivity {
             megoldas = "i";
         }
         else if(random == 3) {
-            mediumimg.setImageResource(R.drawable.qi);
-            megoldas = "i";
-            first.setText("no");
+            mediumimg.setImageResource(R.drawable.qu);
+            megoldas = "u";
+            first.setText("u");
         }
 
         if(megoldas != null)
@@ -189,11 +214,12 @@ public class Medium extends AppCompatActivity {
         return generalt;
     }
 
-    public void sikeres(int siker)
+    public int sikeres(int pontokk)
     {
         int i = 0;
         i = i+1;
         points.setText(i);
+        return i;
     }
 
     public void init()
