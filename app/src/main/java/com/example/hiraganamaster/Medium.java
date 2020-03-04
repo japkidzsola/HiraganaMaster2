@@ -1,12 +1,16 @@
 package com.example.hiraganamaster;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,8 +25,11 @@ public class Medium extends AppCompatActivity {
     public TextView timer, points, pointsneeded, beginnertv;
     public ImageView mediumimg;
     private CountDownTimer countDownTimer;
-    private long timeLeftInMilliseconds = 60000;
+    private long timeLeftInMilliseconds = 10000;
+    private long timeRestartInMilliseconds = 10000;
     private boolean timerRunning;
+
+    private Menu menu;
 
     public int pontokk = 0;
     //public
@@ -31,7 +38,13 @@ public class Medium extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medium);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         init();
+
+        startTimer();
 
         final String[] megoldas = {general()};
         final int[] pontok = {0};
@@ -57,6 +70,11 @@ public class Medium extends AppCompatActivity {
             }
              */
 
+            if(timer.getText().toString().equals("0"))
+            {
+                megoldas[0] = general();
+            }
+
             first.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -69,11 +87,15 @@ public class Medium extends AppCompatActivity {
                         points.setText(seged);
                         if(points.getText().toString().equals(pointsneeded.getText().toString()))
                         {
+                            stopTimer();
                             Intent intent = new Intent(Medium.this, Ending.class);
                             startActivity(intent);
                             finish();
                         }else {
                             megoldas[0] = general();
+                            stopTimer();
+                            timeReset();
+                            startTimer();
                         }
                     } else {
                         Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
@@ -92,11 +114,15 @@ public class Medium extends AppCompatActivity {
                         points.setText(seged);
                         if(points.getText().toString().equals(pointsneeded.getText().toString()))
                         {
+                            stopTimer();
                             Intent intent = new Intent(Medium.this, Ending.class);
                             startActivity(intent);
                             finish();
                         }else {
                             megoldas[0] = general();
+                            stopTimer();
+                            timeReset();
+                            startTimer();
                         }
                     } else {
                         Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
@@ -115,11 +141,15 @@ public class Medium extends AppCompatActivity {
                         points.setText(seged);
                         if(points.getText().toString().equals(pointsneeded.getText().toString()))
                         {
+                            stopTimer();
                             Intent intent = new Intent(Medium.this, Ending.class);
                             startActivity(intent);
                             finish();
                         }else {
                             megoldas[0] = general();
+                            stopTimer();
+                            timeReset();
+                            startTimer();
                         }
                     } else {
                         Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
@@ -138,11 +168,15 @@ public class Medium extends AppCompatActivity {
                         points.setText(seged);
                         if(points.getText().toString().equals(pointsneeded.getText().toString()))
                         {
+                            stopTimer();
                             Intent intent = new Intent(Medium.this, Ending.class);
                             startActivity(intent);
                             finish();
                         }else {
                             megoldas[0] = general();
+                            stopTimer();
+                            timeReset();
+                            startTimer();
                         }
                     } else {
                         Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
@@ -161,11 +195,15 @@ public class Medium extends AppCompatActivity {
                         points.setText(seged);
                         if(points.getText().toString().equals(pointsneeded.getText().toString()))
                         {
+                            stopTimer();
                             Intent intent = new Intent(Medium.this, Ending.class);
                             startActivity(intent);
                             finish();
                         }else {
                             megoldas[0] = general();
+                            stopTimer();
+                            timeReset();
+                            startTimer();
                         }
                     } else {
                         Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
@@ -184,11 +222,15 @@ public class Medium extends AppCompatActivity {
                         points.setText(seged);
                         if(points.getText().toString().equals(pointsneeded.getText().toString()))
                         {
+                            stopTimer();
                             Intent intent = new Intent(Medium.this, Ending.class);
                             startActivity(intent);
                             finish();
                         }else{
                             megoldas[0] = general();
+                            stopTimer();
+                            timeReset();
+                            startTimer();
                         }
                     } else {
                         Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
@@ -196,6 +238,9 @@ public class Medium extends AppCompatActivity {
                         minuszpontok[0] = pontHozzaad(minuszpontok[0]);
                         if (minuszpontok[0] == 3)
                         {
+                            stopTimer();
+                            Intent intent = new Intent(Medium.this, EndingFail.class);
+                            startActivity(intent);
                             finish();
                         }
                     }
@@ -224,15 +269,27 @@ public class Medium extends AppCompatActivity {
 
     public String general()
     {
-
+        String[] tobbigenereal = {"a","i","u","e","o","ka"};
         int min = 1;
         int max = 7;
         Random r = new Random();
         int random = r.nextInt(max-min) + min;
         String megoldas = null;
         //int random = random();
+        int valasztott1 = r.nextInt(tobbigenereal.length);
+        String valsztottneve1 = tobbigenereal[valasztott1];
+        int valasztott2 = r.nextInt(tobbigenereal.length);
+        String valsztottneve2 = tobbigenereal[valasztott2];
+        int valasztott3 = r.nextInt(tobbigenereal.length);
+        String valsztottneve3 = tobbigenereal[valasztott3];
+        int valasztott4 = r.nextInt(tobbigenereal.length);
+        String valsztottneve4 = tobbigenereal[valasztott4];
+        int valasztott5 = r.nextInt(tobbigenereal.length);
+        String valsztottneve5 = tobbigenereal[valasztott5];
+
+
         int elhelyez = randomelhelyez();
-        String toltelek = toltelek();
+        //String toltelek = toltelek();
 
         if(random == 1) {
             mediumimg.setImageResource(R.drawable.qa);
@@ -245,58 +302,87 @@ public class Medium extends AppCompatActivity {
         else if(random == 3) {
             mediumimg.setImageResource(R.drawable.qu);
             megoldas = "u";
-            first.setText("u");
         }
         else if(random == 4) {
             mediumimg.setImageResource(R.drawable.qe);
             megoldas = "e";
-            first.setText("e");
         }
         else if(random == 5) {
             mediumimg.setImageResource(R.drawable.qo);
             megoldas = "o";
-            first.setText("o");
         }
         else if(random == 6) {
             mediumimg.setImageResource(R.drawable.qka);
             megoldas = "ka";
-            first.setText("ka");
         }
 
         if(megoldas != null)
         {
-            if(!megoldas.equals(toltelek.toString().toLowerCase())) {
+            if(!megoldas.equals(valsztottneve1) && !megoldas.equals(valsztottneve2) && !megoldas.equals(valsztottneve3) && !megoldas.equals(valsztottneve4) && !megoldas.equals(valsztottneve5)) {
                 if (elhelyez == 0) {
                     first.setText(megoldas);
+                    second.setText(valsztottneve1);
+                    third.setText(valsztottneve2);
+                    fourth.setText(valsztottneve3);
+                    fifth.setText(valsztottneve4);
+                    sixth.setText(valsztottneve5);
                 } else if (elhelyez == 1) {
                     second.setText(megoldas);
+                    first.setText(valsztottneve1);
+                    third.setText(valsztottneve2);
+                    fourth.setText(valsztottneve3);
+                    fifth.setText(valsztottneve4);
+                    sixth.setText(valsztottneve5);
                 } else if (elhelyez == 2) {
                     third.setText(megoldas);
+                    first.setText(valsztottneve1);
+                    second.setText(valsztottneve2);
+                    fourth.setText(valsztottneve3);
+                    fifth.setText(valsztottneve4);
+                    sixth.setText(valsztottneve5);
                 } else if (elhelyez == 3) {
                     fourth.setText(megoldas);
+                    first.setText(valsztottneve1);
+                    second.setText(valsztottneve2);
+                    third.setText(valsztottneve3);
+                    fifth.setText(valsztottneve4);
+                    sixth.setText(valsztottneve5);
                 } else if (elhelyez == 4) {
                     fifth.setText(megoldas);
+                    first.setText(valsztottneve1);
+                    second.setText(valsztottneve2);
+                    third.setText(valsztottneve3);
+                    fourth.setText(valsztottneve4);
+                    sixth.setText(valsztottneve5);
                 } else if (elhelyez == 5) {
                     sixth.setText(megoldas);
+                    first.setText(valsztottneve1);
+                    second.setText(valsztottneve2);
+                    third.setText(valsztottneve3);
+                    fourth.setText(valsztottneve4);
+                    fifth.setText(valsztottneve5);
                 }
             }
             else
             {
                 beginnertv.setText("no");
-                toltelek = toltelek();
+                first.setText(megoldas);
+                second.setText(valsztottneve1);
+                third.setText(valsztottneve2);
+                fourth.setText(valsztottneve3);
+                fifth.setText(valsztottneve4);
+                sixth.setText(valsztottneve5);
             }
         }
 
         return megoldas;
     }
 
-    public String toltelek()
+    /*public String toltelek()
     {
-        String[] tobbigenereal = {"a","i","u","e","o","ka"};
-        Random r = new Random();
-        int valasztott = r.nextInt(tobbigenereal.length);
+
         return tobbigenereal[valasztott];
-    }
+    }*/
 
     public int random()
     {
@@ -338,5 +424,102 @@ public class Medium extends AppCompatActivity {
         beginnertv = findViewById(R.id.beginnertv);
 
         timer = findViewById(R.id.timer);
+    }
+
+    @Override
+    public void onBackPressed() {
+        stopTimer();
+        finish();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.pause)
+        {
+            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Paused. Are you ready to continue?")
+                    .setCancelable(false)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                            startTimer();
+                        }
+                    })
+                    .setNegativeButton("No, I want to exit", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            Medium.this.finish();
+                        }
+                    });
+            AlertDialog alert = builder.create();
+            alert.show();
+        }
+        startStop();
+
+        return true;
+    }
+
+    public void timeReset()
+    {
+        timeLeftInMilliseconds = timeRestartInMilliseconds;
+    }
+
+    public void startStop()
+    {
+        if(timerRunning)
+        {
+            stopTimer();
+        }
+        else
+        {
+            startTimer();
+        }
+    }
+
+    public void startTimer()
+    {
+        countDownTimer = new CountDownTimer(timeLeftInMilliseconds, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timeLeftInMilliseconds = millisUntilFinished;
+                updateTimer();
+            }
+
+            @Override
+            public void onFinish() {
+                Intent intent = new Intent(Medium.this, EndingFail.class);
+                startActivity(intent);
+                finish();
+            }
+        }.start();
+        timerRunning = true;
+    }
+
+    public void stopTimer()
+    {
+        countDownTimer.cancel();
+        timerRunning = false;
+
+        /**/
+        /*MenuItem menuStart = menu.findItem(R.id.pause);
+        menuStart.setIcon(R.drawable.ic_play_arrow);*/
+    }
+
+    public void updateTimer()
+    {
+        int seconds = (int) timeLeftInMilliseconds / 1000;
+
+        String timeLeftText;
+        timeLeftText = "" + seconds;
+
+        timer.setText(timeLeftText);
     }
 }
