@@ -96,6 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="first"
+            android:background="@color/colorwhite"
             />
         <Button
             android:id="@+id/second"
@@ -103,6 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="second"
+            android:background="@color/colorwhite"
             />
 
     </LinearLayout>
@@ -119,6 +121,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="third"
+            android:background="@color/colorwhite"
             />
         <Button
             android:id="@+id/fourth"
@@ -126,6 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="fourth"
+            android:background="@color/colorwhite"
             />
 
     </LinearLayout>
@@ -143,6 +147,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="fifth"
+            android:background="@color/colorwhite"
             />
         <Button
             android:id="@+id/sixth"
@@ -150,6 +155,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="sixth"
+            android:background="@color/colorwhite"
             />
 
     </LinearLayout>

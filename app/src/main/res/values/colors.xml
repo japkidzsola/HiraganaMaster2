@@ -7,4 +7,7 @@
     <color name="colorButton">#F1F0F0</color>
     <color name="colorcardview">#2196F3</color>
     <color name="colorcardtext">#FF9800</color>
+    <color name="colorcorrectanswer">#32E800</color>
+    <color name="colorwronganswer">#F0B3B3B3</color>
+    <color name="colorwhite">#FAFAFA</color>
 </resources>

@@ -4,11 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.vectordrawable.graphics.drawable.ArgbEvaluator;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,6 +34,8 @@ public class Medium extends AppCompatActivity {
     private long timeLeftInMilliseconds = 10000;
     private long timeRestartInMilliseconds = 10000;
     private boolean timerRunning;
+
+    private Handler mHandler = new Handler();
 
     private Menu menu;
 
@@ -84,6 +92,8 @@ public class Medium extends AppCompatActivity {
                     if (megoldas[0].equals(first.getText().toString().toLowerCase())){
                         /*int kiir = sikeres(pontokk);
                         points.setText(kiir);*/
+                        startColorAnim1(first);
+                        //stopColorAnim(first);
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
                         points.setText(seged);
@@ -100,13 +110,25 @@ public class Medium extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         }else {
+                            animdelay1();
                             megoldas[0] = general();
                             stopTimer();
                             timeReset();
                             startTimer();
                         }
                     } else {
-                        Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
+                        startFailAnim1(first);
+                        pontHozzaad(minuszpontok[0]);
+                        minuszpontok[0] = pontHozzaad(minuszpontok[0]);
+                        String seged = Integer.toString(minuszpontok[0]);
+                        beginnertv.setText(seged);
+                        if (minuszpontok[0] == 3)
+                        {
+                            stopTimer();
+                            Intent intent = new Intent(Medium.this, EndingFail.class);
+                            startActivity(intent);
+                            finish();
+                        }
                     }
                 }
             });
@@ -116,6 +138,8 @@ public class Medium extends AppCompatActivity {
                 public void onClick(View v) {
                     if (megoldas[0].equals(second.getText().toString().toLowerCase())) {
                         //sikeres(seged2);
+                        startColorAnim2(second);
+                        //stopColorAnim1(second);
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
                         points.setText(seged);
@@ -137,8 +161,19 @@ public class Medium extends AppCompatActivity {
                             timeReset();
                             startTimer();
                         }
-                    } else {
-                        Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
+                    }  else {
+                        startFailAnim2(second);
+                        pontHozzaad(minuszpontok[0]);
+                        minuszpontok[0] = pontHozzaad(minuszpontok[0]);
+                        String seged = Integer.toString(minuszpontok[0]);
+                        beginnertv.setText(seged);
+                        if (minuszpontok[0] == 3)
+                        {
+                            stopTimer();
+                            Intent intent = new Intent(Medium.this, EndingFail.class);
+                            startActivity(intent);
+                            finish();
+                        }
                     }
                 }
             });
@@ -148,6 +183,8 @@ public class Medium extends AppCompatActivity {
                 public void onClick(View v) {
                     if (megoldas[0].equals(third.getText().toString().toLowerCase())) {
                         //sikeres(seged2);
+                        startColorAnim3(third);
+                        //stopColorAnim2(third);
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
                         points.setText(seged);
@@ -170,7 +207,18 @@ public class Medium extends AppCompatActivity {
                             startTimer();
                         }
                     } else {
-                        Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
+                        startFailAnim3(third);
+                        pontHozzaad(minuszpontok[0]);
+                        minuszpontok[0] = pontHozzaad(minuszpontok[0]);
+                        String seged = Integer.toString(minuszpontok[0]);
+                        beginnertv.setText(seged);
+                        if (minuszpontok[0] == 3)
+                        {
+                            stopTimer();
+                            Intent intent = new Intent(Medium.this, EndingFail.class);
+                            startActivity(intent);
+                            finish();
+                        }
                     }
                 }
             });
@@ -180,6 +228,7 @@ public class Medium extends AppCompatActivity {
                 public void onClick(View v) {
                     if (megoldas[0].equals(fourth.getText().toString().toLowerCase())) {
                         //sikeres(seged2);
+                        startColorAnim4(fourth);
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
                         points.setText(seged);
@@ -201,8 +250,19 @@ public class Medium extends AppCompatActivity {
                             timeReset();
                             startTimer();
                         }
-                    } else {
-                        Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
+                    }  else {
+                        startFailAnim4(fourth);
+                        pontHozzaad(minuszpontok[0]);
+                        minuszpontok[0] = pontHozzaad(minuszpontok[0]);
+                        String seged = Integer.toString(minuszpontok[0]);
+                        beginnertv.setText(seged);
+                        if (minuszpontok[0] == 3)
+                        {
+                            stopTimer();
+                            Intent intent = new Intent(Medium.this, EndingFail.class);
+                            startActivity(intent);
+                            finish();
+                        }
                     }
                 }
             });
@@ -212,6 +272,7 @@ public class Medium extends AppCompatActivity {
                 public void onClick(View v) {
                     if (megoldas[0].equals(fifth.getText().toString().toLowerCase())) {
                         //sikeres(seged2);
+                        startColorAnim5(fifth);
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
                         points.setText(seged);
@@ -234,7 +295,18 @@ public class Medium extends AppCompatActivity {
                             startTimer();
                         }
                     } else {
-                        Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
+                        startFailAnim5(fifth);
+                        pontHozzaad(minuszpontok[0]);
+                        minuszpontok[0] = pontHozzaad(minuszpontok[0]);
+                        String seged = Integer.toString(minuszpontok[0]);
+                        beginnertv.setText(seged);
+                        if (minuszpontok[0] == 3)
+                        {
+                            stopTimer();
+                            Intent intent = new Intent(Medium.this, EndingFail.class);
+                            startActivity(intent);
+                            finish();
+                        }
                     }
                 }
             });
@@ -244,6 +316,7 @@ public class Medium extends AppCompatActivity {
                 public void onClick(View v) {
                     if (megoldas[0].equals(sixth.getText().toString().toLowerCase())) {
                         //sikeres(seged2);
+                        startColorAnim6(sixth);
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
                         points.setText(seged);
@@ -266,9 +339,11 @@ public class Medium extends AppCompatActivity {
                             startTimer();
                         }
                     } else {
-                        Toast.makeText(Medium.this, "nem egyenlő", Toast.LENGTH_SHORT).show();
+                        startFailAnim6(sixth);
                         pontHozzaad(minuszpontok[0]);
                         minuszpontok[0] = pontHozzaad(minuszpontok[0]);
+                        String seged = Integer.toString(minuszpontok[0]);
+                        beginnertv.setText(seged);
                         if (minuszpontok[0] == 3)
                         {
                             stopTimer();
@@ -288,6 +363,195 @@ public class Medium extends AppCompatActivity {
         while(points.getText().toString().equals(pointsneeded.getText().toString()));
     }
 
+    private void animdelay1() {
+        Runnable animdelay1 = new Runnable() {
+            @Override
+            public void run() {
+                startColorAnim1(first);
+                mHandler.postDelayed(this, 3000);
+            }
+        };
+    }
+    private void animdelay2() {
+        Runnable animdelay2 = new Runnable() {
+            @Override
+            public void run() {
+                startColorAnim2(second);
+                mHandler.postDelayed(this, 3000);
+            }
+        };
+    }
+    @SuppressLint("RestrictedApi")
+    public void startColorAnim1(View v)
+    {
+        int colorStart = first.getSolidColor();
+        int colorEnd = Color.GREEN;
+
+        ValueAnimator colorAnim = ObjectAnimator.ofInt(v,"backgroundColor",colorStart,colorEnd);
+
+        colorAnim.setDuration(500);
+        colorAnim.setEvaluator(new ArgbEvaluator());
+        colorAnim.setRepeatCount(1);
+        colorAnim.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnim.start();
+    }
+    @SuppressLint("RestrictedApi")
+    public void startColorAnim2(View v)
+    {
+        int colorStart = second.getSolidColor();
+        int colorEnd = Color.GREEN;
+
+        ValueAnimator colorAnim = ObjectAnimator.ofInt(v,"backgroundColor",colorStart,colorEnd);
+
+        colorAnim.setDuration(500);
+        colorAnim.setEvaluator(new ArgbEvaluator());
+        colorAnim.setRepeatCount(1);
+        colorAnim.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnim.start();
+    }
+    @SuppressLint("RestrictedApi")
+    public void startColorAnim3(View v)
+    {
+        int colorStart = third.getSolidColor();
+        int colorEnd = Color.GREEN;
+
+        ValueAnimator colorAnim = ObjectAnimator.ofInt(v,"backgroundColor",colorStart,colorEnd);
+
+        colorAnim.setDuration(350);
+        colorAnim.setEvaluator(new ArgbEvaluator());
+        colorAnim.setRepeatCount(1);
+        colorAnim.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnim.start();
+    }
+    @SuppressLint("RestrictedApi")
+    public void startColorAnim4(View v)
+    {
+        int colorStart = fourth.getSolidColor();
+        int colorEnd = Color.GREEN;
+
+        ValueAnimator colorAnim = ObjectAnimator.ofInt(v,"backgroundColor",colorStart,colorEnd);
+
+        colorAnim.setDuration(350);
+        colorAnim.setEvaluator(new ArgbEvaluator());
+        colorAnim.setRepeatCount(1);
+        colorAnim.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnim.start();
+    }
+    @SuppressLint("RestrictedApi")
+    public void startColorAnim5(View v)
+    {
+        int colorStart = fifth.getSolidColor();
+        int colorEnd = Color.GREEN;
+
+        ValueAnimator colorAnim = ObjectAnimator.ofInt(v,"backgroundColor",colorStart,colorEnd);
+
+        colorAnim.setDuration(350);
+        colorAnim.setEvaluator(new ArgbEvaluator());
+        colorAnim.setRepeatCount(1);
+        colorAnim.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnim.start();
+    }
+    @SuppressLint("RestrictedApi")
+    public void startColorAnim6(View v)
+    {
+        int colorStart = sixth.getSolidColor();
+        int colorEnd = Color.GREEN;
+
+        ValueAnimator colorAnim = ObjectAnimator.ofInt(v,"backgroundColor",colorStart,colorEnd);
+
+        colorAnim.setDuration(350);
+        colorAnim.setEvaluator(new ArgbEvaluator());
+        colorAnim.setRepeatCount(1);
+        colorAnim.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnim.start();
+    }
+
+    @SuppressLint("RestrictedApi")
+    public void startFailAnim1(View v)
+    {
+        int colorStart = first.getSolidColor();
+        int colorEnd = Color.RED;
+
+        ValueAnimator colorAnim = ObjectAnimator.ofInt(v,"backgroundColor",colorStart,colorEnd);
+
+        colorAnim.setDuration(350);
+        colorAnim.setEvaluator(new ArgbEvaluator());
+        colorAnim.setRepeatCount(1);
+        colorAnim.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnim.start();
+    }
+    @SuppressLint("RestrictedApi")
+    public void startFailAnim2(View v)
+    {
+        int colorStart = second.getSolidColor();
+        int colorEnd = Color.RED;
+
+        ValueAnimator colorAnim = ObjectAnimator.ofInt(v,"backgroundColor",colorStart,colorEnd);
+
+        colorAnim.setDuration(350);
+        colorAnim.setEvaluator(new ArgbEvaluator());
+        colorAnim.setRepeatCount(1);
+        colorAnim.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnim.start();
+    }
+    @SuppressLint("RestrictedApi")
+    public void startFailAnim3(View v)
+    {
+        int colorStart = third.getSolidColor();
+        int colorEnd = Color.RED;
+
+        ValueAnimator colorAnim = ObjectAnimator.ofInt(v,"backgroundColor",colorStart,colorEnd);
+
+        colorAnim.setDuration(350);
+        colorAnim.setEvaluator(new ArgbEvaluator());
+        colorAnim.setRepeatCount(1);
+        colorAnim.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnim.start();
+    }
+    @SuppressLint("RestrictedApi")
+    public void startFailAnim4(View v)
+    {
+        int colorStart = fourth.getSolidColor();
+        int colorEnd = Color.RED;
+
+        ValueAnimator colorAnim = ObjectAnimator.ofInt(v,"backgroundColor",colorStart,colorEnd);
+
+        colorAnim.setDuration(350);
+        colorAnim.setEvaluator(new ArgbEvaluator());
+        colorAnim.setRepeatCount(1);
+        colorAnim.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnim.start();
+    }
+    @SuppressLint("RestrictedApi")
+    public void startFailAnim5(View v)
+    {
+        int colorStart = fifth.getSolidColor();
+        int colorEnd = Color.RED;
+
+        ValueAnimator colorAnim = ObjectAnimator.ofInt(v,"backgroundColor",colorStart,colorEnd);
+
+        colorAnim.setDuration(350);
+        colorAnim.setEvaluator(new ArgbEvaluator());
+        colorAnim.setRepeatCount(1);
+        colorAnim.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnim.start();
+    }
+    @SuppressLint("RestrictedApi")
+    public void startFailAnim6(View v)
+    {
+        int colorStart = sixth.getSolidColor();
+        int colorEnd = Color.RED;
+
+        ValueAnimator colorAnim = ObjectAnimator.ofInt(v,"backgroundColor",colorStart,colorEnd);
+
+        colorAnim.setDuration(350);
+        colorAnim.setEvaluator(new ArgbEvaluator());
+        colorAnim.setRepeatCount(1);
+        colorAnim.setRepeatMode(ValueAnimator.REVERSE);
+        colorAnim.start();
+    }
+
+
     public int pontLevon(int pontlevonas)
     {
         int pontlevon = pontlevonas+1;
@@ -304,14 +568,19 @@ public class Medium extends AppCompatActivity {
     {
         String[] tobbigenereal = {"a","i","u","e","o","ka","ki","ku","ke","ko","sa","shi","su","se","so","ta","chi","tsu","te","to","na","ni","nu","ne","no","ha","hi","hu","he","ho","ma","mi","mu","me","mo","ya","yu","yo","ra","ri","ru","re","ro","wa","wo","n"};
         int min = 1;
-        int max = 15;
+        int max = 46;
         Random r = new Random();
         int random = r.nextInt(max-min+1) + min;
         String melyiksazm = Integer.toString(random);
         String megoldas = null;
         //int random = random();
 
-        beginnertv.setText(melyiksazm);
+        //beginnertv.setText(melyiksazm);
+
+        /*fourth.setBackgroundColor(Color.parseColor("F0B3B3B3"));
+        fifth.setBackgroundColor(Color.parseColor("F0B3B3B3"));
+        sixth.setBackgroundColor(Color.parseColor("F0B3B3B3"));*/
+
 
         int elhelyez = randomelhelyez();
         //String toltelek = toltelek();
@@ -376,6 +645,130 @@ public class Medium extends AppCompatActivity {
             mediumimg.setImageResource(R.drawable.qso);
             megoldas = "so";
         }
+        else if(random == 16) {
+            mediumimg.setImageResource(R.drawable.qta);
+            megoldas = "ta";
+        }
+        else if(random == 17) {
+            mediumimg.setImageResource(R.drawable.qchi);
+            megoldas = "chi";
+        }
+        else if(random == 18) {
+            mediumimg.setImageResource(R.drawable.qtsu);
+            megoldas = "tsu";
+        }
+        else if(random == 19) {
+            mediumimg.setImageResource(R.drawable.qte);
+            megoldas = "te";
+        }
+        else if(random == 20) {
+            mediumimg.setImageResource(R.drawable.qto);
+            megoldas = "to";
+        }
+        else if(random == 21) {
+            mediumimg.setImageResource(R.drawable.qna);
+            megoldas = "na";
+        }
+        else if(random == 22) {
+            mediumimg.setImageResource(R.drawable.qni);
+            megoldas = "ni";
+        }
+        else if(random == 23) {
+            mediumimg.setImageResource(R.drawable.qnu);
+            megoldas = "nu";
+        }
+        else if(random == 24) {
+            mediumimg.setImageResource(R.drawable.qne);
+            megoldas = "ne";
+        }
+        else if(random == 25) {
+            mediumimg.setImageResource(R.drawable.qno);
+            megoldas = "no";
+        }
+        else if(random == 26) {
+            mediumimg.setImageResource(R.drawable.qha);
+            megoldas = "ha";
+        }
+        else if(random == 27) {
+            mediumimg.setImageResource(R.drawable.qhi);
+            megoldas = "hi";
+        }
+        else if(random == 28) {
+            mediumimg.setImageResource(R.drawable.qfu);
+            megoldas = "hu";
+        }
+        else if(random == 29) {
+            mediumimg.setImageResource(R.drawable.qhe);
+            megoldas = "he";
+        }
+        else if(random == 30) {
+            mediumimg.setImageResource(R.drawable.qho);
+            megoldas = "ho";
+        }
+        else if(random == 31) {
+            mediumimg.setImageResource(R.drawable.qma);
+            megoldas = "ma";
+        }
+        else if(random == 32) {
+            mediumimg.setImageResource(R.drawable.qmi);
+            megoldas = "mi";
+        }
+        else if(random == 33) {
+            mediumimg.setImageResource(R.drawable.qmu);
+            megoldas = "mu";
+        }
+        else if(random == 34) {
+            mediumimg.setImageResource(R.drawable.qme);
+            megoldas = "me";
+        }
+        else if(random == 35) {
+            mediumimg.setImageResource(R.drawable.qmo);
+            megoldas = "mo";
+        }
+        else if(random == 36) {
+            mediumimg.setImageResource(R.drawable.qya);
+            megoldas = "ya";
+        }
+        else if(random == 37) {
+            mediumimg.setImageResource(R.drawable.qyu);
+            megoldas = "yu";
+        }
+        else if(random == 38) {
+            mediumimg.setImageResource(R.drawable.qyo);
+            megoldas = "yo";
+        }
+        else if(random == 39) {
+            mediumimg.setImageResource(R.drawable.qra);
+            megoldas = "ra";
+        }
+        else if(random == 40) {
+            mediumimg.setImageResource(R.drawable.qri);
+            megoldas = "ri";
+        }
+        else if(random == 41) {
+            mediumimg.setImageResource(R.drawable.qru);
+            megoldas = "ru";
+        }
+        else if(random == 42) {
+            mediumimg.setImageResource(R.drawable.qre);
+            megoldas = "re";
+        }
+        else if(random == 43) {
+            mediumimg.setImageResource(R.drawable.qro);
+            megoldas = "ro";
+        }
+        else if(random == 44) {
+            mediumimg.setImageResource(R.drawable.qwa);
+            megoldas = "wa";
+        }
+        else if(random == 45) {
+            mediumimg.setImageResource(R.drawable.qwo);
+            megoldas = "wo";
+        }
+        else if(random == 46) {
+            mediumimg.setImageResource(R.drawable.qn);
+            megoldas = "n";
+        }
 
 
         if(megoldas != null)
@@ -408,6 +801,16 @@ public class Medium extends AppCompatActivity {
                 valasztott3 = r.nextInt(tobbigenereal.length);
                 valsztottneve3 = tobbigenereal[valasztott3];
             }
+            while(valsztottneve3.equals(valsztottneve1))
+            {
+                valasztott3 = r.nextInt(tobbigenereal.length);
+                valsztottneve3 = tobbigenereal[valasztott3];
+            }
+            while(valsztottneve3.equals(megoldas))
+            {
+                valasztott3 = r.nextInt(tobbigenereal.length);
+                valsztottneve3 = tobbigenereal[valasztott3];
+            }
 
             int valasztott4 = r.nextInt(tobbigenereal.length);
             String valsztottneve4 = tobbigenereal[valasztott4];
@@ -416,10 +819,45 @@ public class Medium extends AppCompatActivity {
                 valasztott4 = r.nextInt(tobbigenereal.length);
                 valsztottneve4 = tobbigenereal[valasztott4];
             }
+            while(valsztottneve4.equals(valsztottneve2))
+            {
+                valasztott4 = r.nextInt(tobbigenereal.length);
+                valsztottneve4 = tobbigenereal[valasztott4];
+            }
+            while(valsztottneve4.equals(valsztottneve1))
+            {
+                valasztott4 = r.nextInt(tobbigenereal.length);
+                valsztottneve4 = tobbigenereal[valasztott4];
+            }
+            while(valsztottneve4.equals(megoldas))
+            {
+                valasztott4 = r.nextInt(tobbigenereal.length);
+                valsztottneve4 = tobbigenereal[valasztott4];
+            }
 
             int valasztott5 = r.nextInt(tobbigenereal.length);
             String valsztottneve5 = tobbigenereal[valasztott5];
             while(valsztottneve5.equals(valsztottneve4))
+            {
+                valasztott5 = r.nextInt(tobbigenereal.length);
+                valsztottneve5 = tobbigenereal[valasztott5];
+            }
+            while(valsztottneve5.equals(valsztottneve3))
+            {
+                valasztott5 = r.nextInt(tobbigenereal.length);
+                valsztottneve5 = tobbigenereal[valasztott5];
+            }
+            while(valsztottneve5.equals(valsztottneve2))
+            {
+                valasztott5 = r.nextInt(tobbigenereal.length);
+                valsztottneve5 = tobbigenereal[valasztott5];
+            }
+            while(valsztottneve5.equals(valsztottneve1))
+            {
+                valasztott5 = r.nextInt(tobbigenereal.length);
+                valsztottneve5 = tobbigenereal[valasztott5];
+            }
+            while(valsztottneve5.equals(megoldas))
             {
                 valasztott5 = r.nextInt(tobbigenereal.length);
                 valsztottneve5 = tobbigenereal[valasztott5];
