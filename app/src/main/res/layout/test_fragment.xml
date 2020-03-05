@@ -47,6 +47,29 @@
         android:layout_marginBottom="10dp"
         />
 
+    <LinearLayout
+        android:id="@+id/Seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+    <TextView
+        android:id="@+id/seekbartv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="20dp"
+        android:visibility="invisible"/>
+    <SeekBar
+        android:id="@+id/idSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="45"
+        android:alpha="0"
+        android:background="@null"
+        />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/hardcoretv"
         android:layout_width="match_parent"

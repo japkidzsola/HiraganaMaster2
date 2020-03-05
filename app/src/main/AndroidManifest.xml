@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EndingFail"></activity>
         <activity
             android:name=".Medium"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Hardcore"/>
+        <activity android:name=".EndingFail" />
         <activity android:name=".Ending" />
         <activity android:name=".Beginner" />
         <activity android:name=".Modification" />

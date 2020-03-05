@@ -46,6 +46,9 @@ public class Medium extends AppCompatActivity {
 
         startTimer();
 
+        String ertek = getIntent().getExtras().getString("Value");
+        pointsneeded.setText(ertek);
+
         final String[] megoldas = {general()};
         final int[] pontok = {0};
         final int[] minuszpontok = {0};
@@ -79,7 +82,6 @@ public class Medium extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (megoldas[0].equals(first.getText().toString().toLowerCase())){
-                        Toast.makeText(Medium.this, "done", Toast.LENGTH_SHORT).show();
                         /*int kiir = sikeres(pontokk);
                         points.setText(kiir);*/
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
@@ -89,6 +91,12 @@ public class Medium extends AppCompatActivity {
                         {
                             stopTimer();
                             Intent intent = new Intent(Medium.this, Ending.class);
+                            String tovabbit = pointsneeded.getText().toString();
+                            String minusztovabbit = Integer.toString(minuszpontok[0]);
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Success",tovabbit);
+                            intent.putExtra("Unsuccess",minusztovabbit);
+                            intent.putExtra("Value",e);
                             startActivity(intent);
                             finish();
                         }else {
@@ -107,7 +115,6 @@ public class Medium extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (megoldas[0].equals(second.getText().toString().toLowerCase())) {
-                        Toast.makeText(Medium.this, "done", Toast.LENGTH_SHORT).show();
                         //sikeres(seged2);
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
@@ -116,6 +123,12 @@ public class Medium extends AppCompatActivity {
                         {
                             stopTimer();
                             Intent intent = new Intent(Medium.this, Ending.class);
+                            String tovabbit = pointsneeded.getText().toString();
+                            String minusztovabbit = Integer.toString(minuszpontok[0]);
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Success",tovabbit);
+                            intent.putExtra("Unsuccess",minusztovabbit);
+                            intent.putExtra("Value",e);
                             startActivity(intent);
                             finish();
                         }else {
@@ -134,7 +147,6 @@ public class Medium extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (megoldas[0].equals(third.getText().toString().toLowerCase())) {
-                        Toast.makeText(Medium.this, "done", Toast.LENGTH_SHORT).show();
                         //sikeres(seged2);
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
@@ -143,6 +155,12 @@ public class Medium extends AppCompatActivity {
                         {
                             stopTimer();
                             Intent intent = new Intent(Medium.this, Ending.class);
+                            String tovabbit = pointsneeded.getText().toString();
+                            String minusztovabbit = Integer.toString(minuszpontok[0]);
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Success",tovabbit);
+                            intent.putExtra("Unsuccess",minusztovabbit);
+                            intent.putExtra("Value",e);
                             startActivity(intent);
                             finish();
                         }else {
@@ -161,7 +179,6 @@ public class Medium extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (megoldas[0].equals(fourth.getText().toString().toLowerCase())) {
-                        Toast.makeText(Medium.this, "done", Toast.LENGTH_SHORT).show();
                         //sikeres(seged2);
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
@@ -170,6 +187,12 @@ public class Medium extends AppCompatActivity {
                         {
                             stopTimer();
                             Intent intent = new Intent(Medium.this, Ending.class);
+                            String tovabbit = pointsneeded.getText().toString();
+                            String minusztovabbit = Integer.toString(minuszpontok[0]);
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Success",tovabbit);
+                            intent.putExtra("Unsuccess",minusztovabbit);
+                            intent.putExtra("Value",e);
                             startActivity(intent);
                             finish();
                         }else {
@@ -188,7 +211,6 @@ public class Medium extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (megoldas[0].equals(fifth.getText().toString().toLowerCase())) {
-                        Toast.makeText(Medium.this, "done", Toast.LENGTH_SHORT).show();
                         //sikeres(seged2);
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
@@ -197,6 +219,12 @@ public class Medium extends AppCompatActivity {
                         {
                             stopTimer();
                             Intent intent = new Intent(Medium.this, Ending.class);
+                            String tovabbit = pointsneeded.getText().toString();
+                            String minusztovabbit = Integer.toString(minuszpontok[0]);
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Success",tovabbit);
+                            intent.putExtra("Unsuccess",minusztovabbit);
+                            intent.putExtra("Value",e);
                             startActivity(intent);
                             finish();
                         }else {
@@ -215,7 +243,6 @@ public class Medium extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (megoldas[0].equals(sixth.getText().toString().toLowerCase())) {
-                        Toast.makeText(Medium.this, "done", Toast.LENGTH_SHORT).show();
                         //sikeres(seged2);
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
@@ -224,6 +251,12 @@ public class Medium extends AppCompatActivity {
                         {
                             stopTimer();
                             Intent intent = new Intent(Medium.this, Ending.class);
+                            String tovabbit = pointsneeded.getText().toString();
+                            String minusztovabbit = Integer.toString(minuszpontok[0]);
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Success",tovabbit);
+                            intent.putExtra("Unsuccess",minusztovabbit);
+                            intent.putExtra("Value",e);
                             startActivity(intent);
                             finish();
                         }else{
@@ -269,24 +302,16 @@ public class Medium extends AppCompatActivity {
 
     public String general()
     {
-        String[] tobbigenereal = {"a","i","u","e","o","ka"};
+        String[] tobbigenereal = {"a","i","u","e","o","ka","ki","ku","ke","ko","sa","shi","su","se","so","ta","chi","tsu","te","to","na","ni","nu","ne","no","ha","hi","hu","he","ho","ma","mi","mu","me","mo","ya","yu","yo","ra","ri","ru","re","ro","wa","wo","n"};
         int min = 1;
-        int max = 7;
+        int max = 15;
         Random r = new Random();
-        int random = r.nextInt(max-min) + min;
+        int random = r.nextInt(max-min+1) + min;
+        String melyiksazm = Integer.toString(random);
         String megoldas = null;
         //int random = random();
-        int valasztott1 = r.nextInt(tobbigenereal.length);
-        String valsztottneve1 = tobbigenereal[valasztott1];
-        int valasztott2 = r.nextInt(tobbigenereal.length);
-        String valsztottneve2 = tobbigenereal[valasztott2];
-        int valasztott3 = r.nextInt(tobbigenereal.length);
-        String valsztottneve3 = tobbigenereal[valasztott3];
-        int valasztott4 = r.nextInt(tobbigenereal.length);
-        String valsztottneve4 = tobbigenereal[valasztott4];
-        int valasztott5 = r.nextInt(tobbigenereal.length);
-        String valsztottneve5 = tobbigenereal[valasztott5];
 
+        beginnertv.setText(melyiksazm);
 
         int elhelyez = randomelhelyez();
         //String toltelek = toltelek();
@@ -315,10 +340,92 @@ public class Medium extends AppCompatActivity {
             mediumimg.setImageResource(R.drawable.qka);
             megoldas = "ka";
         }
+        else if(random == 7) {
+            mediumimg.setImageResource(R.drawable.qki);
+            megoldas = "ki";
+        }
+        else if(random == 8) {
+            mediumimg.setImageResource(R.drawable.qku);
+            megoldas = "ku";
+        }
+        else if(random == 9) {
+            mediumimg.setImageResource(R.drawable.qke);
+            megoldas = "ke";
+        }
+        else if(random == 10) {
+            mediumimg.setImageResource(R.drawable.qko);
+            megoldas = "ko";
+        }
+        else if(random == 11) {
+            mediumimg.setImageResource(R.drawable.qsa);
+            megoldas = "sa";
+        }
+        else if(random == 12) {
+            mediumimg.setImageResource(R.drawable.qshi);
+            megoldas = "shi";
+        }
+        else if(random == 13) {
+            mediumimg.setImageResource(R.drawable.qsu);
+            megoldas = "su";
+        }
+        else if(random == 14) {
+            mediumimg.setImageResource(R.drawable.qse);
+            megoldas = "se";
+        }
+        else if(random == 15) {
+            mediumimg.setImageResource(R.drawable.qso);
+            megoldas = "so";
+        }
+
 
         if(megoldas != null)
         {
-            if(!megoldas.equals(valsztottneve1) && !megoldas.equals(valsztottneve2) && !megoldas.equals(valsztottneve3) && !megoldas.equals(valsztottneve4) && !megoldas.equals(valsztottneve5)) {
+            int valasztott1 = r.nextInt(tobbigenereal.length);
+            String valsztottneve1 = tobbigenereal[valasztott1];
+            while(valsztottneve1.equals(megoldas))
+            {
+                valasztott1 = r.nextInt(tobbigenereal.length);
+                valsztottneve1 = tobbigenereal[valasztott1];
+            }
+
+            int valasztott2 = r.nextInt(tobbigenereal.length);
+            String valsztottneve2 = tobbigenereal[valasztott2];
+            while(valsztottneve2.equals(valsztottneve1))
+            {
+                valasztott2 = r.nextInt(tobbigenereal.length);
+                valsztottneve2 = tobbigenereal[valasztott2];
+            }
+            while(valsztottneve2.equals(megoldas))
+            {
+                valasztott2 = r.nextInt(tobbigenereal.length);
+                valsztottneve2 = tobbigenereal[valasztott2];
+            }
+
+            int valasztott3 = r.nextInt(tobbigenereal.length);
+            String valsztottneve3 = tobbigenereal[valasztott3];
+            while(valsztottneve3.equals(valsztottneve2))
+            {
+                valasztott3 = r.nextInt(tobbigenereal.length);
+                valsztottneve3 = tobbigenereal[valasztott3];
+            }
+
+            int valasztott4 = r.nextInt(tobbigenereal.length);
+            String valsztottneve4 = tobbigenereal[valasztott4];
+            while(valsztottneve4.equals(valsztottneve3))
+            {
+                valasztott4 = r.nextInt(tobbigenereal.length);
+                valsztottneve4 = tobbigenereal[valasztott4];
+            }
+
+            int valasztott5 = r.nextInt(tobbigenereal.length);
+            String valsztottneve5 = tobbigenereal[valasztott5];
+            while(valsztottneve5.equals(valsztottneve4))
+            {
+                valasztott5 = r.nextInt(tobbigenereal.length);
+                valsztottneve5 = tobbigenereal[valasztott5];
+            }
+
+            //if(!megoldas.equals(valsztottneve1) && !megoldas.equals(valsztottneve2) && !megoldas.equals(valsztottneve3) && !megoldas.equals(valsztottneve4) && !megoldas.equals(valsztottneve5)) {
                 if (elhelyez == 0) {
                     first.setText(megoldas);
                     second.setText(valsztottneve1);
@@ -362,7 +469,7 @@ public class Medium extends AppCompatActivity {
                     fourth.setText(valsztottneve4);
                     fifth.setText(valsztottneve5);
                 }
-            }
+            //}
             else
             {
                 beginnertv.setText("no");

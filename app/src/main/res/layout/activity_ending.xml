@@ -15,11 +15,36 @@
         android:textSize="50dp"
         android:gravity="center"/>
 
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your score: "
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        />
+
     <Button
         android:id="@+id/redomedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="I want to do the medium test"
+        android:layout_marginBottom="20dp"
+        />
+    <TextView
+        android:id="@+id/taxfraud"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="I want to redo this"
+        android:visibility="invisible"
+        />
+
+
+    <Button
+        android:id="@+id/redohardcore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="I want to do the hardcore test"
         />
 
 </LinearLayout>
