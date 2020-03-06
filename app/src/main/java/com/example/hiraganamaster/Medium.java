@@ -977,6 +977,11 @@ public class Medium extends AppCompatActivity {
         stopTimer();
         finish();
     }
+    
+    @Override
+    public void onStop() {
+        stopTimer();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
