@@ -18,14 +18,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hiraganamaster.Beginner;
+import com.example.hiraganamaster.Hardcore;
 import com.example.hiraganamaster.Medium;
 import com.example.hiraganamaster.R;
 
 public class TestFragment extends Fragment {
 
     private Button beginnerbtn, mediumbtn, hardcorebtn;
-    public SeekBar seekBar;
-    public TextView seekbartv;
+    public SeekBar seekBar, seekBarh;
+    public TextView seekbartv, mediumdesc,seekbartvh,hardcoreDescr;
 
     private TestViewModel mViewModel;
 
@@ -51,6 +52,10 @@ public class TestFragment extends Fragment {
         hardcorebtn = getView().findViewById(R.id.hardcorebtn);
         seekBar = getView().findViewById(R.id.idSeekBar);
         seekbartv = getView().findViewById(R.id.seekbartv);
+        mediumdesc = getView().findViewById(R.id.mediumDescr);
+        seekBarh = getView().findViewById(R.id.idSeekBarh);
+        seekbartvh = getView().findViewById(R.id.seekbartvh);
+        hardcoreDescr = getView().findViewById(R.id.hardcoreDescr);
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -70,6 +75,24 @@ public class TestFragment extends Fragment {
             }
         });
 
+        seekBarh.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                progress += 1;
+                seekbartvh.setText("" + progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                Toast.makeText(getContext(), "Press the hardcore button to go to the test", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         beginnerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,6 +106,7 @@ public class TestFragment extends Fragment {
             public void onClick(View v) {
                 seekBar.setAlpha(1);
                 seekbartv.setVisibility(View.VISIBLE);
+                mediumdesc.setVisibility(View.VISIBLE);
 
                 i[0]++;
                 if(i[0] == 2)
@@ -92,7 +116,7 @@ public class TestFragment extends Fragment {
                     int itovabbad = Integer.parseInt(tovabbad);
                     intent.putExtra("Value",tovabbad);
                     startActivity(intent);
-                    i[0] = 0;
+                    i[0] = 1;
                 }
 
             }
@@ -104,6 +128,7 @@ public class TestFragment extends Fragment {
             public void onClick(View v) {
                 seekBar.setAlpha(1);
                 seekbartv.setVisibility(View.VISIBLE);
+                mediumdesc.setVisibility(View.VISIBLE);
 
                 j[0]++;
                 if(j[0] == 2)
@@ -113,7 +138,29 @@ public class TestFragment extends Fragment {
                     int itovabbad = Integer.parseInt(tovabbad);
                     intent.putExtra("Value",tovabbad);
                     startActivity(intent);
-                    j[0] = 0;
+                    j[0] = 1;
+                }
+
+            }
+        });
+
+        final int[] k = {0};
+        hardcorebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seekBarh.setAlpha(1);
+                seekbartvh.setVisibility(View.VISIBLE);
+                hardcoreDescr.setVisibility(View.VISIBLE);
+
+                k[0]++;
+                if(k[0] == 2)
+                {
+                    Intent intent = new Intent(getContext(), Hardcore.class);
+                    String tovabbad = seekbartvh.getText().toString();
+                    int itovabbad = Integer.parseInt(tovabbad);
+                    intent.putExtra("Valueh",tovabbad);
+                    startActivity(intent);
+                    k[0] = 1;
                 }
 
             }

@@ -26,6 +26,14 @@
         />
 
     <Button
+        android:id="@+id/redobeginner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="I want to do the beginner test"
+        android:layout_marginBottom="20dp"
+        />
+
+    <Button
         android:id="@+id/redomedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

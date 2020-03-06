@@ -44,7 +44,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Medium level"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="3sp"
+        />
+
+    <TextView
+        android:id="@+id/mediumDescr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Drag the bar. How many hiraganas you want in your test"
+        android:gravity="center"
+        android:visibility="invisible"
         />
 
     <LinearLayout
@@ -58,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:visibility="invisible"/>
     <SeekBar
         android:id="@+id/idSeekBar"
@@ -84,5 +94,38 @@
         android:text="Hardcore level"
         android:layout_marginBottom="10dp"
         />
+
+    <TextView
+        android:id="@+id/hardcoreDescr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Drag the bar. How many hiraganas you want in your test"
+        android:gravity="center"
+        android:visibility="invisible"
+        />
+
+    <LinearLayout
+        android:id="@+id/Seekbarh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/seekbartvh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="20sp"
+            android:visibility="invisible"/>
+        <SeekBar
+            android:id="@+id/idSeekBarh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="45"
+            android:alpha="0"
+            android:background="@null"
+            />
+    </LinearLayout>
 
 </LinearLayout>

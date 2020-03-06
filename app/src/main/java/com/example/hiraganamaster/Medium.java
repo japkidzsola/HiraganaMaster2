@@ -97,6 +97,7 @@ public class Medium extends AppCompatActivity {
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
                         points.setText(seged);
+
                         if(points.getText().toString().equals(pointsneeded.getText().toString()))
                         {
                             stopTimer();
