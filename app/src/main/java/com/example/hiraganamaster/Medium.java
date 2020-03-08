@@ -555,8 +555,7 @@ public class Medium extends AppCompatActivity {
 
     public int pontLevon(int pontlevonas)
     {
-        int pontlevon = pontlevonas+1;
-        return pontlevon;
+        return pontlevonas+1;
     }
 
     public int pontHozzaad(int pont)
@@ -977,9 +976,16 @@ public class Medium extends AppCompatActivity {
         stopTimer();
         finish();
     }
-    
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+        startTimer();
+    }
+
     @Override
     public void onStop() {
+        super.onStop();
         stopTimer();
     }
 
