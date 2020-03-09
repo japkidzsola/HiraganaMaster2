@@ -21,7 +21,8 @@
         <activity android:name=".Registration" />
         <activity android:name=".Login" />
         <activity android:name=".HiraganaMasterHome" />
-        <activity android:name=".HiraganaLearn" />
+        <activity android:name=".HiraganaLearn"
+                   android:theme="@style/Widget.Design.FloatingActionButton"/>
         <activity android:name=".Settings" />
         <activity android:name=".Favorites" />
         <activity android:name=".Test" />
