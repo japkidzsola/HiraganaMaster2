@@ -8,7 +8,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:fullBackupContent="@xml/backup_descriptor">
         <activity
             android:name=".Medium"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -21,8 +22,7 @@
         <activity android:name=".Registration" />
         <activity android:name=".Login" />
         <activity android:name=".HiraganaMasterHome" />
-        <activity android:name=".HiraganaLearn"
-                   android:theme="@style/Widget.Design.FloatingActionButton"/>
+        <activity android:name=".HiraganaLearn" />
         <activity android:name=".Settings" />
         <activity android:name=".Favorites" />
         <activity android:name=".Test" />

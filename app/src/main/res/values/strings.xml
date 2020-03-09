@@ -17,5 +17,18 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="login">Login</string>
+    <string name="share_with_my_frinds">Share with my frinds</string>
+    <string name="time_to_share_this_program_to_my_friends">Time to share this program to my friends</string>
+    <string name="get_me_to_my_settings">get me to my settings</string>
+    <string name="settings">Settings</string>
+    <string name="get_to_see_my_favorite_characters">Get to see my favorite characters</string>
+    <string name="let_me_see_my_favorite_characters">Let me see my favorite characters</string>
+    <string name="get_to_test_myself">Get to test myself</string>
+    <string name="you_want_to_test_your_skills">You want to test your skills?</string>
+    <string name="get_me_to_the_learning_page">Get me to the learning page</string>
+    <string name="get_to_the_learning_page">Get to the learning page</string>
+    <string name="time_to_learn">Time to learn</string>
+    <string name="welcome_to_hiragana_master">Welcome to Hiragana Master</string>
 
 </resources>

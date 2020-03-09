@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/hiraganamasterhome"
@@ -7,13 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.hiraganamasterhome.HiraganaMasterHomeFragment">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <TextView
         android:id="@+id/welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Welcome to Hiragana Master"
-        android:textSize="30dp"
+        android:text="@string/welcome_to_hiragana_master"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,8 +35,8 @@
             android:id="@+id/learntv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Time to learn"
-            android:textSize="20dp"
+            android:text="@string/time_to_learn"
+            android:textSize="20sp"
 
             />
         <androidx.cardview.widget.CardView
@@ -41,9 +44,9 @@
 
             android:layout_width="250dp"
             android:layout_height="60dp"
-            android:text="Get to the learning page"
+            android:text="@string/get_to_the_learning_page"
             app:cardCornerRadius="15dp"
-            android:elevation="10dp"
+            android:elevation="10sp"
             app:cardBackgroundColor="@color/colorcardview"
             android:layout_marginBottom="10dp"
         >
@@ -55,8 +58,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Get me to the learning page"
-                android:textSize="17dp"
+                android:text="@string/get_me_to_the_learning_page"
+                android:textSize="17sp"
                 android:textColor="@color/colorcardtext"
                 android:layout_centerInParent="true"
                 />
@@ -67,14 +70,14 @@
             android:id="@+id/testtv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="You want to test your skills?"
-            android:textSize="20dp"
+            android:text="@string/you_want_to_test_your_skills"
+            android:textSize="20sp"
             />
         <Button
             android:id="@+id/testbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Get to test myself"
+            android:text="@string/get_to_test_myself"
             android:layout_marginBottom="10dp"
             />
 
@@ -82,14 +85,14 @@
             android:id="@+id/favoritestv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Let me see my favorite characters"
-            android:textSize="20dp"
+            android:text="@string/let_me_see_my_favorite_characters"
+            android:textSize="20sp"
             />
         <Button
             android:id="@+id/favoritesbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Get to see my favorite characters"
+            android:text="@string/get_to_see_my_favorite_characters"
             android:layout_marginBottom="10dp"
             />
 
@@ -97,14 +100,14 @@
             android:id="@+id/settingstv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Settings"
-            android:textSize="20dp"
+            android:text="@string/settings"
+            android:textSize="20sp"
             />
         <Button
             android:id="@+id/settingsbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="get me to my settings"
+            android:text="@string/get_me_to_my_settings"
             android:layout_marginBottom="10dp"
             />
 
@@ -112,14 +115,14 @@
             android:id="@+id/sharetv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Time to share this program to my friends"
-            android:textSize="20dp"
+            android:text="@string/time_to_share_this_program_to_my_friends"
+            android:textSize="20sp"
             />
         <Button
             android:id="@+id/sharebtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Share with my frinds"
+            android:text="@string/share_with_my_frinds"
             android:layout_marginBottom="10dp"
             />
 
@@ -128,9 +131,9 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/login"
         android:layout_below="@+id/welcome"
         android:id="@+id/login"
         />
-
 </RelativeLayout>
+</ScrollView>

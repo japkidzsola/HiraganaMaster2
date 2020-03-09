@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HiraganaMaster</string>
+    <string name="navigation_drawer_open">A navigációs fiók kinyitása</string>
+    <string name="navigation_drawer_close">A navigációs fiókbezárása</string>
+    <string name="nav_header_title">Hiragana Master</string>
+    <string name="nav_header_subtitle">Készítette: Suzuki Zsolt</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Beállítás</string>
+    <string name="menu_gallery">Galéria</string>
+    <string name="menu_learn">Tanulás</string>
+    <string name="menu_test">Teszt</string>
+    <string name="menu_favorites">Kedvencek</string>
+    <string name="menu_settings">Beállítások</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Megosztás</string>
+    <string name="menu_send">Küldés</string>
+    <string name="menu_home">Kezdőlap</string>
+    <string name="time_to_learn">Ideje tanulni</string>
+    <string name="get_to_the_learning_page">Meg akarod tekinteni az összes karaktert</string>
+    <string name="get_me_to_the_learning_page">A karakterekez</string>
+    <string name="you_want_to_test_your_skills">Meg akarod tudni, hogy mennyire ismered a karaktereket</string>
+    <string name="get_to_test_myself">Teszteld tudásod</string>
+    <string name="let_me_see_my_favorite_characters">Meg akarod tekinteni a kedvenc karaktereid</string>
+    <string name="get_to_see_my_favorite_characters">Kedvenc karaktereim</string>
+    <string name="settings">Beállítás</string>
+    <string name="get_me_to_my_settings">Beállításaim</string>
+    <string name="time_to_share_this_program_to_my_friends">Meg akarom mutatni ismerőseimnek</string>
+    <string name="share_with_my_frinds">Megosztás a barátaimmal</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="welcome_to_hiragana_master">Üdvözlünk a Hiragana Masterben</string>
+</resources>
