@@ -30,6 +30,8 @@ public class HiraganaLearnFragment extends Fragment {
 
     private Button btnplay;
 
+    private final AdatbazisSegito dbhelper = new AdatbazisSegito(getContext());
+
     MediaPlayer mp;
 
     public String seged = "";
@@ -962,7 +964,7 @@ public class HiraganaLearnFragment extends Fragment {
             }
         });
     }
-    final AdatbazisSegito dbhelper = new AdatbazisSegito(getContext());
+
     private void Favorite()
     {
         final AdatbazisSegito db = new AdatbazisSegito(getContext());

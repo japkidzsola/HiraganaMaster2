@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 public class AdatbazisSegito extends SQLiteOpenHelper {
 
     public static User loggedinuser;
-    private static final int DBversion = 2;
+    private static final int DBversion = 1;
     private static final String DBname = "tanulok.db";
 
     private static final String TABLE_NAME = "tanulok";
@@ -21,6 +21,11 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
     private static final String COL_EMAIL = "email";
     private static final String COL_JELSZO = "jelszo";
     private static final String COL_KEDVENCEK = "kedvencek";
+
+    private static final String TABLE_NAME_KEDVENCEK = "kedvencek";
+
+    private static final String COL_FELHASZ_ID = "felhasz_id";
+    private static final String COL_HIRAGANA_ID = "hiragana_id";
 
     public AdatbazisSegito(Context context) {super(context,DBname,null,DBversion); }
 
@@ -33,7 +38,14 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
                 COL_EMAIL+ " VARCHAR(30)," +
                 COL_JELSZO+ " VARCHAR(30)," +
                 COL_KEDVENCEK+ " VARCHAR(30))";
+
+        String createTables2 = "CREATE TABLE IF NOT EXISTS "+TABLE_NAME_KEDVENCEK + "(" +
+                COL_FELHASZ_ID+" INTEGER PRIMARY KEY AUTOINCREMENT," +
+                COL_HIRAGANA_ID+" VARCHAR(30),"+
+                " FOREIGN key (" + COL_FELHASZ_ID + ") REFERENCES " + COL_ID +");";
+
         db.execSQL(createTables);
+        db.execSQL(createTables2);
     }
 
     @Override
