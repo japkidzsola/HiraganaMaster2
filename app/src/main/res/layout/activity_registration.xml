@@ -13,14 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvlogin"
-        android:text="Please registrate"
-        android:textSize="30dp"
+        android:text="@string/please_registrate"
+        android:textSize="30sp"
         android:gravity="center"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
+        android:hint="@string/name"
         android:layout_below="@+id/tvlogin"
         android:id="@+id/etName1"
         />
@@ -31,13 +31,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/etName1"
         android:layout_marginTop="0dp"
-        android:hint="E-mail"
+        android:hint="@string/e_mail"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:layout_below="@+id/etEmail"
         android:id="@+id/etPassword"
@@ -45,7 +45,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password again"
+        android:hint="@string/password_again"
         android:inputType="textPassword"
         android:layout_below="@+id/etPassword"
         android:id="@+id/etPasswordAgain"
@@ -53,21 +53,21 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="registrate"
+        android:text="@string/registrate"
         android:layout_below="@+id/etPasswordAgain"
         android:id="@+id/btnRegistrate"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Already registrated?"
+        android:text="@string/already_registrated"
         android:layout_below="@+id/btnRegistrate"
         android:id="@+id/tvregistration"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/login"
         android:layout_below="@+id/tvregistration"
         android:id="@+id/btnLogin"
         />

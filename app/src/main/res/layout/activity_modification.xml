@@ -13,15 +13,15 @@
         android:id="@+id/tvedit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit profile"
-        android:textSize="30dp"
+        android:text="@string/edit_profile"
+        android:textSize="30sp"
         android:gravity="center"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
-        android:text="asd"
+        android:hint="@string/name"
+        android:text="@string/asd"
         android:layout_below="@+id/tvedit"
         android:id="@+id/etName1"
         />
@@ -32,14 +32,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/etName1"
         android:layout_marginTop="0dp"
-        android:hint="E-mail"
-        android:text="asd@asd.com"
+        android:hint="@string/e_mail"
+        android:text="@string/asd_asd_com"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:layout_below="@+id/etEmail"
         android:id="@+id/etPassword"
@@ -48,14 +48,14 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit profile"
+        android:text="@string/edit_profile"
         android:layout_below="@+id/etPassword"
         android:id="@+id/btnEdit"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="go back"
+        android:text="@string/go_back"
         android:layout_below="@+id/btnEdit"
         android:id="@+id/btnBack"
         />
@@ -66,7 +66,7 @@
         android:scrollbars="vertical"
         android:layout_below="@+id/btnBack"
         android:maxLines="999"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:id="@+id/textAdatok"
         />
 

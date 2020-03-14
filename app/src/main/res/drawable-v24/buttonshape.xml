@@ -4,12 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:shape="rectangle">
+
+    <corners
+        android:radius="15dp"/>
+
     <gradient
         android:angle="90"
         android:centerX="35%"
-        android:centerColor="#0D7AA8"
-        android:startColor="#1E97E8"
-        android:endColor="#0526FF"
+        android:centerColor="#2EA7DA"
+        android:startColor="#4399D3"
+        android:endColor="#4E73FB"
         android:type="linear"
         />
     <padding

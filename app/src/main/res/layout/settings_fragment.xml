@@ -11,8 +11,8 @@
         android:id="@+id/tvsettings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Settings"
-        android:textSize="30dp"
+        android:text="@string/settings"
+        android:textSize="30sp"
         android:gravity="center"/>
 
     <LinearLayout
@@ -27,14 +27,14 @@
         android:id="@+id/tvlanguage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Want to change the language?"
-        android:textSize="20dp"
+        android:text="@string/language_change"
+        android:textSize="20sp"
         />
         <Button
             android:id="@+id/btnlanguage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Do it here"
+            android:text="@string/language_change_btn"
             android:layout_marginBottom="10dp"
             />
 
@@ -42,14 +42,14 @@
         android:id="@+id/tvprofile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Want to edit profile?"
-        android:textSize="20dp"
+        android:text="@string/want_to_edit_profile"
+        android:textSize="20sp"
         />
         <Button
             android:id="@+id/btnprofile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Change profile here"
+            android:text="@string/change_profile_here"
             android:layout_marginBottom="10dp"
             />
 
@@ -57,14 +57,14 @@
         android:id="@+id/tvlogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Want to logout from this profile?"
-        android:textSize="20dp"
+        android:text="@string/want_to_logout_from_this_profile"
+        android:textSize="20sp"
         />
         <Button
             android:id="@+id/btnlogout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Logout from profile here"
+            android:text="@string/logout_from_profile_here"
             android:layout_marginBottom="10dp"
             />
 

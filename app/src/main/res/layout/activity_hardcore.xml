@@ -20,14 +20,14 @@
                 android:id="@+id/hardcorepoints"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/_0"
                 android:textSize="20sp"
                 />
             <TextView
                 android:id="@+id/slash"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="/"
+                android:text="@string/slash"
                 android:textSize="20sp"
                 />
 
@@ -35,7 +35,7 @@
                 android:id="@+id/hardcorepointsneeded"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="6"
+                android:text="@string/_6"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -43,8 +43,8 @@
             android:id="@+id/hardcoretv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hardcore test"
-            android:textSize="25dp"
+            android:text="@string/hardcore_test"
+            android:textSize="25sp"
             android:gravity="center"/>
 
         <TextView
@@ -52,14 +52,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
-            android:text="10"
+            android:text="@string/timer"
             android:textSize="25sp" />
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="100"
         android:layout_marginBottom="10dp"
         android:gravity="center">
@@ -76,15 +76,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:hint="Enter hiragana name here"
+        android:hint="@string/hardcoreHint"
         android:gravity="center"
-        />
+        android:autofillHints="" />
     <Button
         android:id="@+id/hardcoresend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:text="send"
+        android:text="@string/hardcoreSolution"
         />
 
 </LinearLayout>

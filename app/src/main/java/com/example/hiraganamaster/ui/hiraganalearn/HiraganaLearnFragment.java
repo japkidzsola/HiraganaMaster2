@@ -1,9 +1,12 @@
 package com.example.hiraganamaster.ui.hiraganalearn;
 
+import androidx.annotation.RequiresApi;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,6 +25,10 @@ import com.example.hiraganamaster.AdatbazisSegito;
 import com.example.hiraganamaster.Modification;
 import com.example.hiraganamaster.R;
 import com.example.hiraganamaster.ui.hiraganamasterhome.HiraganaMasterHomeFragment;
+
+import java.util.Objects;
+
+import static java.util.Objects.*;
 
 public class HiraganaLearnFragment extends Fragment {
 
@@ -58,6 +65,8 @@ public class HiraganaLearnFragment extends Fragment {
         return inflater.inflate(R.layout.hiragana_learn_fragment, container, false);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @SuppressLint("SetTextI18n")
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -69,19 +78,60 @@ public class HiraganaLearnFragment extends Fragment {
         final MediaPlayer playU = MediaPlayer.create(getContext(), R.raw.u);
         final MediaPlayer playE = MediaPlayer.create(getContext(), R.raw.e);
         final MediaPlayer playO = MediaPlayer.create(getContext(), R.raw.o);
+
         final MediaPlayer playKa = MediaPlayer.create(getContext(), R.raw.ka);
         final MediaPlayer playKi = MediaPlayer.create(getContext(), R.raw.ki);
         final MediaPlayer playKu = MediaPlayer.create(getContext(), R.raw.ku);
         final MediaPlayer playKe = MediaPlayer.create(getContext(), R.raw.ke);
         final MediaPlayer playKo = MediaPlayer.create(getContext(), R.raw.ko);
+
         final MediaPlayer playSa = MediaPlayer.create(getContext(), R.raw.sa);
         final MediaPlayer playShi = MediaPlayer.create(getContext(), R.raw.shi);
         final MediaPlayer playSu = MediaPlayer.create(getContext(), R.raw.su);
         final MediaPlayer playSe = MediaPlayer.create(getContext(), R.raw.se);
         final MediaPlayer playSo = MediaPlayer.create(getContext(), R.raw.so);
 
+        final MediaPlayer playTa = MediaPlayer.create(getContext(), R.raw.ta);
+        final MediaPlayer playChi = MediaPlayer.create(getContext(), R.raw.chi);
+        final MediaPlayer playTsu = MediaPlayer.create(getContext(), R.raw.tsu);
+        final MediaPlayer playTe = MediaPlayer.create(getContext(), R.raw.te);
+        final MediaPlayer playTo = MediaPlayer.create(getContext(), R.raw.to);
 
-        TextView tw = getView().findViewById(R.id.textviewhiragana);
+        final MediaPlayer playNa = MediaPlayer.create(getContext(), R.raw.na);
+        final MediaPlayer playNi = MediaPlayer.create(getContext(), R.raw.ni);
+        final MediaPlayer playNu = MediaPlayer.create(getContext(), R.raw.nu);
+        final MediaPlayer playNe = MediaPlayer.create(getContext(), R.raw.ne);
+        final MediaPlayer playNo = MediaPlayer.create(getContext(), R.raw.no);
+
+        final MediaPlayer playHa = MediaPlayer.create(getContext(), R.raw.ha);
+        final MediaPlayer playHi = MediaPlayer.create(getContext(), R.raw.hi);
+        final MediaPlayer playFu = MediaPlayer.create(getContext(), R.raw.fu);
+        final MediaPlayer playHe = MediaPlayer.create(getContext(), R.raw.he);
+        final MediaPlayer playHo = MediaPlayer.create(getContext(), R.raw.ho);
+
+        final MediaPlayer playMa = MediaPlayer.create(getContext(), R.raw.ma);
+        final MediaPlayer playMi = MediaPlayer.create(getContext(), R.raw.mi);
+        final MediaPlayer playMu = MediaPlayer.create(getContext(), R.raw.mu);
+        final MediaPlayer playMe = MediaPlayer.create(getContext(), R.raw.me);
+        final MediaPlayer playMo = MediaPlayer.create(getContext(), R.raw.mo);
+
+        final MediaPlayer playYa = MediaPlayer.create(getContext(), R.raw.ya);
+        final MediaPlayer playYu = MediaPlayer.create(getContext(), R.raw.yu);
+        final MediaPlayer playYo = MediaPlayer.create(getContext(), R.raw.yo);
+
+        final MediaPlayer playRa = MediaPlayer.create(getContext(), R.raw.ra);
+        final MediaPlayer playRi = MediaPlayer.create(getContext(), R.raw.ri);
+        final MediaPlayer playRu = MediaPlayer.create(getContext(), R.raw.ru);
+        final MediaPlayer playRe = MediaPlayer.create(getContext(), R.raw.re);
+        final MediaPlayer playRo = MediaPlayer.create(getContext(), R.raw.ro);
+
+        final MediaPlayer playWa = MediaPlayer.create(getContext(), R.raw.wa);
+        final MediaPlayer playWo = MediaPlayer.create(getContext(), R.raw.wo);
+        final MediaPlayer playN = MediaPlayer.create(getContext(), R.raw.n);
+
+
+        TextView tw;
+        tw = requireNonNull(getView()).findViewById(R.id.textviewhiragana);
         ImageView ivLearn = getView().findViewById(R.id.ivLearn);
         TextView tn = getView().findViewById(R.id.textviewname);
         tw.setText("Hiragana");
@@ -325,38 +375,148 @@ public class HiraganaLearnFragment extends Fragment {
         btnplay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(seged == "") {
-                    if (betu.equals("a")) {
-                        playA.start();
-                    } else if (betu.equals("i")) {
-                        playI.start();
-                    } else if (betu.equals("u")) {
-                        playU.start();
-                    } else if (betu.equals("e")) {
-                        playE.start();
-                    } else if (betu.equals("o")) {
-                        playO.start();
-                    } else if (betu.equals("ka")) {
-                        playKa.start();
-                    } else if (betu.equals("ki")) {
-                        playKi.start();
-                    } else if (betu.equals("ku")) {
-                        playKu.start();
-                    } else if (betu.equals("ke")) {
-                        playKe.start();
-                    } else if (betu.equals("ko")) {
-                        playKo.start();
-                    } else if (betu.equals("sa")) {
-                        playSa.start();
-                    } else if (betu.equals("si")) {
-                        playShi.start();
-                    } else if (betu.equals("su")) {
-                        playSu.start();
-                    } else if (betu.equals("se")) {
-                        playSe.start();
-                    } else if (betu.equals("so")) {
-                        playSo.start();
+                if(seged.equals("")) {
+                    switch (betu) {
+                        case "a":
+                            playA.start();
+                            break;
+                        case "i":
+                            playI.start();
+                            break;
+                        case "u":
+                            playU.start();
+                            break;
+                        case "e":
+                            playE.start();
+                            break;
+                        case "o":
+                            playO.start();
+                            break;
+                        case "ka":
+                            playKa.start();
+                            break;
+                        case "ki":
+                            playKi.start();
+                            break;
+                        case "ku":
+                            playKu.start();
+                            break;
+                        case "ke":
+                            playKe.start();
+                            break;
+                        case "ko":
+                            playKo.start();
+                            break;
+                        case "sa":
+                            playSa.start();
+                            break;
+                        case "si":
+                            playShi.start();
+                            break;
+                        case "su":
+                            playSu.start();
+                            break;
+                        case "se":
+                            playSe.start();
+                            break;
+                        case "so":
+                            playSo.start();
+                            break;
+                        case "ta":
+                            playTa.start();
+                            break;
+                        case "chi":
+                            playChi.start();
+                            break;
+                        case "tsu":
+                            playTsu.start();
+                            break;
+                        case "te":
+                            playTe.start();
+                            break;
+                        case "to":
+                            playTo.start();
+                            break;
+                        case "na":
+                            playNa.start();
+                            break;
+                        case "ni":
+                            playNi.start();
+                            break;
+                        case "nu":
+                            playNu.start();
+                            break;
+                        case "ne":
+                            playNe.start();
+                            break;
+                        case "no":
+                            playNo.start();
+                            break;
+                        case "ha":
+                            playHa.start();
+                            break;
+                        case "hi":
+                            playHi.start();
+                            break;
+                        case "fu":
+                            playFu.start();
+                            break;
+                        case "he":
+                            playHe.start();
+                            break;
+                        case "ho":
+                            playHo.start();
+                            break;
+                        case "ma":
+                            playMa.start();
+                            break;
+                        case "mi":
+                            playMi.start();
+                            break;
+                        case "mu":
+                            playMu.start();
+                            break;
+                        case "me":
+                            playMe.start();
+                            break;
+                        case "mo":
+                            playMo.start();
+                            break;
+                        case "ya":
+                            playYa.start();
+                            break;
+                        case "yu":
+                            playYu.start();
+                            break;
+                        case "yo":
+                            playYo.start();
+                            break;
+                        case "ra":
+                            playRa.start();
+                            break;
+                        case "ri":
+                            playRi.start();
+                            break;
+                        case "ru":
+                            playRu.start();
+                            break;
+                        case "re":
+                            playRe.start();
+                            break;
+                        case "ro":
+                            playRo.start();
+                            break;
+                        case "wa":
+                            playWa.start();
+                            break;
+                        case "wo":
+                            playWo.start();
+                            break;
+                        case "n":
+                            playN.start();
+                            break;
                     }
+
                 }else if (seged.equals("a")) {
                     playA.start();
                 } else if (seged.equals("i")) {
@@ -387,6 +547,68 @@ public class HiraganaLearnFragment extends Fragment {
                     playSe.start();
                 } else if (seged.equals("so")) {
                     playSo.start();
+                } else if (betu.equals("ta")) {
+                    playTa.start();
+                } else if (betu.equals("chi")) {
+                    playChi.start();
+                } else if (betu.equals("tsu")) {
+                    playTsu.start();
+                } else if (betu.equals("te")) {
+                    playTe.start();
+                } else if (betu.equals("to")) {
+                    playTo.start();
+                } else if (betu.equals("na")) {
+                    playNa.start();
+                } else if (betu.equals("ni")) {
+                    playNi.start();
+                } else if (betu.equals("nu")) {
+                    playNu.start();
+                } else if (betu.equals("ne")) {
+                    playNe.start();
+                } else if (betu.equals("no")) {
+                    playNo.start();
+                } else if (betu.equals("ha")) {
+                    playHa.start();
+                } else if (betu.equals("hi")) {
+                    playHi.start();
+                } else if (betu.equals("fu")) {
+                    playFu.start();
+                } else if (betu.equals("he")) {
+                    playHe.start();
+                } else if (betu.equals("ho")) {
+                    playHo.start();
+                } else if (betu.equals("ma")) {
+                    playMa.start();
+                } else if (betu.equals("mi")) {
+                    playMi.start();
+                } else if (betu.equals("mu")) {
+                    playMu.start();
+                } else if (betu.equals("me")) {
+                    playMe.start();
+                } else if (betu.equals("mo")) {
+                    playMo.start();
+                } else if (betu.equals("ya")) {
+                    playYa.start();
+                } else if (betu.equals("yu")) {
+                    playYu.start();
+                } else if (betu.equals("yo")) {
+                    playYo.start();
+                } else if (betu.equals("ra")) {
+                    playRa.start();
+                } else if (betu.equals("ri")) {
+                    playRi.start();
+                } else if (betu.equals("ru")) {
+                    playRu.start();
+                } else if (betu.equals("re")) {
+                    playRe.start();
+                } else if (betu.equals("ro")) {
+                    playRo.start();
+                } else if (betu.equals("wa")) {
+                    playWa.start();
+                } else if (betu.equals("wo")) {
+                    playWo.start();
+                } else if (betu.equals("n")) {
+                    playN.start();
                 }
             }
         });
@@ -432,533 +654,547 @@ public class HiraganaLearnFragment extends Fragment {
         });
 
         toRight.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View v) {
-                TextView tw = getView().findViewById(R.id.textviewhiragana);
+                TextView tw;
+                tw = Objects.<View>requireNonNull(getView()).findViewById(R.id.textviewhiragana);
                 ImageView ivLearn = getView().findViewById(R.id.ivLearn);
                 TextView tn = getView().findViewById(R.id.textviewname);
 
-                if(seged.equals("a"))
-                {
-                    ivLearn.setImageResource(R.drawable.qi);
-                    seged = "i";
-                    tw.setText("Hiragana i");
-                    tn.setText("i");
-                }
-                else if(seged.equals("i"))
-                {
-                    ivLearn.setImageResource(R.drawable.qu);
-                    seged = "u";
-                    tw.setText("Hiragana u");
-                    tn.setText("u");
-                }
-                else if(seged.equals("i"))
-                {
-                    ivLearn.setImageResource(R.drawable.qu);
-                    seged = "u";
-                    tw.setText("Hiragana u");
-                    tn.setText("u");
-                }
-                else if(seged.equals("u"))
-                {
-                    ivLearn.setImageResource(R.drawable.qe);
-                    seged = "e";
-                    tw.setText("Hiragana e");
-                    tn.setText("e");
-                }
-                else if(seged.equals("e"))
-                {
-                    ivLearn.setImageResource(R.drawable.qo);
-                    seged = "o";
-                    tw.setText("Hiaragana o");
-                    tn.setText("o");
-                }
-                else if(seged.equals("o"))
-                {
-                    ivLearn.setImageResource(R.drawable.qka);
-                    seged = "ka";
-                    tw.setText("Hiaragana ka");
-                    tn.setText("ka");
-                }
-                else if(seged.equals("ka"))
-                {
-                    ivLearn.setImageResource(R.drawable.qki);
-                    seged = "ki";
-                    tw.setText("Hiaragana ki");
-                    tn.setText("ki");
-                }
-                else if(seged.equals("ki"))
-                {
-                    ivLearn.setImageResource(R.drawable.qku);
-                    seged = "ku";
-                    tw.setText("Hiaragana ku");
-                    tn.setText("ku");
-                }
-                else if(seged.equals("ku"))
-                {
-                    ivLearn.setImageResource(R.drawable.qke);
-                    seged = "ke";
-                    tw.setText("Hiaragana ke");
-                    tn.setText("ke");
-                }
-                else if(seged.equals("ke"))
-                {
-                    ivLearn.setImageResource(R.drawable.qko);
-                    seged = "ko";
-                    tw.setText("Hiaragana ko");
-                    tn.setText("ko");
-                }
-                else if(seged.equals("ko"))
-                {
-                    ivLearn.setImageResource(R.drawable.qsa);
-                    seged = "sa";
-                    tw.setText("Hiaragana sa");
-                    tn.setText("sa");
-                }
-                else if(seged.equals("sa"))
-                {
-                    ivLearn.setImageResource(R.drawable.qshi);
-                    seged = "shi";
-                    tw.setText("Hiaragana shi");
-                    tn.setText("shi");
-                }
-                else if(seged.equals("shi"))
-                {
-                    ivLearn.setImageResource(R.drawable.qsu);
-                    seged = "su";
-                    tw.setText("Hiaragana su");
-                    tn.setText("su");
-                }
-                else if(seged.equals("su"))
-                {
-                    ivLearn.setImageResource(R.drawable.qse);
-                    seged = "se";
-                    tw.setText("Hiaragana se");
-                    tn.setText("se");
-                }
-                else if(seged.equals("se"))
-                {
-                    ivLearn.setImageResource(R.drawable.qso);
-                    seged = "so";
-                    tw.setText("Hiaragana so");
-                    tn.setText("so");
-                }
-                else if(seged.equals("so"))
-                {
-                    ivLearn.setImageResource(R.drawable.qta);
-                    seged = "ta";
-                    tw.setText("Hiaragana ta");
-                    tn.setText("ta");
-                }
-                else if(seged.equals("ta"))
-                {
-                    ivLearn.setImageResource(R.drawable.qchi);
-                    seged = "chi";
-                    tw.setText("Hiaragana chi");
-                    tn.setText("chi");
-                }
-                else if(seged.equals("chi"))
-                {
-                    ivLearn.setImageResource(R.drawable.qtsu);
-                    seged = "tsu";
-                    tw.setText("Hiaragana tsu");
-                    tn.setText("tsu");
-                }
-                else if(seged.equals("tsu"))
-                {
-                    ivLearn.setImageResource(R.drawable.qte);
-                    seged = "te";
-                    tw.setText("Hiaragana te");
-                    tn.setText("te");
-                }
-                else if(seged.equals("te"))
-                {
-                    ivLearn.setImageResource(R.drawable.qto);
-                    seged = "to";
-                    tw.setText("Hiaragana to");
-                    tn.setText("to");
-                }
-                else if(seged.equals("to"))
-                {
-                    ivLearn.setImageResource(R.drawable.qna);
-                    seged = "na";
-                    tw.setText("Hiaragana na");
-                    tn.setText("na");
-                }
-                else if(seged.equals("na"))
-                {
-                    ivLearn.setImageResource(R.drawable.qni);
-                    seged = "ni";
-                    tw.setText("Hiaragana ni");
-                    tn.setText("ni");
-                }
-                else if(seged.equals("ni"))
-                {
-                    ivLearn.setImageResource(R.drawable.qnu);
-                    seged = "nu";
-                    tw.setText("Hiaragana nu");
-                    tn.setText("nu");
-                }
-                else if(seged.equals("nu"))
-                {
-                    ivLearn.setImageResource(R.drawable.qne);
-                    seged = "ne";
-                    tw.setText("Hiaragana ne");
-                    tn.setText("ne");
-                }
-                else if(seged.equals("ne"))
-                {
-                    ivLearn.setImageResource(R.drawable.qno);
-                    seged = "no";
-                    tw.setText("Hiaragana no");
-                    tn.setText("no");
-                }
-                else if(seged.equals("no"))
-                {
-                    ivLearn.setImageResource(R.drawable.qha);
-                    seged = "ha";
-                    tw.setText("Hiaragana ha");
-                    tn.setText("ha");
-                }
-                else if(seged.equals("ha"))
-                {
-                    ivLearn.setImageResource(R.drawable.qhi);
-                    seged = "hi";
-                    tw.setText("Hiaragana hi");
-                    tn.setText("hi");
-                }
-                else if(seged.equals("hi"))
-                {
-                    ivLearn.setImageResource(R.drawable.qfu);
-                    seged = "fu";
-                    tw.setText("Hiaragana fu");
-                    tn.setText("fu");
-                }
-                else if(seged.equals("fu"))
-                {
-                    ivLearn.setImageResource(R.drawable.qhe);
-                    seged = "he";
-                    tw.setText("Hiaragana he");
-                    tn.setText("he");
-                }
-                else if(seged.equals("he"))
-                {
-                    ivLearn.setImageResource(R.drawable.qho);
-                    seged = "ho";
-                    tw.setText("Hiaragana ho");
-                    tn.setText("ho");
-                }
-                else if(seged.equals("ho"))
-                {
-                    ivLearn.setImageResource(R.drawable.qma);
-                    seged = "ma";
-                    tw.setText("Hiaragana ma");
-                    tn.setText("ma");
-                }
-                else if(seged.equals("ma"))
-                {
-                    ivLearn.setImageResource(R.drawable.qmi);
-                    seged = "mi";
-                    tw.setText("Hiaragana mi");
-                    tn.setText("mi");
-                }
-                else if(seged.equals("mi"))
-                {
-                    ivLearn.setImageResource(R.drawable.qmu);
-                    seged = "mu";
-                    tw.setText("Hiaragana mu");
-                    tn.setText("mu");
-                }
-                else if(seged.equals("mu"))
-                {
-                    ivLearn.setImageResource(R.drawable.qme);
-                    seged = "me";
-                    tw.setText("Hiaragana me");
-                    tn.setText("me");
-                }
-                else if(seged.equals("me"))
-                {
-                    ivLearn.setImageResource(R.drawable.qmo);
-                    seged = "mo";
-                    tw.setText("Hiaragana mo");
-                    tn.setText("mo");
-                }
-                else if(seged.equals("mo"))
-                {
-                    ivLearn.setImageResource(R.drawable.qya);
-                    seged = "ya";
-                    tw.setText("Hiaragana ya");
-                    tn.setText("ya");
-                }
-                else if(seged.equals("ya"))
-                {
-                    ivLearn.setImageResource(R.drawable.qyu);
-                    seged = "yu";
-                    tw.setText("Hiaragana yu");
-                    tn.setText("yu");
-                }
-                else if(seged.equals("yu"))
-                {
-                    ivLearn.setImageResource(R.drawable.qyo);
-                    seged = "yo";
-                    tw.setText("Hiaragana yo");
-                    tn.setText("yo");
-                }
-                else if(seged.equals("yo"))
-                {
-                    ivLearn.setImageResource(R.drawable.qra);
-                    seged = "ra";
-                    tw.setText("Hiaragana ra");
-                    tn.setText("ra");
-                }
-                else if(seged.equals("ra"))
-                {
-                    ivLearn.setImageResource(R.drawable.qri);
-                    seged = "ri";
-                    tw.setText("Hiaragana ri");
-                    tn.setText("ri");
-                }
-                else if(seged.equals("ri"))
-                {
-                    ivLearn.setImageResource(R.drawable.qru);
-                    seged = "ru";
-                    tw.setText("Hiaragana ru");
-                    tn.setText("ru");
-                }
-                else if(seged.equals("ru"))
-                {
-                    ivLearn.setImageResource(R.drawable.qre);
-                    seged = "re";
-                    tw.setText("Hiaragana re");
-                    tn.setText("re");
-                }
-                else if(seged.equals("re"))
-                {
-                    ivLearn.setImageResource(R.drawable.qro);
-                    seged = "ro";
-                    tw.setText("Hiaragana ro");
-                    tn.setText("ro");
-                }
-                else if(seged.equals("ro"))
-                {
-                    ivLearn.setImageResource(R.drawable.qwa);
-                    seged = "wa";
-                    tw.setText("Hiaragana wa");
-                    tn.setText("wa");
-                }
-                else if(seged.equals("wa"))
-                {
-                    ivLearn.setImageResource(R.drawable.qwo);
-                    seged = "wo";
-                    tw.setText("Hiaragana wo");
-                    tn.setText("wo");
-                }
-                else if(seged.equals("wo"))
-                {
-                    ivLearn.setImageResource(R.drawable.qn);
-                    seged = "n";
-                    tw.setText("Hiaragana n");
-                    tn.setText("n");
-                }
-                else if(seged.equals("n"))
-                {
-                    Toast.makeText(getContext(), "Hiba", Toast.LENGTH_SHORT).show();
+                switch (seged) {
+                    case "a":
+                        ivLearn.setImageResource(R.drawable.qi);
+                        seged = "i";
+                        tw.setText("Hiragana i");
+                        tn.setText("i");
+                        break;
+                    case "i":
+                        ivLearn.setImageResource(R.drawable.qu);
+                        seged = "u";
+                        tw.setText("Hiragana u");
+                        tn.setText("u");
+                        break;
+                    case "u":
+                        ivLearn.setImageResource(R.drawable.qe);
+                        seged = "e";
+                        tw.setText("Hiragana e");
+                        tn.setText("e");
+                        break;
+                    case "e":
+                        ivLearn.setImageResource(R.drawable.qo);
+                        seged = "o";
+                        tw.setText("Hiaragana o");
+                        tn.setText("o");
+                        break;
+                    case "o":
+                        ivLearn.setImageResource(R.drawable.qka);
+                        seged = "ka";
+                        tw.setText("Hiaragana ka");
+                        tn.setText("ka");
+                        break;
+                    case "ka":
+                        ivLearn.setImageResource(R.drawable.qki);
+                        seged = "ki";
+                        tw.setText("Hiaragana ki");
+                        tn.setText("ki");
+                        break;
+                    case "ki":
+                        ivLearn.setImageResource(R.drawable.qku);
+                        seged = "ku";
+                        tw.setText("Hiaragana ku");
+                        tn.setText("ku");
+                        break;
+                    case "ku":
+                        ivLearn.setImageResource(R.drawable.qke);
+                        seged = "ke";
+                        tw.setText("Hiaragana ke");
+                        tn.setText("ke");
+                        break;
+                    case "ke":
+                        ivLearn.setImageResource(R.drawable.qko);
+                        seged = "ko";
+                        tw.setText("Hiaragana ko");
+                        tn.setText("ko");
+                        break;
+                    case "ko":
+                        ivLearn.setImageResource(R.drawable.qsa);
+                        seged = "sa";
+                        tw.setText("Hiaragana sa");
+                        tn.setText("sa");
+                        break;
+                    case "sa":
+                        ivLearn.setImageResource(R.drawable.qshi);
+                        seged = "shi";
+                        tw.setText("Hiaragana shi");
+                        tn.setText("shi");
+                        break;
+                    case "shi":
+                        ivLearn.setImageResource(R.drawable.qsu);
+                        seged = "su";
+                        tw.setText("Hiaragana su");
+                        tn.setText("su");
+                        break;
+                    case "su":
+                        ivLearn.setImageResource(R.drawable.qse);
+                        seged = "se";
+                        tw.setText("Hiaragana se");
+                        tn.setText("se");
+                        break;
+                    case "se":
+                        ivLearn.setImageResource(R.drawable.qso);
+                        seged = "so";
+                        tw.setText("Hiaragana so");
+                        tn.setText("so");
+                        break;
+                    case "so":
+                        ivLearn.setImageResource(R.drawable.qta);
+                        seged = "ta";
+                        tw.setText("Hiaragana ta");
+                        tn.setText("ta");
+                        break;
+                    case "ta":
+                        ivLearn.setImageResource(R.drawable.qchi);
+                        seged = "chi";
+                        tw.setText("Hiaragana chi");
+                        tn.setText("chi");
+                        break;
+                    case "chi":
+                        ivLearn.setImageResource(R.drawable.qtsu);
+                        seged = "tsu";
+                        tw.setText("Hiaragana tsu");
+                        tn.setText("tsu");
+                        break;
+                    case "tsu":
+                        ivLearn.setImageResource(R.drawable.qte);
+                        seged = "te";
+                        tw.setText("Hiaragana te");
+                        tn.setText("te");
+                        break;
+                    case "te":
+                        ivLearn.setImageResource(R.drawable.qto);
+                        seged = "to";
+                        tw.setText("Hiaragana to");
+                        tn.setText("to");
+                        break;
+                    case "to":
+                        ivLearn.setImageResource(R.drawable.qna);
+                        seged = "na";
+                        tw.setText("Hiaragana na");
+                        tn.setText("na");
+                        break;
+                    case "na":
+                        ivLearn.setImageResource(R.drawable.qni);
+                        seged = "ni";
+                        tw.setText("Hiaragana ni");
+                        tn.setText("ni");
+                        break;
+                    case "ni":
+                        ivLearn.setImageResource(R.drawable.qnu);
+                        seged = "nu";
+                        tw.setText("Hiaragana nu");
+                        tn.setText("nu");
+                        break;
+                    case "nu":
+                        ivLearn.setImageResource(R.drawable.qne);
+                        seged = "ne";
+                        tw.setText("Hiaragana ne");
+                        tn.setText("ne");
+                        break;
+                    case "ne":
+                        ivLearn.setImageResource(R.drawable.qno);
+                        seged = "no";
+                        tw.setText("Hiaragana no");
+                        tn.setText("no");
+                        break;
+                    case "no":
+                        ivLearn.setImageResource(R.drawable.qha);
+                        seged = "ha";
+                        tw.setText("Hiaragana ha");
+                        tn.setText("ha");
+                        break;
+                    case "ha":
+                        ivLearn.setImageResource(R.drawable.qhi);
+                        seged = "hi";
+                        tw.setText("Hiaragana hi");
+                        tn.setText("hi");
+                        break;
+                    case "hi":
+                        ivLearn.setImageResource(R.drawable.qfu);
+                        seged = "fu";
+                        tw.setText("Hiaragana fu");
+                        tn.setText("fu");
+                        break;
+                    case "fu":
+                        ivLearn.setImageResource(R.drawable.qhe);
+                        seged = "he";
+                        tw.setText("Hiaragana he");
+                        tn.setText("he");
+                        break;
+                    case "he":
+                        ivLearn.setImageResource(R.drawable.qho);
+                        seged = "ho";
+                        tw.setText("Hiaragana ho");
+                        tn.setText("ho");
+                        break;
+                    case "ho":
+                        ivLearn.setImageResource(R.drawable.qma);
+                        seged = "ma";
+                        tw.setText("Hiaragana ma");
+                        tn.setText("ma");
+                        break;
+                    case "ma":
+                        ivLearn.setImageResource(R.drawable.qmi);
+                        seged = "mi";
+                        tw.setText("Hiaragana mi");
+                        tn.setText("mi");
+                        break;
+                    case "mi":
+                        ivLearn.setImageResource(R.drawable.qmu);
+                        seged = "mu";
+                        tw.setText("Hiaragana mu");
+                        tn.setText("mu");
+                        break;
+                    case "mu":
+                        ivLearn.setImageResource(R.drawable.qme);
+                        seged = "me";
+                        tw.setText("Hiaragana me");
+                        tn.setText("me");
+                        break;
+                    case "me":
+                        ivLearn.setImageResource(R.drawable.qmo);
+                        seged = "mo";
+                        tw.setText("Hiaragana mo");
+                        tn.setText("mo");
+                        break;
+                    case "mo":
+                        ivLearn.setImageResource(R.drawable.qya);
+                        seged = "ya";
+                        tw.setText("Hiaragana ya");
+                        tn.setText("ya");
+                        break;
+                    case "ya":
+                        ivLearn.setImageResource(R.drawable.qyu);
+                        seged = "yu";
+                        tw.setText("Hiaragana yu");
+                        tn.setText("yu");
+                        break;
+                    case "yu":
+                        ivLearn.setImageResource(R.drawable.qyo);
+                        seged = "yo";
+                        tw.setText("Hiaragana yo");
+                        tn.setText("yo");
+                        break;
+                    case "yo":
+                        ivLearn.setImageResource(R.drawable.qra);
+                        seged = "ra";
+                        tw.setText("Hiaragana ra");
+                        tn.setText("ra");
+                        break;
+                    case "ra":
+                        ivLearn.setImageResource(R.drawable.qri);
+                        seged = "ri";
+                        tw.setText("Hiaragana ri");
+                        tn.setText("ri");
+                        break;
+                    case "ri":
+                        ivLearn.setImageResource(R.drawable.qru);
+                        seged = "ru";
+                        tw.setText("Hiaragana ru");
+                        tn.setText("ru");
+                        break;
+                    case "ru":
+                        ivLearn.setImageResource(R.drawable.qre);
+                        seged = "re";
+                        tw.setText("Hiaragana re");
+                        tn.setText("re");
+                        break;
+                    case "re":
+                        ivLearn.setImageResource(R.drawable.qro);
+                        seged = "ro";
+                        tw.setText("Hiaragana ro");
+                        tn.setText("ro");
+                        break;
+                    case "ro":
+                        ivLearn.setImageResource(R.drawable.qwa);
+                        seged = "wa";
+                        tw.setText("Hiaragana wa");
+                        tn.setText("wa");
+                        break;
+                    case "wa":
+                        ivLearn.setImageResource(R.drawable.qwo);
+                        seged = "wo";
+                        tw.setText("Hiaragana wo");
+                        tn.setText("wo");
+                        break;
+                    case "wo":
+                        ivLearn.setImageResource(R.drawable.qn);
+                        seged = "n";
+                        tw.setText("Hiaragana n");
+                        tn.setText("n");
+                        break;
+                    case "n":
+                        Toast.makeText(getContext(), "Hiba", Toast.LENGTH_SHORT).show();
+                        break;
                 }
             }
 
         });
 
         toLeft.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View v) {
-                TextView tw = getView().findViewById(R.id.textviewhiragana);
+                TextView tw;
+                tw = requireNonNull(requireNonNull(getView())).<TextView>findViewById(R.id.textviewhiragana);
                 ImageView ivLearn = getView().findViewById(R.id.ivLearn);
                 TextView tn = getView().findViewById(R.id.textviewname);
 
-                if(seged.equals("a"))
-                {
-                    Toast.makeText(getContext(), "Hiba", Toast.LENGTH_SHORT).show();
-                }
-                else if(seged.equals("i"))
-                {
-                    ivLearn.setImageResource(R.drawable.qa);
-                    seged = "a";
-                    tw.setText("Hiragana a");
-                    tn.setText("a");
-                }
-                else if(seged.equals("u"))
-                {
-                    ivLearn.setImageResource(R.drawable.qi);
-                    seged = "i";
-                    tw.setText("Hiragana i");
-                }
-                else if(seged.equals("e"))
-                {
-                    ivLearn.setImageResource(R.drawable.qu);
-                    seged = "u";
-                    tw.setText("Hiragana u");
-                }
-                else if(seged.equals("o"))
-                {
-                    ivLearn.setImageResource(R.drawable.qe);
-                    seged = "e";
-                    tw.setText("Hiragana e");
-                }
-                else if(seged.equals("ka"))
-                {
-                    ivLearn.setImageResource(R.drawable.qo);
-                    seged = "o";
-                    tw.setText("Hiragana o");
-                }
-                else if(seged.equals("ki"))
-                {
-                    ivLearn.setImageResource(R.drawable.qka);
-                    seged = "ka";
-                    tw.setText("Hiragana ka");
-                }
-                else if(seged.equals("ku"))
-                {
-                    ivLearn.setImageResource(R.drawable.qki);
-                    seged = "ki";
-                    tw.setText("Hiragana ki");
-                }
-                else if(seged.equals("ke"))
-                {
-                    ivLearn.setImageResource(R.drawable.qku);
-                    seged = "ku";
-                    tw.setText("Hiragana ku");
-                }
-                else if(seged.equals("ko"))
-                {
-                    ivLearn.setImageResource(R.drawable.qke);
-                    seged = "ke";
-                    tw.setText("Hiragana ke");
-                }
-                else if(seged.equals("sa"))
-                {
-                    ivLearn.setImageResource(R.drawable.qko);
-                    seged = "ko";
-                    tw.setText("Hiragana ko");
-                }
-                else if(seged.equals("shi"))
-                {
-                    ivLearn.setImageResource(R.drawable.qsa);
-                    seged = "sa";
-                    tw.setText("Hiragana sa");
-                }
-                else if(seged.equals("su"))
-                {
-                    ivLearn.setImageResource(R.drawable.qshi);
-                    seged = "shi";
-                    tw.setText("Hiragana shi");
-                }
-                else if(seged.equals("se"))
-                {
-                    ivLearn.setImageResource(R.drawable.qsu);
-                    seged = "su";
-                    tw.setText("Hiragana su");
-                }
-                else if(seged.equals("so"))
-                {
-                    ivLearn.setImageResource(R.drawable.qse);
-                    seged = "se";
-                    tw.setText("Hiragana se");
-                }
-                else if(seged.equals("ta"))
-                {
-                    ivLearn.setImageResource(R.drawable.qso);
-                    seged = "so";
-                    tw.setText("Hiragana so");
-                }
-                else if(seged.equals("chi"))
-                {
-                    ivLearn.setImageResource(R.drawable.qta);
-                    seged = "ta";
-                    tw.setText("Hiragana ta");
-                }
-                else if(seged.equals("tsu"))
-                {
-                    ivLearn.setImageResource(R.drawable.qchi);
-                    seged = "chi";
-                    tw.setText("Hiragana chi");
-                }
-                else if(seged.equals("te"))
-                {
-                    ivLearn.setImageResource(R.drawable.qtsu);
-                    seged = "tsu";
-                    tw.setText("Hiragana tsu");
-                }
-                else if(seged.equals("to"))
-                {
-                    ivLearn.setImageResource(R.drawable.qte);
-                    seged = "te";
-                    tw.setText("Hiragana te");
-                }
-                else if(seged.equals("na"))
-                {
-                    ivLearn.setImageResource(R.drawable.qte);
-                    seged = "te";
-                    tw.setText("Hiragana te");
-                }
-                else if(seged.equals("ni"))
-                {
-                    ivLearn.setImageResource(R.drawable.qna);
-                    seged = "na";
-                    tw.setText("Hiragana na");
-                }
-                else if(seged.equals("nu"))
-                {
-                    ivLearn.setImageResource(R.drawable.qni);
-                    seged = "ni";
-                    tw.setText("Hiragana ni");
-                }
-                else if(seged.equals("ne"))
-                {
-                    ivLearn.setImageResource(R.drawable.qnu);
-                    seged = "nu";
-                    tw.setText("Hiragana nu");
-                }
-                else if(seged.equals("no"))
-                {
-                    ivLearn.setImageResource(R.drawable.qne);
-                    seged = "ne";
-                    tw.setText("Hiragana ne");
-                }
-                else if(seged.equals("ha"))
-                {
-                    ivLearn.setImageResource(R.drawable.qno);
-                    seged = "no";
-                    tw.setText("Hiragana no");
-                }
-                else if(seged.equals("hi"))
-                {
-                    ivLearn.setImageResource(R.drawable.qha);
-                    seged = "ha";
-                    tw.setText("Hiragana ha");
-                }
-                else if(seged.equals("fu"))
-                {
-                    ivLearn.setImageResource(R.drawable.qhi);
-                    seged = "hi";
-                    tw.setText("Hiragana hi");
-                }
-                else if(seged.equals("he"))
-                {
-                    ivLearn.setImageResource(R.drawable.qfu);
-                    seged = "fu";
-                    tw.setText("Hiragana fu");
-                }
-                else if(seged.equals("ho"))
-                {
-                    ivLearn.setImageResource(R.drawable.qhe);
-                    seged = "he";
-                    tw.setText("Hiragana he");
-                }
-                else if(seged.equals("ma"))
-                {
-                    ivLearn.setImageResource(R.drawable.qho);
-                    seged = "ho";
-                    tw.setText("Hiragana ho");
+                switch (seged) {
+                    case "a":
+                        Toast.makeText(getContext(), "Hiba", Toast.LENGTH_SHORT).show();
+                        break;
+                    case "i":
+                        ivLearn.setImageResource(R.drawable.qa);
+                        seged = "a";
+                        tw.setText("Hiragana a");
+                        tn.setText("a");
+                        break;
+                    case "u":
+                        ivLearn.setImageResource(R.drawable.qi);
+                        seged = "i";
+                        tw.setText("Hiragana i");
+                        break;
+                    case "e":
+                        ivLearn.setImageResource(R.drawable.qu);
+                        seged = "u";
+                        tw.setText("Hiragana u");
+                        break;
+                    case "o":
+                        ivLearn.setImageResource(R.drawable.qe);
+                        seged = "e";
+                        tw.setText("Hiragana e");
+                        break;
+                    case "ka":
+                        ivLearn.setImageResource(R.drawable.qo);
+                        seged = "o";
+                        tw.setText("Hiragana o");
+                        break;
+                    case "ki":
+                        ivLearn.setImageResource(R.drawable.qka);
+                        seged = "ka";
+                        tw.setText("Hiragana ka");
+                        break;
+                    case "ku":
+                        ivLearn.setImageResource(R.drawable.qki);
+                        seged = "ki";
+                        tw.setText("Hiragana ki");
+                        break;
+                    case "ke":
+                        ivLearn.setImageResource(R.drawable.qku);
+                        seged = "ku";
+                        tw.setText("Hiragana ku");
+                        break;
+                    case "ko":
+                        ivLearn.setImageResource(R.drawable.qke);
+                        seged = "ke";
+                        tw.setText("Hiragana ke");
+                        break;
+                    case "sa":
+                        ivLearn.setImageResource(R.drawable.qko);
+                        seged = "ko";
+                        tw.setText("Hiragana ko");
+                        break;
+                    case "shi":
+                        ivLearn.setImageResource(R.drawable.qsa);
+                        seged = "sa";
+                        tw.setText("Hiragana sa");
+                        break;
+                    case "su":
+                        ivLearn.setImageResource(R.drawable.qshi);
+                        seged = "shi";
+                        tw.setText("Hiragana shi");
+                        break;
+                    case "se":
+                        ivLearn.setImageResource(R.drawable.qsu);
+                        seged = "su";
+                        tw.setText("Hiragana su");
+                        break;
+                    case "so":
+                        ivLearn.setImageResource(R.drawable.qse);
+                        seged = "se";
+                        tw.setText("Hiragana se");
+                        break;
+                    case "ta":
+                        ivLearn.setImageResource(R.drawable.qso);
+                        seged = "so";
+                        tw.setText("Hiragana so");
+                        break;
+                    case "chi":
+                        ivLearn.setImageResource(R.drawable.qta);
+                        seged = "ta";
+                        tw.setText("Hiragana ta");
+                        break;
+                    case "tsu":
+                        ivLearn.setImageResource(R.drawable.qchi);
+                        seged = "chi";
+                        tw.setText("Hiragana chi");
+                        break;
+                    case "te":
+                        ivLearn.setImageResource(R.drawable.qtsu);
+                        seged = "tsu";
+                        tw.setText("Hiragana tsu");
+                        break;
+                    case "to":
+                        ivLearn.setImageResource(R.drawable.qte);
+                        seged = "te";
+                        tw.setText("Hiragana te");
+                        break;
+                    case "na":
+                        ivLearn.setImageResource(R.drawable.qte);
+                        seged = "te";
+                        tw.setText("Hiragana te");
+                        break;
+                    case "ni":
+                        ivLearn.setImageResource(R.drawable.qna);
+                        seged = "na";
+                        tw.setText("Hiragana na");
+                        break;
+                    case "nu":
+                        ivLearn.setImageResource(R.drawable.qni);
+                        seged = "ni";
+                        tw.setText("Hiragana ni");
+                        break;
+                    case "ne":
+                        ivLearn.setImageResource(R.drawable.qnu);
+                        seged = "nu";
+                        tw.setText("Hiragana nu");
+                        break;
+                    case "no":
+                        ivLearn.setImageResource(R.drawable.qne);
+                        seged = "ne";
+                        tw.setText("Hiragana ne");
+                        break;
+                    case "ha":
+                        ivLearn.setImageResource(R.drawable.qno);
+                        seged = "no";
+                        tw.setText("Hiragana no");
+                        break;
+                    case "hi":
+                        ivLearn.setImageResource(R.drawable.qha);
+                        seged = "ha";
+                        tw.setText("Hiragana ha");
+                        break;
+                    case "fu":
+                        ivLearn.setImageResource(R.drawable.qhi);
+                        seged = "hi";
+                        tw.setText("Hiragana hi");
+                        break;
+                    case "he":
+                        ivLearn.setImageResource(R.drawable.qfu);
+                        seged = "fu";
+                        tw.setText("Hiragana fu");
+                        break;
+                    case "ho":
+                        ivLearn.setImageResource(R.drawable.qhe);
+                        seged = "he";
+                        tw.setText("Hiragana he");
+                        break;
+                    case "ma":
+                        ivLearn.setImageResource(R.drawable.qho);
+                        seged = "ho";
+                        tw.setText("Hiragana ho");
+                        break;
+                    case "mi":
+                        ivLearn.setImageResource(R.drawable.qma);
+                        seged = "ma";
+                        tw.setText("Hiaragana ma");
+                        tn.setText("ma");
+                        break;
+                    case "mu":
+                        ivLearn.setImageResource(R.drawable.qmi);
+                        seged = "mi";
+                        tw.setText("Hiaragana mi");
+                        tn.setText("mi");
+                        break;
+                    case "me":
+                        ivLearn.setImageResource(R.drawable.qmu);
+                        seged = "mu";
+                        tw.setText("Hiaragana mu");
+                        tn.setText("mu");
+                        break;
+                    case "mo":
+                        ivLearn.setImageResource(R.drawable.qme);
+                        seged = "me";
+                        tw.setText("Hiaragana me");
+                        tn.setText("me");
+                        break;
+                    case "ya":
+                        ivLearn.setImageResource(R.drawable.qmo);
+                        seged = "mo";
+                        tw.setText("Hiaragana mo");
+                        tn.setText("mo");
+                        break;
+                    case "yu":
+                        ivLearn.setImageResource(R.drawable.qya);
+                        seged = "ya";
+                        tw.setText("Hiaragana ya");
+                        tn.setText("ya");
+                        break;
+                    case "yo":
+                        ivLearn.setImageResource(R.drawable.qyu);
+                        seged = "yu";
+                        tw.setText("Hiaragana yu");
+                        tn.setText("yu");
+                        break;
+                    case "ra":
+                        ivLearn.setImageResource(R.drawable.qyo);
+                        seged = "yo";
+                        tw.setText("Hiaragana yo");
+                        tn.setText("yo");
+                        break;
+                    case "ri":
+                        ivLearn.setImageResource(R.drawable.qra);
+                        seged = "ra";
+                        tw.setText("Hiaragana ra");
+                        tn.setText("ra");
+                        break;
+                    case "ru":
+                        ivLearn.setImageResource(R.drawable.qri);
+                        seged = "ri";
+                        tw.setText("Hiaragana ri");
+                        tn.setText("ri");
+                        break;
+                    case "re":
+                        ivLearn.setImageResource(R.drawable.qru);
+                        seged = "ru";
+                        tw.setText("Hiaragana ru");
+                        tn.setText("ru");
+                        break;
+                    case "ro":
+                        ivLearn.setImageResource(R.drawable.qre);
+                        seged = "re";
+                        tw.setText("Hiaragana re");
+                        tn.setText("re");
+                        break;
+                    case "wa":
+                        ivLearn.setImageResource(R.drawable.qro);
+                        seged = "ro";
+                        tw.setText("Hiaragana ro");
+                        tn.setText("ro");
+                        break;
+                    case "wo":
+                        ivLearn.setImageResource(R.drawable.qwa);
+                        seged = "wa";
+                        tw.setText("Hiaragana wa");
+                        tn.setText("wa");
+                        break;
+                    case "n":
+                        ivLearn.setImageResource(R.drawable.qwo);
+                        seged = "wo";
+                        tw.setText("Hiaragana wo");
+                        tn.setText("wo");
+                        break;
                 }
 
             }

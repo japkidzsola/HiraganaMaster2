@@ -11,22 +11,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:text="Sorry you couldn't make it"
-        android:textSize="50dp"
+        android:text="@string/unsuccessfulEnd"
+        android:textSize="50sp"
         android:gravity="center"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I think I can make it this time"
-        android:textSize="20dp"
+        android:text="@string/encouragement"
+        android:textSize="20sp"
         android:gravity="center"
         android:layout_marginBottom="20dp"/>
     <Button
         android:id="@+id/failredobeginner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I want to try an easier level"
+        android:text="@string/backToTest"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         />
@@ -35,7 +35,7 @@
         android:id="@+id/failredomedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I want to redo medium level"
+        android:text="@string/backToRedoMedium"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         />
@@ -43,15 +43,15 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I think I need to go back to learn"
-        android:textSize="20dp"
+        android:text="@string/backToLearn"
+        android:textSize="20sp"
         android:gravity="center"
         android:layout_marginBottom="20dp"/>
     <Button
         android:id="@+id/failredolearn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I want to go back to learn"
+        android:text="@string/backToLearnButton"
         android:layout_gravity="center"
         />
 

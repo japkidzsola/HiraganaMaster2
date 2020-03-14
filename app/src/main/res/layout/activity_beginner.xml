@@ -20,31 +20,31 @@
             android:id="@+id/points"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="20dp"
+            android:text="@string/_0"
+            android:textSize="20sp"
             />
         <TextView
             android:id="@+id/slash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="/"
-            android:textSize="20dp"
+            android:text="@string/slash"
+            android:textSize="20sp"
             />
 
             <TextView
                 android:id="@+id/pointsneeded"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="6"
-                android:textSize="20dp" />
+                android:text="@string/_6"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/beginnertv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Beginner test"
-            android:textSize="25dp"
+            android:text="@string/beginner_test"
+            android:textSize="25sp"
             android:gravity="center"/>
     </RelativeLayout>
 
@@ -74,14 +74,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="first"
-            />
+            android:text="@string/first"
+            tools:ignore="ButtonStyle,NestedWeights" />
         <Button
             android:id="@+id/second"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="second"
+            android:text="@string/second"
             />
 
     </LinearLayout>
@@ -97,14 +97,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="third"
-            />
+            android:text="@string/third"
+            tools:ignore="NestedWeights" />
         <Button
             android:id="@+id/fourth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="fourth"
+            android:text="@string/fourth"
             />
 
     </LinearLayout>

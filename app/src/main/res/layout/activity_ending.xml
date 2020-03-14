@@ -11,15 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:text="Good job u did it"
-        android:textSize="50dp"
+        android:text="@string/sucessfulEnd"
+        android:textSize="50sp"
         android:gravity="center"/>
 
     <TextView
         android:id="@+id/score"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Your score: "
+        android:text="@string/score"
         android:textSize="20sp"
         android:layout_marginBottom="20dp"
         android:gravity="center"
@@ -29,7 +29,7 @@
         android:id="@+id/redobeginner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I want to do the beginner test"
+        android:text="@string/backToBeginnerTest"
         android:layout_marginBottom="20dp"
         />
 
@@ -37,7 +37,7 @@
         android:id="@+id/redomedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I want to do the medium test"
+        android:text="@string/backToMediumTest"
         android:layout_marginBottom="20dp"
         />
     <TextView
@@ -52,7 +52,7 @@
         android:id="@+id/redohardcore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I want to do the hardcore test"
+        android:text="@string/backToHardcoreTest"
         />
 
 </LinearLayout>

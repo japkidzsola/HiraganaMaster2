@@ -11,14 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvlogin"
-        android:text="Please login"
-        android:textSize="30dp"
+        android:text="@string/please_login"
+        android:textSize="30sp"
         android:gravity="center"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
+        android:hint="@string/name"
         android:layout_below="@+id/tvlogin"
         android:id="@+id/etName"
         />
@@ -26,28 +26,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:hint="Password"
+        android:hint="@string/password"
         android:layout_below="@+id/etName"
         android:id="@+id/etPassword"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="login"
+        android:text="@string/login"
         android:layout_below="@+id/etPassword"
         android:id="@+id/btnLogin"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You haven't registrated yet?"
+        android:text="@string/you_haven_t_registrated_yet"
         android:layout_below="@+id/btnLogin"
         android:id="@+id/tvregistration"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="registration"
+        android:text="@string/registration"
         android:layout_below="@+id/tvregistration"
         android:id="@+id/btnRegistration"
         />
