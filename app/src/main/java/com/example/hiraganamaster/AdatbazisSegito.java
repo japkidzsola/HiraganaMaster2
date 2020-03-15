@@ -45,7 +45,7 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
                 " FOREIGN key (" + COL_FELHASZ_ID + ") REFERENCES " + COL_ID +");";
 
         db.execSQL(createTables);
-        db.execSQL(createTables2);
+        //db.execSQL(createTables2);
     }
 
     @Override

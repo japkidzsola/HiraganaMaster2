@@ -135,6 +135,9 @@ public class HiraganaLearnFragment extends Fragment {
         ImageView ivLearn = getView().findViewById(R.id.ivLearn);
         TextView tn = getView().findViewById(R.id.textviewname);
         tw.setText("Hiragana");
+
+
+
         if(seged.isEmpty()) {
 
             if (betu.equals("a")) {
