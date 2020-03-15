@@ -7,6 +7,7 @@ import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.hiraganamaster.AdatbazisSegito;
@@ -48,6 +52,12 @@ public class HiraganaMasterHomeFragment extends Fragment {
         db = new AdatbazisSegito(getContext());
         TextView tw = getView().findViewById(R.id.welcome);
 
+        ScrollView linearLayout = getView().findViewById(R.id.hiraganamasterhome);
+        AnimationDrawable animationDrawable = (AnimationDrawable) linearLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(4000);
+        animationDrawable.start();
+
         login = getView().findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +66,7 @@ public class HiraganaMasterHomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        if(bejelentkezett() == true) {
+        if(bejelentkezett()) {
             tw.setText("Welcome "+getTeljesNev());
         }
         else
