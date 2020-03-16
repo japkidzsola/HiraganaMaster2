@@ -27,6 +27,8 @@ import android.widget.Toast;
 
 import java.util.Random;
 
+import maes.tech.intentanim.CustomIntent;
+
 public class Medium extends AppCompatActivity {
 
     public Button first,second,third,fourth,fifth,sixth;
@@ -982,7 +984,24 @@ public class Medium extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         stopTimer();
-        finish();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Would you like to exit this test?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Medium.this.finish();
+                        CustomIntent.customType(Medium.this,"fadein-to-fadeout");
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                        startTimer();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+
     }
 
     @Override

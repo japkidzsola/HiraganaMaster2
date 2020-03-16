@@ -27,11 +27,13 @@ import com.example.hiraganamaster.Hardcore;
 import com.example.hiraganamaster.Medium;
 import com.example.hiraganamaster.R;
 
+import maes.tech.intentanim.CustomIntent;
+
 public class TestFragment extends Fragment {
 
     private Button beginnerbtn, mediumbtn, hardcorebtn;
-    public SeekBar seekBar;
-    public TextView seekbartv, mediumdesc;
+    private SeekBar seekBar;
+    private TextView seekbartv, mediumdesc;
 
     private TestViewModel mViewModel;
 
@@ -107,6 +109,7 @@ public class TestFragment extends Fragment {
                 int itovabbad = Integer.parseInt(tovabbad);
                 intent.putExtra("Value",tovabbad);
                 startActivity(intent);
+                CustomIntent.customType(getContext(),"fadein-to-fadeout");
             }
         });
 
