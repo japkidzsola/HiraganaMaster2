@@ -80,5 +80,6 @@
     <string name="want_to_logout_from_this_profile">Want to logout from this profile?</string>
     <string name="logout_from_profile_here">Logout from profile here</string>
     <string name="hardcoreSolution">send</string>
+    <string name="error">Error</string>
 
 </resources>

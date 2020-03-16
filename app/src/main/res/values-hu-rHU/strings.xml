@@ -80,4 +80,5 @@
     <string name="want_to_logout_from_this_profile">Ki szeretne jelentkezni?</string>
     <string name="logout_from_profile_here">Kijelentkezés itt</string>
     <string name="hardcoreSolution">küld</string>
+    <string name="error">Hiba</string>
 </resources>

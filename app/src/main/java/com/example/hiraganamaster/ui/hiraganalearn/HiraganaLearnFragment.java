@@ -26,6 +26,7 @@ import com.example.hiraganamaster.Modification;
 import com.example.hiraganamaster.R;
 import com.example.hiraganamaster.ui.hiraganamasterhome.HiraganaMasterHomeFragment;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 import static java.util.Objects.*;
@@ -136,6 +137,29 @@ public class HiraganaLearnFragment extends Fragment {
         TextView tn = getView().findViewById(R.id.textviewname);
         tw.setText("Hiragana");
 
+        ArrayList<String> regikedvencek = new ArrayList<String>();
+        String [] regi ;
+        String [] uj ;
+
+        Cursor cursorAdatok = dbhelper.adatLekerdezes();
+        if (cursorAdatok == null){
+            Toast.makeText(getContext(),
+                    "Sikertlen Adatlekérdezés", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (cursorAdatok.getCount() == 0){
+            Toast.makeText(getContext(),
+                    "Nincs még felvéve adat", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        StringBuffer stringBuffer = new StringBuffer();
+        while (cursorAdatok.moveToNext()){
+                stringBuffer.append(cursorAdatok.getString(4) + ",");
+                //regikedvencek.add(stringBuffer.toString());
+        }
+        String adatbaziskedvenc = stringBuffer.toString();
+
+        String[] sor = adatbaziskedvenc.split(",");
 
 
         if(seged.isEmpty()) {
@@ -955,7 +979,7 @@ public class HiraganaLearnFragment extends Fragment {
 
                 switch (seged) {
                     case "a":
-                        Toast.makeText(getContext(), "Hiba", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), R.string.error, Toast.LENGTH_SHORT).show();
                         break;
                     case "i":
                         ivLearn.setImageResource(R.drawable.qa);

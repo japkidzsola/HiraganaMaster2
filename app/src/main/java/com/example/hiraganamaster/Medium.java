@@ -52,11 +52,11 @@ public class Medium extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        LinearLayout linearLayout = findViewById(R.id.layout);
+        /*LinearLayout linearLayout = findViewById(R.id.layout);
         AnimationDrawable animationDrawable = (AnimationDrawable) linearLayout.getBackground();
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(4000);
-        animationDrawable.start();
+        animationDrawable.start();*/
 
         init();
 
