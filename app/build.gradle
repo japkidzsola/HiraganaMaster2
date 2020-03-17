@@ -28,6 +28,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.2.1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'com.github.hajiyevelnur92:intentanimation:1.0'
+    implementation 'nl.bryanderidder:themed-toggle-button-group:1.1.0'
+    implementation 'com.google.android:flexbox:2.0.1'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

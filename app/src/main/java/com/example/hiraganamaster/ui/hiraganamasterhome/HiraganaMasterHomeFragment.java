@@ -71,7 +71,7 @@ public class HiraganaMasterHomeFragment extends Fragment {
         }
         else
         {
-            tw.setText("Welcom to Hiragana Master");
+            tw.setText("Welcome to Hiragana Master");
         }
 
     }
