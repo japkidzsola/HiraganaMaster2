@@ -1,5 +1,6 @@
 package com.example.hiraganamaster.ui.hiraganamasterhome;
 
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Context;
@@ -26,6 +27,8 @@ import android.widget.TextView;
 import com.example.hiraganamaster.AdatbazisSegito;
 import com.example.hiraganamaster.Login;
 import com.example.hiraganamaster.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 public class HiraganaMasterHomeFragment extends Fragment {
 
@@ -50,9 +53,19 @@ public class HiraganaMasterHomeFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(HiraganaMasterHomeViewModel.class);
         db = new AdatbazisSegito(getContext());
+
+        /*FloatingActionButton fab = getView().findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Bruh", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });*/
+
         TextView tw = getView().findViewById(R.id.welcome);
 
-        ScrollView linearLayout = getView().findViewById(R.id.hiraganamasterhome);
+        CoordinatorLayout linearLayout = getView().findViewById(R.id.hiraganamasterhome);
         AnimationDrawable animationDrawable = (AnimationDrawable) linearLayout.getBackground();
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(4000);
