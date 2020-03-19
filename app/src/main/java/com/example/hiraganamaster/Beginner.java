@@ -30,87 +30,18 @@ public class Beginner extends AppCompatActivity {
         setContentView(R.layout.activity_beginner);
         init();
 
-        final String megold = general();
-
+        final String[] megold = {general()};
+        String ertek = getIntent().getExtras().getString("Value");
+        pointsneeded.setText(ertek);
         final int seged = 0;
 
-        //randomHiragana = new ArrayList<>();
-
-     /*   randomHiragana.add("A");
-        randomHiragana.add("I");
-        randomHiragana.add("U");
-        randomHiragana.add("E");
-        randomHiragana.add("O");*/
-      /*   randomHiragana.add("ka");
-        randomHiragana.add("ki");
-        randomHiragana.add("ku");
-        randomHiragana.add("ke");
-        randomHiragana.add("ko");
-        randomHiragana.add("sa");
-        randomHiragana.add("shi");
-        randomHiragana.add("su");
-        randomHiragana.add("se");
-        randomHiragana.add("so");
-        randomHiragana.add("ta");
-        randomHiragana.add("chi");
-        randomHiragana.add("tsu");
-        randomHiragana.add("te");
-        randomHiragana.add("to");*/
-
-        /*for (int i = 0; i < randomHiragana.size(); i++) {
-            pointsneeded.setText("végigment");
-        }
-
-        int k = randomHiragana.size();
-        String po = Integer.toString(k);
-        points.setText(po);
-
-        if (randomHiragana.isEmpty())
-        {
-            pointsneeded.setText("ez üres gecc");
-        }*/
-
         //general();
-        elhelyez();
+        final int[] pontok = {0};
+        final int[] minuszpontok = {0};
 
         int place = randomplace();
 
-        if(megold != null)
-        {
-            //beginnertv.setText(megold);
-        }
 
-        String randomgene = randomgenerator();
-
-        //pointsneeded.setText(randomgene);
-
-
-       /* if(megold != null)
-        {
-            if (place == 1) {
-                first.setText(megold);
-            } else if (place == 2) {
-                second.setText(megold);
-            } else if (place == 3) {
-                third.setText(megold);
-            } else if (place == 4) {
-                fourth.setText(megold);
-            }
-        }
-        else
-        {
-            Toast.makeText(this, "nem tudom elhelyezni", Toast.LENGTH_SHORT).show();
-        }*/
-
-        /*for (String t: randomHiragana)
-        {
-            if(t.equals(randoms))
-            {
-                beginnertv.setText("no luck");
-                beginnerimg.setImageResource(R.drawable.qn);
-            }
-            beginnertv.setText("it is possible");
-        }*/
 
         if(points.getText().toString().equals(pointsneeded.getText().toString()))
         {
@@ -120,68 +51,117 @@ public class Beginner extends AppCompatActivity {
         }
 
         //final String finalMegoldas = megold;
-        if(megold != null) {
+        if(megold[0] != null) {
             //final String finalMegoldas = megold;
             first.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //randomgenerator();
-                    //beginnertv.setText(randomgenerator());
-                    //beginnertv.setText(kiir);
-                    if (megold.equals(first.getText().toString().toLowerCase())) {
-                        Toast.makeText(Beginner.this, "Good job", Toast.LENGTH_SHORT).show();
-                        general();
-                        elhelyez();
-                        String pont = points.getText().toString();
-                        int pont1 = Integer.parseInt(pont);
-                        points.setText(pont1+1);
+                    if (megold[0].equals(first.getText().toString().toLowerCase())) {
+                        String seged = Integer.toString(pontHozzaad(pontok[0]));
+                        pontok[0] = pontHozzaad(pontok[0]);
+                        points.setText(seged);
+                        if(points.getText().toString().equals(pointsneeded.getText().toString()))
+                        {
+                            Intent intent = new Intent(Beginner.this, Ending.class);
+                            String tovabbit = pointsneeded.getText().toString();
+                            String minusztovabbit = Integer.toString(minuszpontok[0]);
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Success",tovabbit);
+                            intent.putExtra("Unsuccess",minusztovabbit);
+                            intent.putExtra("Value",e);
+                            startActivity(intent);
+                            finish();
+                        }else {
+                            megold[0] = general();
+                        }
                     } else {
                         Toast.makeText(Beginner.this, "Try again", Toast.LENGTH_SHORT).show();
+                        pontHozzaad(minuszpontok[0]);
+                        minuszpontok[0] = pontHozzaad(minuszpontok[0]);
                     }
                 }
             });
             second.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (megold.equals(second.getText().toString().toLowerCase())) {
-                        Toast.makeText(Beginner.this, "Good job", Toast.LENGTH_SHORT).show();
-                        general();
-                        elhelyez();
-                        String pont = points.getText().toString();
-                        int pont1 = Integer.parseInt(pont);
-                        points.setText(pont1+1);
+                    if (megold[0].equals(second.getText().toString().toLowerCase())) {
+                        String seged = Integer.toString(pontHozzaad(pontok[0]));
+                        pontok[0] = pontHozzaad(pontok[0]);
+                        points.setText(seged);
+                        if(points.getText().toString().equals(pointsneeded.getText().toString()))
+                        {
+                            Intent intent = new Intent(Beginner.this, Ending.class);
+                            String tovabbit = pointsneeded.getText().toString();
+                            String minusztovabbit = Integer.toString(minuszpontok[0]);
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Success",tovabbit);
+                            intent.putExtra("Unsuccess",minusztovabbit);
+                            intent.putExtra("Value",e);
+                            startActivity(intent);
+                            finish();
+                        }else {
+                            megold[0] = general();
+                        }
                     } else {
                         Toast.makeText(Beginner.this, "Try again", Toast.LENGTH_SHORT).show();
+                        pontHozzaad(minuszpontok[0]);
+                        minuszpontok[0] = pontHozzaad(minuszpontok[0]);
                     }
                 }
             });
             third.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (megold.equals(third.getText().toString().toLowerCase())) {
-                        Toast.makeText(Beginner.this, "Good job", Toast.LENGTH_SHORT).show();
-                        general();
-                        elhelyez();
-                        String pont = points.getText().toString();
-                        int pont1 = Integer.parseInt(pont);
-                        points.setText(pont1+1);
+                    if (megold[0].equals(third.getText().toString().toLowerCase())) {
+                        String seged = Integer.toString(pontHozzaad(pontok[0]));
+                        pontok[0] = pontHozzaad(pontok[0]);
+                        points.setText(seged);
+                        if(points.getText().toString().equals(pointsneeded.getText().toString()))
+                        {
+                            Intent intent = new Intent(Beginner.this, Ending.class);
+                            String tovabbit = pointsneeded.getText().toString();
+                            String minusztovabbit = Integer.toString(minuszpontok[0]);
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Success",tovabbit);
+                            intent.putExtra("Unsuccess",minusztovabbit);
+                            intent.putExtra("Value",e);
+                            startActivity(intent);
+                            finish();
+                        }else {
+                            megold[0] = general();
+                        }
                     } else {
                         Toast.makeText(Beginner.this, "Try again", Toast.LENGTH_SHORT).show();
+                        pontHozzaad(minuszpontok[0]);
+                        minuszpontok[0] = pontHozzaad(minuszpontok[0]);
                     }
                 }
             });
             fourth.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (megold.equals(fourth.getText().toString().toLowerCase())) {
-                        Toast.makeText(Beginner.this, "Good job", Toast.LENGTH_SHORT).show();
-                        general();
-                        elhelyez();
-                        String pont = points.getText().toString();
-                        int pont1 = Integer.parseInt(pont);
-                        points.setText(pont1+1);
+                    if (megold[0].equals(fourth.getText().toString().toLowerCase())) {
+                        String seged = Integer.toString(pontHozzaad(pontok[0]));
+                        pontok[0] = pontHozzaad(pontok[0]);
+                        points.setText(seged);
+                        if(points.getText().toString().equals(pointsneeded.getText().toString()))
+                        {
+                            Intent intent = new Intent(Beginner.this, Ending.class);
+                            String tovabbit = pointsneeded.getText().toString();
+                            String minusztovabbit = Integer.toString(minuszpontok[0]);
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Success",tovabbit);
+                            intent.putExtra("Unsuccess",minusztovabbit);
+                            intent.putExtra("Value",e);
+                            startActivity(intent);
+                            finish();
+                        }else {
+                            megold[0] = general();
+                        }
                     } else {
                         Toast.makeText(Beginner.this, "Try again", Toast.LENGTH_SHORT).show();
+                        pontHozzaad(minuszpontok[0]);
+                        minuszpontok[0] = pontHozzaad(minuszpontok[0]);
                     }
                 }
             });
@@ -191,78 +171,321 @@ public class Beginner extends AppCompatActivity {
 
     public String general()
     {
-
-
-        randomHiragana = new ArrayList<>();
-        voltmar = new ArrayList<>();
-
-
-        //voltmar = new ArrayList<>();
-
-        randomHiragana.add("a");
-        randomHiragana.add("i");
-        randomHiragana.add("u");
-        randomHiragana.add("e");
-        randomHiragana.add("o");
+        String[] tobbigenereal = {"a","i","u","e","o","ka","ki","ku","ke","ko","sa","shi","su","se","so","ta","chi","tsu","te","to","na","ni","nu","ne","no","ha","hi","hu","he","ho","ma","mi","mu","me","mo","ya","yu","yo","ra","ri","ru","re","ro","wa","wo","n"};
+        int min = 1;
+        int max = 46;
+        Random r = new Random();
+        int random = r.nextInt(max-min+1) + min;
         String megoldas = null;
-        int randoms = Integer.parseInt(randomgenerator());
-        final String kiir = Integer.toString(randoms);
-        beginnertv.setText(kiir);
 
-        for (int i = 0; i < randomHiragana.size(); i++)
+        int elhelyez = randomelhelyez();
+
+        if(random == 1) {
+            beginnerimg.setImageResource(R.drawable.qa);
+            megoldas = "a";
+        }
+        else if(random == 2) {
+            beginnerimg.setImageResource(R.drawable.qi);
+            megoldas = "i";
+        }
+        else if(random == 3) {
+            beginnerimg.setImageResource(R.drawable.qu);
+            megoldas = "u";
+        }
+        else if(random == 4) {
+            beginnerimg.setImageResource(R.drawable.qe);
+            megoldas = "e";
+        }
+        else if(random == 5) {
+            beginnerimg.setImageResource(R.drawable.qo);
+            megoldas = "o";
+        }
+        else if(random == 6) {
+            beginnerimg.setImageResource(R.drawable.qka);
+            megoldas = "ka";
+        }
+        else if(random == 7) {
+            beginnerimg.setImageResource(R.drawable.qki);
+            megoldas = "ki";
+        }
+        else if(random == 8) {
+            beginnerimg.setImageResource(R.drawable.qku);
+            megoldas = "ku";
+        }
+        else if(random == 9) {
+            beginnerimg.setImageResource(R.drawable.qke);
+            megoldas = "ke";
+        }
+        else if(random == 10) {
+            beginnerimg.setImageResource(R.drawable.qko);
+            megoldas = "ko";
+        }
+        else if(random == 11) {
+            beginnerimg.setImageResource(R.drawable.qsa);
+            megoldas = "sa";
+        }
+        else if(random == 12) {
+            beginnerimg.setImageResource(R.drawable.qshi);
+            megoldas = "shi";
+        }
+        else if(random == 13) {
+            beginnerimg.setImageResource(R.drawable.qsu);
+            megoldas = "su";
+        }
+        else if(random == 14) {
+            beginnerimg.setImageResource(R.drawable.qse);
+            megoldas = "se";
+        }
+        else if(random == 15) {
+            beginnerimg.setImageResource(R.drawable.qso);
+            megoldas = "so";
+        }
+        else if(random == 16) {
+            beginnerimg.setImageResource(R.drawable.qta);
+            megoldas = "ta";
+        }
+        else if(random == 17) {
+            beginnerimg.setImageResource(R.drawable.qchi);
+            megoldas = "chi";
+        }
+        else if(random == 18) {
+            beginnerimg.setImageResource(R.drawable.qtsu);
+            megoldas = "tsu";
+        }
+        else if(random == 19) {
+            beginnerimg.setImageResource(R.drawable.qte);
+            megoldas = "te";
+        }
+        else if(random == 20) {
+            beginnerimg.setImageResource(R.drawable.qto);
+            megoldas = "to";
+        }
+        else if(random == 21) {
+            beginnerimg.setImageResource(R.drawable.qna);
+            megoldas = "na";
+        }
+        else if(random == 22) {
+            beginnerimg.setImageResource(R.drawable.qni);
+            megoldas = "ni";
+        }
+        else if(random == 23) {
+            beginnerimg.setImageResource(R.drawable.qnu);
+            megoldas = "nu";
+        }
+        else if(random == 24) {
+            beginnerimg.setImageResource(R.drawable.qne);
+            megoldas = "ne";
+        }
+        else if(random == 25) {
+            beginnerimg.setImageResource(R.drawable.qno);
+            megoldas = "no";
+        }
+        else if(random == 26) {
+            beginnerimg.setImageResource(R.drawable.qha);
+            megoldas = "ha";
+        }
+        else if(random == 27) {
+            beginnerimg.setImageResource(R.drawable.qhi);
+            megoldas = "hi";
+        }
+        else if(random == 28) {
+            beginnerimg.setImageResource(R.drawable.qfu);
+            megoldas = "hu";
+        }
+        else if(random == 29) {
+            beginnerimg.setImageResource(R.drawable.qhe);
+            megoldas = "he";
+        }
+        else if(random == 30) {
+            beginnerimg.setImageResource(R.drawable.qho);
+            megoldas = "ho";
+        }
+        else if(random == 31) {
+            beginnerimg.setImageResource(R.drawable.qma);
+            megoldas = "ma";
+        }
+        else if(random == 32) {
+            beginnerimg.setImageResource(R.drawable.qmi);
+            megoldas = "mi";
+        }
+        else if(random == 33) {
+            beginnerimg.setImageResource(R.drawable.qmu);
+            megoldas = "mu";
+        }
+        else if(random == 34) {
+            beginnerimg.setImageResource(R.drawable.qme);
+            megoldas = "me";
+        }
+        else if(random == 35) {
+            beginnerimg.setImageResource(R.drawable.qmo);
+            megoldas = "mo";
+        }
+        else if(random == 36) {
+            beginnerimg.setImageResource(R.drawable.qya);
+            megoldas = "ya";
+        }
+        else if(random == 37) {
+            beginnerimg.setImageResource(R.drawable.qyu);
+            megoldas = "yu";
+        }
+        else if(random == 38) {
+            beginnerimg.setImageResource(R.drawable.qyo);
+            megoldas = "yo";
+        }
+        else if(random == 39) {
+            beginnerimg.setImageResource(R.drawable.qra);
+            megoldas = "ra";
+        }
+        else if(random == 40) {
+            beginnerimg.setImageResource(R.drawable.qri);
+            megoldas = "ri";
+        }
+        else if(random == 41) {
+            beginnerimg.setImageResource(R.drawable.qru);
+            megoldas = "ru";
+        }
+        else if(random == 42) {
+            beginnerimg.setImageResource(R.drawable.qre);
+            megoldas = "re";
+        }
+        else if(random == 43) {
+            beginnerimg.setImageResource(R.drawable.qro);
+            megoldas = "ro";
+        }
+        else if(random == 44) {
+            beginnerimg.setImageResource(R.drawable.qwa);
+            megoldas = "wa";
+        }
+        else if(random == 45) {
+            beginnerimg.setImageResource(R.drawable.qwo);
+            megoldas = "wo";
+        }
+        else if(random == 46) {
+            beginnerimg.setImageResource(R.drawable.qn);
+            megoldas = "n";
+        }
+
+
+        if(megoldas != null)
         {
-            if(i == randoms)
-            {
+            int valasztott1 = r.nextInt(tobbigenereal.length);
+            String valsztottneve1 = tobbigenereal[valasztott1];
+            while (valsztottneve1.equals(megoldas)) {
+                valasztott1 = r.nextInt(tobbigenereal.length);
+                valsztottneve1 = tobbigenereal[valasztott1];
+            }
 
-                if (randoms == 1) {
-                    beginnerimg.setImageResource(R.drawable.qa);
-                    megoldas = "a";
-                    //voltmar.add("a");
-                } else if (randoms == 2) {
-                    beginnerimg.setImageResource(R.drawable.qi);
-                    megoldas = "i";
-                    //voltmar.add("i");
-                } else if (randoms == 3) {
-                    beginnerimg.setImageResource(R.drawable.qu);
-                    megoldas = "u";
-                    //voltmar.add("u");
-                } else if (randoms == 4) {
-                    beginnerimg.setImageResource(R.drawable.qe);
-                    megoldas = "e";
-                    //voltmar.add("e");
-                } else if (randoms == 5) {
-                    beginnerimg.setImageResource(R.drawable.qo);
-                    megoldas = "o";
-                    //voltmar.add("o");
-                }
-                else{ beginnertv.setText("not these");
-                    megoldas = null;}
+            int valasztott2 = r.nextInt(tobbigenereal.length);
+            String valsztottneve2 = tobbigenereal[valasztott2];
+            while (valsztottneve2.equals(valsztottneve1)) {
+                valasztott2 = r.nextInt(tobbigenereal.length);
+                valsztottneve2 = tobbigenereal[valasztott2];
+            }
+            while (valsztottneve2.equals(megoldas)) {
+                valasztott2 = r.nextInt(tobbigenereal.length);
+                valsztottneve2 = tobbigenereal[valasztott2];
+            }
+
+            int valasztott3 = r.nextInt(tobbigenereal.length);
+            String valsztottneve3 = tobbigenereal[valasztott3];
+            while (valsztottneve3.equals(valsztottneve2)) {
+                valasztott3 = r.nextInt(tobbigenereal.length);
+                valsztottneve3 = tobbigenereal[valasztott3];
+            }
+            while (valsztottneve3.equals(valsztottneve1)) {
+                valasztott3 = r.nextInt(tobbigenereal.length);
+                valsztottneve3 = tobbigenereal[valasztott3];
+            }
+            while (valsztottneve3.equals(megoldas)) {
+                valasztott3 = r.nextInt(tobbigenereal.length);
+                valsztottneve3 = tobbigenereal[valasztott3];
+            }
+
+            int valasztott4 = r.nextInt(tobbigenereal.length);
+            String valsztottneve4 = tobbigenereal[valasztott4];
+            while (valsztottneve4.equals(valsztottneve3)) {
+                valasztott4 = r.nextInt(tobbigenereal.length);
+                valsztottneve4 = tobbigenereal[valasztott4];
+            }
+            while (valsztottneve4.equals(valsztottneve2)) {
+                valasztott4 = r.nextInt(tobbigenereal.length);
+                valsztottneve4 = tobbigenereal[valasztott4];
+            }
+            while (valsztottneve4.equals(valsztottneve1)) {
+                valasztott4 = r.nextInt(tobbigenereal.length);
+                valsztottneve4 = tobbigenereal[valasztott4];
+            }
+            while (valsztottneve4.equals(megoldas)) {
+                valasztott4 = r.nextInt(tobbigenereal.length);
+                valsztottneve4 = tobbigenereal[valasztott4];
+            }
+
+            int valasztott5 = r.nextInt(tobbigenereal.length);
+            String valsztottneve5 = tobbigenereal[valasztott5];
+            while (valsztottneve5.equals(valsztottneve4)) {
+                valasztott5 = r.nextInt(tobbigenereal.length);
+                valsztottneve5 = tobbigenereal[valasztott5];
+            }
+            while (valsztottneve5.equals(valsztottneve3)) {
+                valasztott5 = r.nextInt(tobbigenereal.length);
+                valsztottneve5 = tobbigenereal[valasztott5];
+            }
+            while (valsztottneve5.equals(valsztottneve2)) {
+                valasztott5 = r.nextInt(tobbigenereal.length);
+                valsztottneve5 = tobbigenereal[valasztott5];
+            }
+            while (valsztottneve5.equals(valsztottneve1)) {
+                valasztott5 = r.nextInt(tobbigenereal.length);
+                valsztottneve5 = tobbigenereal[valasztott5];
+            }
+            while (valsztottneve5.equals(megoldas)) {
+                valasztott5 = r.nextInt(tobbigenereal.length);
+                valsztottneve5 = tobbigenereal[valasztott5];
+            }
+
+            if (elhelyez == 0) {
+                first.setText(megoldas);
+                second.setText(valsztottneve1);
+                third.setText(valsztottneve2);
+                fourth.setText(valsztottneve3);
+            } else if (elhelyez == 1) {
+                second.setText(megoldas);
+                first.setText(valsztottneve1);
+                third.setText(valsztottneve2);
+                fourth.setText(valsztottneve3);
+            } else if (elhelyez == 2) {
+                third.setText(megoldas);
+                first.setText(valsztottneve1);
+                second.setText(valsztottneve2);
+                fourth.setText(valsztottneve3);
+            } else if (elhelyez == 3) {
+                fourth.setText(megoldas);
+                first.setText(valsztottneve1);
+                second.setText(valsztottneve2);
+                third.setText(valsztottneve3);
+            } else {
+                first.setText(megoldas);
+                second.setText(valsztottneve1);
+                third.setText(valsztottneve2);
+                fourth.setText(valsztottneve3);
             }
         }
+
         return megoldas;
     }
 
-    public void elhelyez()
-    {
-        String megold = general();
-        int place = randomplace();
+    private int randomelhelyez() {
+        int min = 0;
+        int max = 4;
+        Random r = new Random();
+        int generalt = r.nextInt(max-min) + min;
+        return generalt;
+    }
 
-        if(megold != null)
-        {
-            if (place == 1) {
-                first.setText(megold);
-            } else if (place == 2) {
-                second.setText(megold);
-            } else if (place == 3) {
-                third.setText(megold);
-            } else if (place == 4) {
-                fourth.setText(megold);
-            }
-        }
-        else
-        {
-            Toast.makeText(this, "nem tudom elhelyezni", Toast.LENGTH_SHORT).show();
-        }
+    public int pontHozzaad(int pont)
+    {
+        int pontnovel = pont +1;
+        return pontnovel;
     }
 
     public String randomgenerator()
@@ -298,7 +521,7 @@ public class Beginner extends AppCompatActivity {
         pointsneeded = findViewById(R.id.pointsneeded);
     }
 
-    public void onBackPressed()
+    /*public void onBackPressed()
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("You think you can't do this test?")
@@ -315,5 +538,5 @@ public class Beginner extends AppCompatActivity {
                 });
         AlertDialog alert = builder.create();
         alert.show();
-    }
+    }*/
 }

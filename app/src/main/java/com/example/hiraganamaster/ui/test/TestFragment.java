@@ -95,7 +95,10 @@ public class TestFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), Beginner.class);
+                String tovabbad = seekbartv.getText().toString();
+                intent.putExtra("Value",tovabbad);
                 startActivity(intent);
+                CustomIntent.customType(getContext(),"bottom-to-up");
             }
         });
         mediumbtn.setOnClickListener(new View.OnClickListener() {
