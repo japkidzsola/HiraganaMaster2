@@ -46,15 +46,19 @@ public class HiraganaLearnFragment extends Fragment {
 
     private static String balra;
     private static String jobbra;
+
+    private static String regikedvenc;
+
     public String[] aiueo = {"nincs","a","i","u","e","o","ka","ki","ku","ke","ko","sa","shi","su","se","so","ta","chi","tsu","te","to"};
 
     public int[] aiueoindex = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22};
 
 
-    public static HiraganaLearnFragment newInstance(String betu, String balra, String jobbra) {
+    public static HiraganaLearnFragment newInstance(String betu, String balra, String jobbra, String adatb) {
         HiraganaLearnFragment.betu = betu;
         HiraganaLearnFragment.balra = balra;
         HiraganaLearnFragment.jobbra = jobbra;
+        HiraganaLearnFragment.regikedvenc = adatb;
         return new HiraganaLearnFragment();
     }
 
@@ -137,11 +141,13 @@ public class HiraganaLearnFragment extends Fragment {
         TextView tn = getView().findViewById(R.id.textviewname);
         tw.setText("Hiragana");
 
+        tw.setText(regikedvenc);
+
         ArrayList<String> regikedvencek = new ArrayList<String>();
         String [] regi ;
         String [] uj ;
 
-        Cursor cursorAdatok = dbhelper.adatLekerdezes();
+        /*Cursor cursorAdatok = dbhelper.adatLekerdezes();
         if (cursorAdatok == null){
             Toast.makeText(getContext(),
                     "Sikertlen Adatlekérdezés", Toast.LENGTH_SHORT).show();
@@ -151,16 +157,17 @@ public class HiraganaLearnFragment extends Fragment {
             Toast.makeText(getContext(),
                     "Nincs még felvéve adat", Toast.LENGTH_SHORT).show();
             return;
-        }
-        StringBuffer stringBuffer = new StringBuffer();
+        }*/
+        /*StringBuffer stringBuffer = new StringBuffer();
         while (cursorAdatok.moveToNext()){
-                stringBuffer.append(cursorAdatok.getString(4) + ",");
-                //regikedvencek.add(stringBuffer.toString());
+                stringBuffer.append(cursorAdatok.getString(4));
         }
         String adatbaziskedvenc = stringBuffer.toString();
 
         String[] sor = adatbaziskedvenc.split(",");
-
+        String kedvenc = sor[0];
+        regikedvencek.add(kedvenc);
+        Toast.makeText(getContext(), "sikeres", Toast.LENGTH_SHORT).show();*/
 
         if(seged.isEmpty()) {
 
