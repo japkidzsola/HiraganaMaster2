@@ -81,5 +81,7 @@
     <string name="logout_from_profile_here">Logout from profile here</string>
     <string name="hardcoreSolution">send</string>
     <string name="error">Error</string>
+    <string name="notification_title">Do you want to develop your japanese</string>
+    <string name="notification_message">It\'s time to practice hiraganas</string>
 
 </resources>

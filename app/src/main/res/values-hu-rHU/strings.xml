@@ -81,4 +81,6 @@
     <string name="logout_from_profile_here">Kijelentkezés itt</string>
     <string name="hardcoreSolution">küld</string>
     <string name="error">Hiba</string>
+    <string name="notification_title">Do you want to develop your japanese</string>
+    <string name="notification_message">It\'s time to practice hiraganas</string>
 </resources>
