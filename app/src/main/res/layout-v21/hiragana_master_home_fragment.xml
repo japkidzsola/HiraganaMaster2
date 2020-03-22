@@ -44,20 +44,21 @@
             android:textSize="20sp"
             />
         <Button
-        android:id="@+id/learnbtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30sp"
-        android:layout_marginLeft="30sp"
-        android:layout_marginEnd="30sp"
-        android:layout_marginRight="30sp"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
-        android:shadowRadius="5"
-        android:text="@string/get_to_the_learning_page"
-        android:textSize="20sp"
-        android:layout_marginBottom="10dp"
-        />
+            android:id="@+id/learnbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30sp"
+            android:layout_marginLeft="30sp"
+            android:layout_marginEnd="30sp"
+            android:layout_marginRight="30sp"
+            android:background="@drawable/gradient_list2"
+            android:shadowColor="#A8A8A8"
+            android:shadowRadius="5"
+            android:text="@string/get_to_the_learning_page"
+            android:textSize="20sp"
+            android:textColor="@color/colorwhite"
+            android:layout_marginBottom="10dp"
+            />
 
         <TextView
             android:id="@+id/testtv"
@@ -74,11 +75,12 @@
             android:layout_marginLeft="30sp"
             android:layout_marginEnd="30sp"
             android:layout_marginRight="30sp"
-            android:background="@drawable/buttonshape"
+            android:background="@drawable/gradient_list2"
             android:shadowColor="#A8A8A8"
             android:shadowRadius="5"
             android:text="@string/get_to_test_myself"
             android:textSize="20sp"
+            android:textColor="@color/colorwhite"
             android:layout_marginBottom="10dp"
             />
 
@@ -97,11 +99,12 @@
             android:layout_marginLeft="30sp"
             android:layout_marginEnd="30sp"
             android:layout_marginRight="30sp"
-            android:background="@drawable/buttonshape"
+            android:background="@drawable/gradient_list2"
             android:shadowColor="#A8A8A8"
             android:shadowRadius="5"
             android:text="@string/get_to_see_my_favorite_characters"
             android:textSize="20sp"
+            android:textColor="@color/colorwhite"
             android:layout_marginBottom="10dp"
             />
 
@@ -120,11 +123,12 @@
             android:layout_marginLeft="30sp"
             android:layout_marginEnd="30sp"
             android:layout_marginRight="30sp"
-            android:background="@drawable/buttonshape"
+            android:background="@drawable/gradient_list2"
             android:shadowColor="#A8A8A8"
             android:shadowRadius="5"
             android:text="@string/get_me_to_my_settings"
             android:textSize="20sp"
+            android:textColor="@color/colorwhite"
             android:layout_marginBottom="10dp"
             />
 
@@ -143,11 +147,12 @@
             android:layout_marginLeft="30sp"
             android:layout_marginEnd="30sp"
             android:layout_marginRight="30sp"
-            android:background="@drawable/buttonshape"
+            android:background="@drawable/gradient_list2"
             android:shadowColor="#A8A8A8"
             android:shadowRadius="5"
             android:text="@string/share_with_my_frinds"
             android:textSize="20sp"
+            android:textColor="@color/colorwhite"
             android:layout_marginBottom="10dp"
             />
 

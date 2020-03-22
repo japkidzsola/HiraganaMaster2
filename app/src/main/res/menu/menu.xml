@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:title="Pause"
+        android:title="@string/pause"
         android:id="@+id/pause"
         android:icon="@drawable/ic_pause"
         app:showAsAction="ifRoom"/>

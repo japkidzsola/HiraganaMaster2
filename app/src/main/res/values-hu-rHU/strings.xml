@@ -83,4 +83,9 @@
     <string name="error">Hiba</string>
     <string name="notification_title">Do you want to develop your japanese</string>
     <string name="notification_message">It\'s time to practice hiraganas</string>
+    <string name="pause">Pause</string>
+    <string name="beginner_level">Beginner level</string>
+    <string name="_1">1</string>
+    <string name="medium_level">Medium level</string>
+    <string name="hardcore_level">Hardcore level</string>
 </resources>

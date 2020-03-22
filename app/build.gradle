@@ -28,7 +28,6 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.2.1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'com.github.hajiyevelnur92:intentanimation:1.0'
-    implementation 'nl.bryanderidder:themed-toggle-button-group:1.1.0'
     implementation 'com.google.android:flexbox:2.0.1'
     //noinspection GradleCompatible
     implementation 'com.android.support:support-compat:28.0.0'
