@@ -88,4 +88,8 @@
     <string name="_1">1</string>
     <string name="medium_level">Medium level</string>
     <string name="hardcore_level">Hardcore level</string>
+    <string name="test">Test</string>
+    <string name="beginner_desc">I want to test myself but I don\'t think im that good</string>
+    <string name="medium_desc">I know more than a beginner I want a harder test</string>
+    <string name="hardcore_desc">I think I know everything give me everything you\'ve got</string>
 </resources>

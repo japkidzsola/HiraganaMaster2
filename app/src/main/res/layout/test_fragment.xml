@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:gravity="center"
-        android:text="Test"
+        android:text="@string/test"
         android:textSize="25sp"
         />
 
@@ -50,7 +50,7 @@
         android:id="@+id/beginnertv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I want to test myself but I don't think im that good"
+        android:text="@string/beginner_desc"
         android:textSize="20sp"
         />
     <Button
@@ -58,6 +58,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/beginner_level"
+        android:textSize="20sp"
+        android:textColor="@color/colorwhite"
         android:background="@drawable/gradient_list2"
         android:layout_marginBottom="10dp"
         />
@@ -66,7 +68,7 @@
         android:id="@+id/mediumtv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I know more than a beginner I want a harder test"
+        android:text="@string/medium_desc"
         android:textSize="20sp"
         />
     <Button
@@ -74,6 +76,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/medium_level"
+        android:textSize="20sp"
+        android:textColor="@color/colorwhite"
         android:background="@drawable/gradient_list2"
         android:layout_marginBottom="3sp"
         />
@@ -84,7 +88,7 @@
         android:id="@+id/hardcoretv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I think I know everything give me everything you've got"
+        android:text="@string/hardcore_desc"
         android:textSize="20sp"
         />
     <Button
@@ -92,6 +96,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hardcore_level"
+        android:textSize="20sp"
+        android:textColor="@color/colorwhite"
         android:background="@drawable/gradient_list2"
         android:layout_marginBottom="10dp"
         />
