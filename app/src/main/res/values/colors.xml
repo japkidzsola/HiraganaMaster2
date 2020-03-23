@@ -12,8 +12,26 @@
     <color name="colorwhite">#FAFAFA</color>
     <color name="colorButtondefault">#0B48FF</color>
     <color name="colorButtondefault2">#1463FF</color>
+
     <color name="colorButtonpressed">#367FFF</color>
     <color name="colorButtonpressed2">#65BFFA</color>
     <color name="colorButtonfocused">#B7FFF6</color>
     <color name="colorButtonfocused2">#FAFAFA</color>
+
+    <color name="colorTestdefault">#B4D2FF</color>
+    <color name="colorTestdefault2">#DDEDFD</color>
+    <color name="colorTestpressed">#838383</color>
+    <color name="colorTestpressed2">#515151</color>
+    <color name="colorTestfocused">#8F8F8F</color>
+    <color name="colorTestfocused2">#7A7A7A</color>
+
+    <color name="colorSuccessfulTest">#89FB6F</color>
+    <color name="colorFailTest">#FF6868</color>
+
+    <color name="colorFacebook">#1486FF</color>
+    <color name="colorInstagram1">#BC07FF</color>
+    <color name="colorInstagram2">#FFE70D</color>
+    <color name="colorTwitter">#1486FF</color>
+    <color name="colorWhatsapp">#35C500</color>
+    <color name="colorGooglePlus">#FF3636</color>
 </resources>

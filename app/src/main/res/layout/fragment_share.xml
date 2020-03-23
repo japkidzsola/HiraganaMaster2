@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,23 +7,55 @@
     android:orientation="vertical"
     android:layout_gravity="center">
 
-    <TextView
-        android:id="@+id/text_share"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/idbtn"
-        android:onClick="btnClick"
+        android:id="@+id/sharefacebook"
         android:text="@string/share_link_on_facebook"
+        android:background="@drawable/button_facebook"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         />
-</RelativeLayout>
+
+        <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/shareinstagra"
+        android:background="@drawable/button_instagram"
+        android:text="@string/share_link_at_instagram"
+        android:layout_marginBottom="20dp"
+        />
+
+        <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sharetwitter"
+        android:background="@drawable/button_twitter"
+        android:text="@string/share_link_at_twitter"
+        android:layout_marginBottom="20dp"
+        />
+
+        <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sharewhatsapp"
+        android:background="@drawable/button_whatsapp"
+        android:text="@string/share_link_at_whatsapp"
+        android:layout_marginBottom="20dp"
+        />
+
+        <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sharegoogleplus"
+        android:background="@drawable/button_gooleplus"
+        android:text="@string/share_link_at_google_plus"
+        android:layout_marginBottom="20dp"
+        />
+    </LinearLayout>
+</ScrollView>

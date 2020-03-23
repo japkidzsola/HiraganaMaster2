@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorFailTest"
     tools:context=".EndingFail"
     android:orientation="vertical">
 
@@ -22,11 +23,20 @@
         android:textSize="20sp"
         android:gravity="center"
         android:layout_marginBottom="20dp"/>
+    <TextView
+        android:id="@+id/mistakename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mistake"
+        android:textSize="30sp"
+        android:gravity="center"/>
+
     <Button
         android:id="@+id/failredobeginner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/backToTest"
+        android:background="@drawable/gradient_list3"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         />
@@ -36,6 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/backToRedoMedium"
+        android:background="@drawable/gradient_list3"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         />
@@ -46,12 +57,14 @@
         android:text="@string/backToLearn"
         android:textSize="20sp"
         android:gravity="center"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"/>
     <Button
         android:id="@+id/failredolearn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/backToLearnButton"
+        android:background="@drawable/gradient_list3"
         android:layout_gravity="center"
         />
 

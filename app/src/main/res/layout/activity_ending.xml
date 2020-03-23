@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorSuccessfulTest"
     tools:context=".Ending"
     android:orientation="vertical">
 
@@ -25,11 +26,20 @@
         android:gravity="center"
         />
 
+    <TextView
+        android:id="@+id/percenttv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/percent"
+        android:textSize="20sp"/>
+
     <Button
         android:id="@+id/redobeginner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/backToBeginnerTest"
+        android:background="@drawable/gradient_list3"
         android:layout_marginBottom="20dp"
         />
 
@@ -38,6 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/backToMediumTest"
+        android:background="@drawable/gradient_list3"
         android:layout_marginBottom="20dp"
         />
     <TextView
@@ -53,6 +64,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/backToHardcoreTest"
+        android:background="@drawable/gradient_list3"
+        android:layout_marginBottom="20dp"
         />
+
+    <Button
+        android:id="@+id/changehiraganaamount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/test_change_hiragana_amount"
+        android:background="@drawable/gradient_list3"
+        android:layout_marginBottom="20sp"
+        />
+
+    <SeekBar
+        android:id="@+id/idSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="45"
+        android:alpha="0"
+        android:background="@null"
+        />
+
+    <TextView
+        android:id="@+id/seekbartv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/_1"
+        android:textSize="20sp"
+        android:visibility="invisible"/>
 
 </LinearLayout>

@@ -115,6 +115,16 @@ public class TestFragment extends Fragment {
                 CustomIntent.customType(getContext(),"fadein-to-fadeout");
             }
         });
+        hardcorebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), Hardcore.class);
+                String tovabbad = seekbartv.getText().toString();
+                intent.putExtra("Value",tovabbad);
+                startActivity(intent);
+                CustomIntent.customType(getContext(),"up-to-bottom");
+            }
+        });
 
     }
 

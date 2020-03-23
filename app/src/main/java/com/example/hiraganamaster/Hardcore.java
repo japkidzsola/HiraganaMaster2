@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Hardcore extends AppCompatActivity {
@@ -22,8 +23,8 @@ public class Hardcore extends AppCompatActivity {
     public ImageView hardcoreimg;
 
     private CountDownTimer countDownTimer;
-    private long timeLeftInMilliseconds = 10000;
-    private long timeRestartInMilliseconds = 10000;
+    private long timeLeftInMilliseconds = 20000;
+    private long timeRestartInMilliseconds = 20000;
     private boolean timerRunning;
 
     @Override
@@ -34,21 +35,74 @@ public class Hardcore extends AppCompatActivity {
 
         startTimer();
 
-        String ertek = getIntent().getExtras().getString("Valueh");
+        String ertek = getIntent().getExtras().getString("Value");
         pointsneeded.setText(ertek);
 
         final String[] megoldas = {general()};
+        final String megoldasseged = Arrays.toString(megoldas);
+        //hardcoretv.setText(megoldasseged);
+        final String arrayStart = "[";
+        final String arrayEnd = "]";
+        final String valasz = hardcoreet.getText().toString().toLowerCase();
+
         final int[] pontok = {0};
         final int[] minuszpontok = {0};
+
+       /* if (megoldas[0].equals(sixth.getText().toString().toLowerCase())) {
+            //sikeres(seged2);
+            startColorAnim6(sixth);
+            String seged = Integer.toString(pontHozzaad(pontok[0]));
+            pontok[0] = pontHozzaad(pontok[0]);
+            points.setText(seged);
+            if(points.getText().toString().equals(pointsneeded.getText().toString()))
+            {
+                stopTimer();
+                Intent intent = new Intent(Medium.this, Ending.class);
+                String tovabbit = pointsneeded.getText().toString();
+                String minusztovabbit = Integer.toString(minuszpontok[0]);
+                String e = pointsneeded.getText().toString();
+                intent.putExtra("Success",tovabbit);
+                intent.putExtra("Unsuccess",minusztovabbit);
+                intent.putExtra("Value",e);
+                startActivity(intent);
+                finish();
+            }else{
+                megoldas[0] = general();
+                stopTimer();
+                timeReset();
+                startTimer();
+            }
+        } else {
+            startFailAnim6(sixth);
+            pontHozzaad(minuszpontok[0]);
+            minuszpontok[0] = pontHozzaad(minuszpontok[0]);
+            String seged = Integer.toString(minuszpontok[0]);
+            beginnertv.setText(seged);
+            if (minuszpontok[0] == 3)
+            {
+                stopTimer();
+                Intent intent = new Intent(Medium.this, EndingFail.class);
+                startActivity(intent);
+                finish();
+            }
+        }*/
 
         hardcoresend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (hardcoreet.getText().toString().isEmpty()) {
+                if (valasz.isEmpty()) {
                     Toast.makeText(Hardcore.this, "Please enter a valid hiragana", Toast.LENGTH_SHORT).show();
                 }
-
-                if (megoldas.equals(hardcoreet.getText().toString().toLowerCase())) {
+                /*if (megoldasseged.equals(arrayStart + hardcoreet.getText().toString() + arrayEnd))
+                {
+                    Toast.makeText(Hardcore.this, "Nigeria", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    hardcoretv.setText(hardcoreet.getText().toString());
+                    Toast.makeText(Hardcore.this, "nigga", Toast.LENGTH_SHORT).show();
+                }*/
+                if (megoldasseged.equals(arrayStart + valasz + arrayEnd)) {
                     Toast.makeText(Hardcore.this, "Good job!", Toast.LENGTH_SHORT).show();
                     String seged = Integer.toString(pontHozzaad(pontok[0]));
                     pontok[0] = pontHozzaad(pontok[0]);
@@ -80,8 +134,8 @@ public class Hardcore extends AppCompatActivity {
                     if (minuszpontok[0] == 3) {
                         stopTimer();
                         Intent intent = new Intent(Hardcore.this, EndingFail.class);
-                        startActivity(intent);
-                        finish();
+                       // startActivity(intent);
+                       // finish();
                     }
                 }
             }
@@ -128,8 +182,8 @@ public class Hardcore extends AppCompatActivity {
             @Override
             public void onFinish() {
                 Intent intent = new Intent(Hardcore.this, EndingFail.class);
-                startActivity(intent);
-                finish();
+                //startActivity(intent);
+                //finish();
             }
         }.start();
         timerRunning = true;
@@ -347,6 +401,7 @@ public class Hardcore extends AppCompatActivity {
             megoldas = "n";
         }
 
+        hardcoretv.setText(megoldas);
         return megoldas;
     }
 

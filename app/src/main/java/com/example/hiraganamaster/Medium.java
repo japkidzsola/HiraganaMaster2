@@ -137,6 +137,10 @@ public class Medium extends AppCompatActivity {
                         {
                             stopTimer();
                             Intent intent = new Intent(Medium.this, EndingFail.class);
+                            String hiba = megoldas[0];
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Mistake",hiba);
+                            intent.putExtra("Value",e);
                             startActivity(intent);
                             finish();
                         }
@@ -182,6 +186,10 @@ public class Medium extends AppCompatActivity {
                         {
                             stopTimer();
                             Intent intent = new Intent(Medium.this, EndingFail.class);
+                            String hiba = megoldas[0];
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Mistake",hiba);
+                            intent.putExtra("Value",e);
                             startActivity(intent);
                             finish();
                         }
@@ -227,6 +235,10 @@ public class Medium extends AppCompatActivity {
                         {
                             stopTimer();
                             Intent intent = new Intent(Medium.this, EndingFail.class);
+                            String hiba = megoldas[0];
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Mistake",hiba);
+                            intent.putExtra("Value",e);
                             startActivity(intent);
                             finish();
                         }
@@ -271,6 +283,10 @@ public class Medium extends AppCompatActivity {
                         {
                             stopTimer();
                             Intent intent = new Intent(Medium.this, EndingFail.class);
+                            String hiba = megoldas[0];
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Mistake",hiba);
+                            intent.putExtra("Value",e);
                             startActivity(intent);
                             finish();
                         }
@@ -315,6 +331,10 @@ public class Medium extends AppCompatActivity {
                         {
                             stopTimer();
                             Intent intent = new Intent(Medium.this, EndingFail.class);
+                            String hiba = megoldas[0];
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Mistake",hiba);
+                            intent.putExtra("Value",e);
                             startActivity(intent);
                             finish();
                         }
@@ -359,6 +379,10 @@ public class Medium extends AppCompatActivity {
                         {
                             stopTimer();
                             Intent intent = new Intent(Medium.this, EndingFail.class);
+                            String hiba = megoldas[0];
+                            String e = pointsneeded.getText().toString();
+                            intent.putExtra("Mistake",hiba);
+                            intent.putExtra("Value",e);
                             startActivity(intent);
                             finish();
                         }
