@@ -5,16 +5,17 @@
     <application
         android:name=".Notification"
         android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:fullBackupContent="@xml/backup_descriptor">
+        android:theme="@style/AppTheme">
+        <activity android:name=".ShareHiraganaMaster"></activity>
         <activity
             android:name=".Medium"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".Hardcore"/>
+        <activity android:name=".Hardcore" />
         <activity android:name=".EndingFail" />
         <activity android:name=".Ending" />
         <activity android:name=".Beginner" />

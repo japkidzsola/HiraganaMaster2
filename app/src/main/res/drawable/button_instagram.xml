@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <gradient
+        android:angle="270"
+        android:startColor="@color/colorInstagram1"
+        android:endColor="@color/colorInstagram2"/>
+
+    <padding
+        android:bottom="7sp"
+        android:left="7sp"
+        android:right="7sp"
+        android:top="7sp"/>
+
+    <corners android:radius="15sp" />
+
+</shape>
