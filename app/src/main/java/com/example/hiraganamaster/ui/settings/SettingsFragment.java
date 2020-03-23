@@ -23,7 +23,7 @@ import com.example.hiraganamaster.R;
 
 public class SettingsFragment extends Fragment {
 
-    private Button btnprofile, btnlogout;
+    private Button btnprofile, btnlogout, btnlanguage;
 
     private SettingsViewModel mViewModel;
 
@@ -62,6 +62,17 @@ public class SettingsFragment extends Fragment {
                 editor.clear();
                 editor.commit();
                 Toast.makeText(getActivity(), "proba", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        final String tothesettings = getString(R.string.gotosettings);
+        btnlanguage = getView().findViewById(R.id.btnlanguage);
+        btnlanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), tothesettings, Toast.LENGTH_SHORT).show();
+
+                startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
             }
         });
     }

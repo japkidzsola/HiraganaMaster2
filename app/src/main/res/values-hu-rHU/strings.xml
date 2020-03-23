@@ -105,5 +105,6 @@
     <string name="twittersharefail">Kérjük telepítse a Twittert</string>
     <string name="whatsappsharefail">Kérjük telepítse a Whatsapp-ot</string>
     <string name="googleplussharefail">Kérjük telepítse a Google Plus-t</string>
+    <string name="gotosettings">Kérjük állítsa át a kiválasztott nyelvre</string>
 
 </resources>

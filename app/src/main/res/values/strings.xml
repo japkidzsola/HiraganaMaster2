@@ -105,5 +105,6 @@
     <string name="twittersharefail">Please Install the Twitter app</string>
     <string name="whatsappsharefail">Please Install the Whatsapp app</string>
     <string name="googleplussharefail">Please Install the Google Plus app</string>
+    <string name="gotosettings">You will need to set the language to a different one</string>
 
 </resources>
