@@ -35,6 +35,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/language_change_btn"
+            android:textColor="@color/colorwhite"
+            android:textSize="20sp"
+            android:background="@drawable/gradient_list2"
             android:layout_marginBottom="10dp"
             />
 
@@ -49,7 +52,10 @@
             android:id="@+id/btnprofile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/gradient_list2"
             android:text="@string/change_profile_here"
+            android:textColor="@color/colorwhite"
+            android:textSize="20sp"
             android:layout_marginBottom="10dp"
             />
 
@@ -64,7 +70,10 @@
             android:id="@+id/btnlogout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/gradient_list2"
             android:text="@string/logout_from_profile_here"
+            android:textColor="@color/colorwhite"
+            android:textSize="20sp"
             android:layout_marginBottom="10dp"
             />
 

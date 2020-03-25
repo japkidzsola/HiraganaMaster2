@@ -2,7 +2,10 @@ package com.example.hiraganamaster.ui.learn;
 
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,10 +13,17 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import android.preference.PreferenceManager;
+
+import com.example.hiraganamaster.AdatbazisSegito;
 import com.example.hiraganamaster.HiraganaLearn;
 import com.example.hiraganamaster.R;
 import com.example.hiraganamaster.ui.hiraganalearn.HiraganaLearnFragment;
@@ -21,6 +31,8 @@ import com.example.hiraganamaster.ui.hiraganalearn.HiraganaLearnFragment;
 public class LearnFragment extends Fragment {
 
     private LearnViewModel mViewModel;
+
+    private AdatbazisSegito dbhelper;
 
     private ImageView a, i, u, e, o, ka, ki, ku, ke, ko, sa, shi, su, se, so, ta, chi, tsu, te, to, na ,ni, nu, ne, no, ha, hi, fu, he, ho, ma,mi, mu, me, mo, ya, yu, yo, ra, ri, ru, re, ro, wa, wo, n;
 
@@ -40,6 +52,7 @@ public class LearnFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(LearnViewModel.class);
+        dbhelper = new AdatbazisSegito(getContext());
 
         a = getView().findViewById(R.id.a);
         a.setOnClickListener(new View.OnClickListener() {
@@ -475,6 +488,60 @@ public class LearnFragment extends Fragment {
             }
         });
 
+        Cursor cursorAdatok = dbhelper.adatLekerdezes();
+        if (cursorAdatok == null){
+            Toast.makeText(getContext(),
+                    "Sikertlen Adatlekérdezés", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (cursorAdatok.getCount() == 0){
+            Toast.makeText(getContext(),
+                    "Nincs még felvéve adat", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        StringBuffer stringBuffer = new StringBuffer();
+        while (cursorAdatok.moveToNext()){
+            stringBuffer.append(cursorAdatok.getString(4));
+        }
+        String adatbaziskedvenc = stringBuffer.toString();
+
+        String[] sor = adatbaziskedvenc.split(",");
+        String kedvenc = sor[0];
+        //regikedvencek.add(kedvenc);
+        Toast.makeText(getContext(), "sikeres", Toast.LENGTH_SHORT).show();
+
+        SharedPreferences sharedpref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor  = sharedpref.edit();
+        editor.putString((adatbaziskedvenc),adatbaziskedvenc);
+        editor.apply();
+
+        /*SharedPreferences sharedpref1 = getActivity().getPreferences(Context.MODE_PRIVATE);
+        String getkedvenc = getResources().getString(Integer.parseInt(adatbaziskedvenc));
+        Toast.makeText(getContext(), getkedvenc, Toast.LENGTH_SHORT).show();
+*/
     }
 
+    public void kedvencment()
+    {
+
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.main,menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            Toast.makeText(getContext(), "yo", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        else {
+            return super.onOptionsItemSelected(item);
+        }
+    }
 }

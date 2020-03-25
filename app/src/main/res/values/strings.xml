@@ -73,11 +73,11 @@
     <string name="favorites">Favorites</string>
     <string name="share_link_on_facebook">Share Link on Facebook</string>
     <string name="hiragana">Hiragana</string>
-    <string name="language_change">Want to change the language?</string>
+    <string name="language_change">Do you want to change the language?</string>
     <string name="language_change_btn">Do it here</string>
-    <string name="want_to_edit_profile">Want to edit profile?</string>
+    <string name="want_to_edit_profile">Do you want to edit profile?</string>
     <string name="change_profile_here">Change profile here</string>
-    <string name="want_to_logout_from_this_profile">Want to logout from this profile?</string>
+    <string name="want_to_logout_from_this_profile">Do you want to logout from this profile?</string>
     <string name="logout_from_profile_here">Logout from profile here</string>
     <string name="hardcoreSolution">send</string>
     <string name="error">Error</string>

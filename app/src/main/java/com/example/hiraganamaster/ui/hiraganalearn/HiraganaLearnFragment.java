@@ -4,6 +4,8 @@ import androidx.annotation.RequiresApi;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.media.MediaPlayer;
 import android.os.Build;
@@ -27,6 +29,7 @@ import com.example.hiraganamaster.R;
 import com.example.hiraganamaster.ui.hiraganamasterhome.HiraganaMasterHomeFragment;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 import static java.util.Objects.*;
@@ -143,9 +146,8 @@ public class HiraganaLearnFragment extends Fragment {
 
         tw.setText(regikedvenc);
 
-        ArrayList<String> regikedvencek = new ArrayList<String>();
         String [] regi ;
-        String [] uj ;
+        final String [] uj ;
 
         /*Cursor cursorAdatok = dbhelper.adatLekerdezes();
         if (cursorAdatok == null){
@@ -169,6 +171,19 @@ public class HiraganaLearnFragment extends Fragment {
         regikedvencek.add(kedvenc);
         Toast.makeText(getContext(), "sikeres", Toast.LENGTH_SHORT).show();*/
 
+        final Button fav = getView().findViewById(R.id.btnfavorite);
+
+        String adatbaziskedvenc = null;
+        SharedPreferences sharedpref1 = getActivity().getPreferences(Context.MODE_PRIVATE);
+        /*String getkedvenc = getResources().getString(Integer.parseInt(adatbaziskedvenc));
+        String[] split = getkedvenc.split(",");
+        ArrayList<String> regikedvencek = new ArrayList<String>(Arrays.asList(getkedvenc.split(",")));
+        */
+        final ArrayList<String>[] ujkedvencek = new ArrayList[]{new ArrayList<>()};
+        String[] ujkedvenc ;
+        ujkedvencek[0].add("a");
+        Toast.makeText(getContext(), adatbaziskedvenc, Toast.LENGTH_SHORT).show();
+
         if(seged.isEmpty()) {
 
             if (betu.equals("a")) {
@@ -176,11 +191,13 @@ public class HiraganaLearnFragment extends Fragment {
                 tw.setText("Hiragana "+betu);
                 tn.setText(betu);
                 seged = "a";
+                backgroundCheck(ujkedvencek[0],"a");
             } else if (betu.equals("i")) {
                 ivLearn.setImageResource(R.drawable.qi);
                 tw.setText("Hiragana "+betu);
                 tn.setText(betu);
                 seged = "i";
+                backgroundCheck(ujkedvencek[0],"i");
             } else if (betu.equals("u")) {
                 ivLearn.setImageResource(R.drawable.qu);
                 tw.setText("Hiragana "+betu);
@@ -647,24 +664,28 @@ public class HiraganaLearnFragment extends Fragment {
             }
         });
 
-        final Button fav = getView().findViewById(R.id.btnfavorite);
+
 
         fav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(seged == "") {
                     if (betu.equals("a")) {
-                        fav.setBackgroundResource(R.drawable.ic_favorite_black_24dp);
-                        Favorite();
+                        ujkedvencek[0] =(addToFav(ujkedvencek[0],"a"));
+                        backgroundCheck(ujkedvencek[0],"a");
                     } else if(betu.equals("i")) {
-                        fav.setBackgroundResource(R.drawable.ic_favorite_black_24dp);
-                        Favorite();
+                        ujkedvencek[0] = (addToFav(ujkedvencek[0],"i"));
+                        backgroundCheck(ujkedvencek[0],"i");
                     }
                 }
                 else if(seged.equals("a"))
                 {
-                    fav.setBackgroundResource(R.drawable.ic_favorite_black_24dp);
-                    Favorite();
+                    ujkedvencek[0] = (addToFav(ujkedvencek[0],"a"));
+                    backgroundCheck(ujkedvencek[0],"a");
+                } else if(seged.equals("i"))
+                {
+                    ujkedvencek[0] = (addToFav(ujkedvencek[0],"i"));
+                    backgroundCheck(ujkedvencek[0],"i");
                 }
             }
         });
@@ -702,12 +723,14 @@ public class HiraganaLearnFragment extends Fragment {
                         seged = "i";
                         tw.setText("Hiragana i");
                         tn.setText("i");
+                        backgroundCheck(ujkedvencek[0],"i");
                         break;
                     case "i":
                         ivLearn.setImageResource(R.drawable.qu);
                         seged = "u";
                         tw.setText("Hiragana u");
                         tn.setText("u");
+                        backgroundCheck(ujkedvencek[0],"u");
                         break;
                     case "u":
                         ivLearn.setImageResource(R.drawable.qe);
@@ -1233,6 +1256,29 @@ public class HiraganaLearnFragment extends Fragment {
 
             }
         });
+    }
+
+    public void backgroundCheck(ArrayList<String> regikedvencek,String betu)
+    {
+        final Button fav = getView().findViewById(R.id.btnfavorite);
+        if (regikedvencek.contains(betu)) {
+            fav.setBackgroundResource(R.drawable.ic_favorite_black_24dp);
+        } else {
+            fav.setBackgroundResource(R.drawable.ic_favorite_border_black);
+        }
+    }
+
+    public ArrayList<String> addToFav(ArrayList<String> ujkedvencek, String betu)
+    {
+        final Button fav = getView().findViewById(R.id.btnfavorite);
+        if (ujkedvencek.contains(betu)) {
+            fav.setBackgroundResource(R.drawable.ic_favorite_border_black);
+            ujkedvencek.remove(betu);
+        } else {
+            fav.setBackgroundResource(R.drawable.ic_favorite_black_24dp);
+            ujkedvencek.add(betu);
+        }
+        return ujkedvencek;
     }
 
     private void Favorite()

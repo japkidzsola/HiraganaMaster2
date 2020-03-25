@@ -1,6 +1,8 @@
 package com.example.hiraganamaster.ui.hiraganamasterhome;
 
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Context;
@@ -27,12 +29,13 @@ import android.widget.TextView;
 import com.example.hiraganamaster.AdatbazisSegito;
 import com.example.hiraganamaster.Login;
 import com.example.hiraganamaster.R;
+import com.example.hiraganamaster.ui.learn.LearnFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 public class HiraganaMasterHomeFragment extends Fragment {
 
-    private Button login;
+    private Button login,learnbtn,testbtn,favoritesbtn,settingsbtn,sharebtn;
     private AdatbazisSegito db;
 
     private HiraganaMasterHomeViewModel mViewModel;
@@ -63,6 +66,9 @@ public class HiraganaMasterHomeFragment extends Fragment {
             }
         });*/
 
+        final LearnFragment learnFragment = new LearnFragment();
+        HiraganaMasterHomeFragment homeFragment = new HiraganaMasterHomeFragment();
+
         TextView tw = getView().findViewById(R.id.welcome);
 
         CoordinatorLayout linearLayout = getView().findViewById(R.id.hiraganamasterhome);
@@ -81,12 +87,29 @@ public class HiraganaMasterHomeFragment extends Fragment {
         });
         if(bejelentkezett()) {
             tw.setText("Welcome "+getTeljesNev());
+
         }
-        else
+        else if (tw.getText().toString().equals("Welcome null"))
         {
             tw.setText("Welcome to Hiragana Master");
         }
 
+        learnbtn = getView().findViewById(R.id.learnbtn);
+        learnbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //FragmentTransaction transaction = ;
+                /*FragmentManager manager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = manager.beginTransaction();
+                FragmentTransaction fragmentTransaction1 = getFragmentManager().beginTransaction();
+                fragmentTransaction1.replace(R.id.hiraganamasterhome,learnFragment);
+                fragmentTransaction1    .commit();*/
+
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_learn, learnFragment)
+                        .addToBackStack(null).commit();
+
+            }
+        });
     }
 
     private boolean bejelentkezett()
@@ -113,6 +136,7 @@ public class HiraganaMasterHomeFragment extends Fragment {
         {
             return null;
         }
+
     }
 
 }
