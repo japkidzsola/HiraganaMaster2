@@ -22,6 +22,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +39,7 @@ public class Medium extends AppCompatActivity {
     private long timeLeftInMilliseconds = 10000;
     private long timeRestartInMilliseconds = 10000;
     private boolean timerRunning;
+    private RelativeLayout beginnerrelative;
 
     private Handler mHandler = new Handler();
 
@@ -52,6 +54,7 @@ public class Medium extends AppCompatActivity {
         setContentView(R.layout.activity_medium);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+        RelativeLayout relativeLayout = findViewById(R.id.beginnerrelative);
         setSupportActionBar(toolbar);
 
         /*LinearLayout linearLayout = findViewById(R.id.layout);
@@ -1104,6 +1107,10 @@ public class Medium extends AppCompatActivity {
             @Override
             public void onFinish() {
                 Intent intent = new Intent(Medium.this, EndingFail.class);
+                String hiba = getString(R.string.timeout);
+                String e = pointsneeded.getText().toString();
+                intent.putExtra("Mistake",hiba);
+                intent.putExtra("Value",e);
                 startActivity(intent);
                 finish();
             }

@@ -2,13 +2,20 @@ package com.example.hiraganamaster;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.vectordrawable.graphics.drawable.ArgbEvaluator;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +28,10 @@ public class Beginner extends AppCompatActivity {
     public Button first, second,third, fourth;
     public ImageView beginnerimg;
     public TextView beginnertv, points, pointsneeded;
+
+    private CountDownTimer countDownTimer;
+    private long timeLeftInMilliseconds = 1000;
+    private boolean timerRunning;
 
     List<String> randomHiragana, voltmar;
 
@@ -50,6 +61,7 @@ public class Beginner extends AppCompatActivity {
             finish();
         }
 
+        final String tryagain = getString(R.string.tryagain);
         //final String finalMegoldas = megold;
         if(megold[0] != null) {
             //final String finalMegoldas = megold;
@@ -57,6 +69,7 @@ public class Beginner extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (megold[0].equals(first.getText().toString().toLowerCase())) {
+                        startAnim();
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
                         points.setText(seged);
@@ -75,7 +88,8 @@ public class Beginner extends AppCompatActivity {
                             megold[0] = general();
                         }
                     } else {
-                        Toast.makeText(Beginner.this, "Try again", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Beginner.this, tryagain, Toast.LENGTH_SHORT).show();
+                        startFailAnim();
                         pontHozzaad(minuszpontok[0]);
                         minuszpontok[0] = pontHozzaad(minuszpontok[0]);
                     }
@@ -85,6 +99,7 @@ public class Beginner extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (megold[0].equals(second.getText().toString().toLowerCase())) {
+                        startAnim();
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
                         points.setText(seged);
@@ -103,7 +118,8 @@ public class Beginner extends AppCompatActivity {
                             megold[0] = general();
                         }
                     } else {
-                        Toast.makeText(Beginner.this, "Try again", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Beginner.this, tryagain, Toast.LENGTH_SHORT).show();
+                        startFailAnim();
                         pontHozzaad(minuszpontok[0]);
                         minuszpontok[0] = pontHozzaad(minuszpontok[0]);
                     }
@@ -113,6 +129,7 @@ public class Beginner extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (megold[0].equals(third.getText().toString().toLowerCase())) {
+                        startAnim();
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
                         points.setText(seged);
@@ -131,7 +148,8 @@ public class Beginner extends AppCompatActivity {
                             megold[0] = general();
                         }
                     } else {
-                        Toast.makeText(Beginner.this, "Try again", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Beginner.this, tryagain, Toast.LENGTH_SHORT).show();
+                        startFailAnim();
                         pontHozzaad(minuszpontok[0]);
                         minuszpontok[0] = pontHozzaad(minuszpontok[0]);
                     }
@@ -141,6 +159,7 @@ public class Beginner extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (megold[0].equals(fourth.getText().toString().toLowerCase())) {
+                        startAnim();
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
                         points.setText(seged);
@@ -159,7 +178,8 @@ public class Beginner extends AppCompatActivity {
                             megold[0] = general();
                         }
                     } else {
-                        Toast.makeText(Beginner.this, "Try again", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Beginner.this, tryagain, Toast.LENGTH_SHORT).show();
+                        startFailAnim();
                         pontHozzaad(minuszpontok[0]);
                         minuszpontok[0] = pontHozzaad(minuszpontok[0]);
                     }
@@ -519,6 +539,41 @@ public class Beginner extends AppCompatActivity {
         beginnertv = findViewById(R.id.beginnertv);
         points = findViewById(R.id.points);
         pointsneeded = findViewById(R.id.pointsneeded);
+    }
+
+    public void startAnim()
+    {
+        countDownTimer = new CountDownTimer(timeLeftInMilliseconds, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                RelativeLayout relativeLayout = findViewById(R.id.beginnerrelative);
+                relativeLayout.setBackgroundColor(Color.GREEN);
+            }
+
+            @Override
+            public void onFinish() {
+                RelativeLayout relativeLayout = findViewById(R.id.beginnerrelative);
+                relativeLayout.setBackgroundColor(Color.WHITE);
+            }
+        }.start();
+        timerRunning = true;
+    }
+    public void startFailAnim()
+    {
+        countDownTimer = new CountDownTimer(timeLeftInMilliseconds, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                RelativeLayout relativeLayout = findViewById(R.id.beginnerrelative);
+                relativeLayout.setBackgroundColor(Color.RED);
+            }
+
+            @Override
+            public void onFinish() {
+                RelativeLayout relativeLayout = findViewById(R.id.beginnerrelative);
+                relativeLayout.setBackgroundColor(Color.WHITE);
+            }
+        }.start();
+        timerRunning = true;
     }
 
     /*public void onBackPressed()

@@ -49,7 +49,6 @@ public class SettingsFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), Modification.class);
                 startActivity(intent);
-                Toast.makeText(getActivity(), "u suck", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -57,11 +56,12 @@ public class SettingsFragment extends Fragment {
         btnlogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String logout = getString(R.string.logout);
                 SharedPreferences preferences = new ContextWrapper(getActivity()).getSharedPreferences("felhasznalo", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.clear();
                 editor.commit();
-                Toast.makeText(getActivity(), "proba", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), logout, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -70,7 +70,7 @@ public class SettingsFragment extends Fragment {
         btnlanguage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), tothesettings, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), tothesettings, Toast.LENGTH_LONG).show();
 
                 startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
             }

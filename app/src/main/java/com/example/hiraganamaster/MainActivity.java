@@ -31,10 +31,12 @@ import android.view.Menu;
 import android.widget.Toast;
 
 import static com.example.hiraganamaster.Notification.CHANNEL_1_ID;
+import static com.example.hiraganamaster.Notification.CHANNEL_2_ID;
 
 public class MainActivity extends AppCompatActivity {
 
     private long notificationTimer = 20000;
+    private long notificationTimer10min = 600000;
     private CountDownTimer countDownTimer;
     private NotificationManagerCompat notificationManager;
     private AppBarConfiguration mAppBarConfiguration;
@@ -68,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         notificationManager = NotificationManagerCompat.from(this);
+
+        startCountdown10min();
     }
 
     public void startTimer()
@@ -90,6 +94,30 @@ public class MainActivity extends AppCompatActivity {
                         .setContentIntent(contentIntent).build();
 
                 notificationManager.notify(1, notification);
+            }
+        }.start();
+    }
+
+    public void startCountdown10min()
+    {
+        countDownTimer = new CountDownTimer(notificationTimer10min, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+            }
+
+            @Override
+            public void onFinish() {
+                String title = getString(R.string.notification_title2);
+                String message = getString(R.string.notification_message2);
+
+                Intent activityIntent = new Intent(getApplicationContext(), MainActivity.class);
+                PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(),0,activityIntent,0);
+
+                Notification notification = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_2_ID).setSmallIcon(R.drawable.ic_learn_black_24dp)
+                        .setContentTitle(title).setContentText(message).setPriority(NotificationCompat.PRIORITY_HIGH).setCategory(NotificationCompat.CATEGORY_MESSAGE).setColor(Color.BLUE)
+                        .setContentIntent(contentIntent).build();
+
+                notificationManager.notify(2, notification);
             }
         }.start();
     }

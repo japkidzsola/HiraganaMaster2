@@ -25,6 +25,9 @@
     <string name="get_to_see_my_favorite_characters">Get to see my favorite characters</string>
     <string name="let_me_see_my_favorite_characters">Let me see my favorite characters</string>
     <string name="get_to_test_myself">Get to test myself</string>
+    <string name="language">Change language</string>
+    <string name="timer_main">Your daily learning task will be 10 minutes</string>
+    <string name="timer_main2">We will notify you if u done this task</string>
     <string name="you_want_to_test_your_skills">You want to test your skills?</string>
     <string name="get_me_to_the_learning_page">Get me to the learning page</string>
     <string name="get_to_the_learning_page">Get to the learning page</string>
@@ -83,6 +86,8 @@
     <string name="error">Error</string>
     <string name="notification_title">Do you want to develop your japanese</string>
     <string name="notification_message">It\'s time to practice hiraganas</string>
+    <string name="notification_title2">Congratulations</string>
+    <string name="notification_message2">You did your daily task of 10 min</string>
     <string name="pause">Pause</string>
     <string name="beginner_level">Beginner level</string>
     <string name="_1">1</string>
@@ -106,5 +111,12 @@
     <string name="whatsappsharefail">Please Install the Whatsapp app</string>
     <string name="googleplussharefail">Please Install the Google Plus app</string>
     <string name="gotosettings">You will need to set the language to a different one</string>
+    <string name="logout">You have successfully logged out</string>
+    <string name="welcome">Welcome to Hiragana Master</string>
+    <string name="welcome_name">Welcome </string>
+    <string name="_10_00">10:00</string>
+    <string name="tryagain">Try again</string>
+    <string name="empty">You left it empty</string>
+    <string name="timeout">Time has ran out</string>
 
 </resources>

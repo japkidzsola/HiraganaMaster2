@@ -26,6 +26,9 @@
     <string name="get_to_see_my_favorite_characters">Kedvenc karaktereim</string>
     <string name="settings">Beállítás</string>
     <string name="get_me_to_my_settings">Beállításaim</string>
+    <string name="language">Nyelv megváltozatása</string>
+    <string name="timer_main">Napi tanulási idő 10 perc</string>
+    <string name="timer_main2">Ennek leteltéről értesítést küldünk</string>
     <string name="time_to_share_this_program_to_my_friends">Meg akarom mutatni ismerőseimnek</string>
     <string name="share_with_my_frinds">Megosztás a barátaimmal</string>
     <string name="login">Bejelentkezés</string>
@@ -83,6 +86,8 @@
     <string name="error">Hiba</string>
     <string name="notification_title">Do you want to develop your japanese</string>
     <string name="notification_message">It\'s time to practice hiraganas</string>
+    <string name="notification_title2">Gratulálunk</string>
+    <string name="notification_message2">Teljesítetted a napi tanulási időt</string>
     <string name="pause">Pause</string>
     <string name="beginner_level">Beginner level</string>
     <string name="_1">1</string>
@@ -92,19 +97,26 @@
     <string name="beginner_desc">I want to test myself but I don\'t think im that good</string>
     <string name="medium_desc">I know more than a beginner I want a harder test</string>
     <string name="hardcore_desc">I think I know everything give me everything you\'ve got</string>
-    <string name="ending_with"> ,with </string>
-    <string name="ending_mistakes"> mistakes </string>
+    <string name="ending_with"> , </string>
+    <string name="ending_mistakes"> darab hibával </string>
     <string name="percent">százalék</string>
-    <string name="mistake">mistake</string>
-    <string name="test_change_hiragana_amount">I want to change the amount of hiraganas</string>
-    <string name="test_seekbar">Press the test button to go to the test</string>
-    <string name="share_link_at_google_plus">Share Link at Google Plus</string>
-    <string name="share_link_at_whatsapp">Share Link at Whatsapp</string>
-    <string name="share_link_at_twitter">Share Link at Twitter</string>
-    <string name="share_link_at_instagram">Share Link at instagram</string>
+    <string name="mistake">hiba</string>
+    <string name="test_change_hiragana_amount">Meg akarom változtatni a kérdések számát</string>
+    <string name="test_seekbar">Nyomnd meg valamelyik tesztet</string>
+    <string name="share_link_at_google_plus">Megosztás Google Pluson</string>
+    <string name="share_link_at_whatsapp">Megosztás Whatsappon</string>
+    <string name="share_link_at_twitter">Megosztás Twitteren</string>
+    <string name="share_link_at_instagram">Megosztás Instagramon</string>
     <string name="twittersharefail">Kérjük telepítse a Twittert</string>
     <string name="whatsappsharefail">Kérjük telepítse a Whatsapp-ot</string>
     <string name="googleplussharefail">Kérjük telepítse a Google Plus-t</string>
     <string name="gotosettings">Kérjük állítsa át a kiválasztott nyelvre</string>
+    <string name="logout">Sikeresen kijelentkezés</string>
+    <string name="welcome">Üdvözöljük a Hiragana Masterben</string>
+    <string name="welcome_name">Üdvözöljük </string>
+    <string name="_10_00">10:00</string>
+    <string name="tryagain">Próbáld újra</string>
+    <string name="empty">Üresen lett hagyva a megoldás</string>
+    <string name="timeout">Lejárt az idő</string>
 
 </resources>

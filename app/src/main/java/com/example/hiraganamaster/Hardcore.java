@@ -3,12 +3,14 @@ package com.example.hiraganamaster;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +24,9 @@ public class Hardcore extends AppCompatActivity {
     public TextView timer,points,pointsneeded, hardcoretv;
     public ImageView hardcoreimg;
 
-    private CountDownTimer countDownTimer;
+    private CountDownTimer countDownTimer, countDownTimer1;
     private long timeLeftInMilliseconds = 20000;
+    private long timeLeftInMilliseconds2 = 1000;
     private long timeRestartInMilliseconds = 20000;
     private boolean timerRunning;
 
@@ -87,11 +90,13 @@ public class Hardcore extends AppCompatActivity {
             }
         }*/
 
+        final String tryagain = getString(R.string.tryagain);
+        final String empty = getString(R.string.empty);
         hardcoresend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (valasz.isEmpty()) {
-                    Toast.makeText(Hardcore.this, "Please enter a valid hiragana", Toast.LENGTH_SHORT).show();
+                if (hardcoreet.getText().toString().isEmpty()) {
+                    Toast.makeText(Hardcore.this, empty, Toast.LENGTH_SHORT).show();
                 }
                 /*if (megoldasseged.equals(arrayStart + hardcoreet.getText().toString() + arrayEnd))
                 {
@@ -102,8 +107,8 @@ public class Hardcore extends AppCompatActivity {
                     hardcoretv.setText(hardcoreet.getText().toString());
                     Toast.makeText(Hardcore.this, "nigga", Toast.LENGTH_SHORT).show();
                 }*/
-                if (megoldasseged.equals(arrayStart + valasz + arrayEnd)) {
-                    Toast.makeText(Hardcore.this, "Good job!", Toast.LENGTH_SHORT).show();
+                if (megoldas[0].equals(hardcoreet.getText().toString().toLowerCase())) {
+                    startAnim();
                     String seged = Integer.toString(pontHozzaad(pontok[0]));
                     pontok[0] = pontHozzaad(pontok[0]);
                     points.setText(seged);
@@ -119,14 +124,15 @@ public class Hardcore extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     } else {
-                        Toast.makeText(Hardcore.this, "That's not it", Toast.LENGTH_SHORT).show();
                         megoldas[0] = general();
+                        hardcoreet.setText("");
                         stopTimer();
                         timeReset();
                         startTimer();
                     }
                 } else {
-                    Toast.makeText(Hardcore.this, "That's not the correct answer", Toast.LENGTH_SHORT).show();
+                    startFailAnim();
+                    Toast.makeText(Hardcore.this, tryagain, Toast.LENGTH_SHORT).show();
                     pontHozzaad(minuszpontok[0]);
                     minuszpontok[0] = pontHozzaad(minuszpontok[0]);
                     String seged = Integer.toString(minuszpontok[0]);
@@ -134,6 +140,12 @@ public class Hardcore extends AppCompatActivity {
                     if (minuszpontok[0] == 3) {
                         stopTimer();
                         Intent intent = new Intent(Hardcore.this, EndingFail.class);
+                        String hiba = megoldas[0];
+                        String e = pointsneeded.getText().toString();
+                        intent.putExtra("Mistake",hiba);
+                        intent.putExtra("Value",e);
+                        startActivity(intent);
+                        finish();
                        // startActivity(intent);
                        // finish();
                     }
@@ -182,8 +194,12 @@ public class Hardcore extends AppCompatActivity {
             @Override
             public void onFinish() {
                 Intent intent = new Intent(Hardcore.this, EndingFail.class);
-                //startActivity(intent);
-                //finish();
+                String hiba = getString(R.string.timeout);
+                String e = pointsneeded.getText().toString();
+                intent.putExtra("Mistake",hiba);
+                intent.putExtra("Value",e);
+                startActivity(intent);
+                finish();
             }
         }.start();
         timerRunning = true;
@@ -193,10 +209,6 @@ public class Hardcore extends AppCompatActivity {
     {
         countDownTimer.cancel();
         timerRunning = false;
-
-        /**/
-        /*MenuItem menuStart = menu.findItem(R.id.pause);
-        menuStart.setIcon(R.drawable.ic_play_arrow);*/
     }
 
     public void updateTimer()
@@ -409,5 +421,39 @@ public class Hardcore extends AppCompatActivity {
     {
         int pontnovel = pont +1;
         return pontnovel;
+    }
+    public void startAnim()
+    {
+        countDownTimer1 = new CountDownTimer(timeLeftInMilliseconds2, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                RelativeLayout relativeLayout = findViewById(R.id.hardcorerelative);
+                relativeLayout.setBackgroundColor(Color.GREEN);
+            }
+
+            @Override
+            public void onFinish() {
+                RelativeLayout relativeLayout = findViewById(R.id.hardcorerelative);
+                relativeLayout.setBackgroundColor(Color.WHITE);
+            }
+        }.start();
+        timerRunning = true;
+    }
+    public void startFailAnim()
+    {
+        countDownTimer1 = new CountDownTimer(timeLeftInMilliseconds2, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                RelativeLayout relativeLayout = findViewById(R.id.hardcorerelative);
+                relativeLayout.setBackgroundColor(Color.RED);
+            }
+
+            @Override
+            public void onFinish() {
+                RelativeLayout relativeLayout = findViewById(R.id.hardcorerelative);
+                relativeLayout.setBackgroundColor(Color.WHITE);
+            }
+        }.start();
+        timerRunning = true;
     }
 }

@@ -18,6 +18,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="text"
         android:hint="@string/name"
         android:layout_below="@+id/tvlogin"
         android:id="@+id/etName"
@@ -35,12 +36,14 @@
         android:layout_height="wrap_content"
         android:text="@string/login"
         android:layout_below="@+id/etPassword"
+        android:layout_centerInParent="true"
         android:id="@+id/btnLogin"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/you_haven_t_registrated_yet"
+        android:layout_centerInParent="true"
         android:layout_below="@+id/btnLogin"
         android:id="@+id/tvregistration"
         />
@@ -49,6 +52,7 @@
         android:layout_height="wrap_content"
         android:text="@string/registration"
         android:layout_below="@+id/tvregistration"
+        android:layout_centerInParent="true"
         android:id="@+id/btnRegistration"
         />
 

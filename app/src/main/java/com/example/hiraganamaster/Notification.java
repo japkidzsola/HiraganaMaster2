@@ -7,6 +7,7 @@ import android.os.Build;
 
 public class Notification extends Application {
     public static final String CHANNEL_1_ID = "appnotification";
+    public static final String CHANNEL_2_ID = "appnotification";
 
     public void onCreate()
     {
@@ -25,8 +26,16 @@ public class Notification extends Application {
             );
             channel1.setDescription("This is Hiragana Master's notification");
 
+            NotificationChannel channel2 = new NotificationChannel(
+                    CHANNEL_2_ID,
+                    "Hiragana Master Notification",
+                    NotificationManager.IMPORTANCE_HIGH
+            );
+            channel2.setDescription("This is Hiragana Master's notification");
+
             NotificationManager manager = getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel1);
+            manager.createNotificationChannel(channel2);
         }
     }
 }

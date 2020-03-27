@@ -21,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/name"
+        android:inputType="text"
         android:layout_below="@+id/tvlogin"
         android:id="@+id/etName1"
         />
@@ -53,6 +54,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:text="@string/registrate"
         android:layout_below="@+id/etPasswordAgain"
         android:id="@+id/btnRegistrate"
@@ -62,6 +64,7 @@
         android:layout_height="wrap_content"
         android:text="@string/already_registrated"
         android:layout_below="@+id/btnRegistrate"
+        android:layout_centerInParent="true"
         android:id="@+id/tvregistration"
         />
     <Button
@@ -70,6 +73,7 @@
         android:text="@string/login"
         android:layout_below="@+id/tvregistration"
         android:id="@+id/btnLogin"
+        android:layout_centerInParent="true"
         />
 
 </RelativeLayout>

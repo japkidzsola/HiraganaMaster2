@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/beginnerrelative">
+        android:id="@+id/hardcorerelative">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -76,9 +76,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:hint="@string/hardcoreHint"
+        android:autofillHints=""
         android:gravity="center"
-        android:autofillHints="" />
+        android:hint="@string/hardcoreHint"
+        android:inputType="text"/>
+
     <Button
         android:id="@+id/hardcoresend"
         android:layout_width="match_parent"

@@ -30,7 +30,14 @@ public class EndingFail extends AppCompatActivity {
         mistakename = findViewById(R.id.mistakename);
         String mistakenamefromtest = getIntent().getExtras().getString("Mistake");
         String mistake = getString(R.string.mistake);
-        mistakename.setText(String.format("%s %s", mistake, mistakenamefromtest));
+        String timeout = getString(R.string.timeout);
+        if(mistakenamefromtest.equals(timeout))
+        {
+            mistakename.setText(timeout);
+        }
+        else {
+            mistakename.setText(String.format("%s %s", mistake, mistakenamefromtest));
+        }
 
         final String testamount = getIntent().getExtras().getString("Value");
 

@@ -10,11 +10,11 @@
     <color name="colorcorrectanswer">#32E800</color>
     <color name="colorwronganswer">#F0B3B3B3</color>
     <color name="colorwhite">#FAFAFA</color>
+
     <color name="colorButtondefault">#0B48FF</color>
     <color name="colorButtondefault2">#1463FF</color>
-
     <color name="colorButtonpressed">#367FFF</color>
-    <color name="colorButtonpressed2">#65BFFA</color>
+    <color name="colorButtonpressed2">#75E8FB</color>
     <color name="colorButtonfocused">#B7FFF6</color>
     <color name="colorButtonfocused2">#FAFAFA</color>
 
@@ -24,6 +24,13 @@
     <color name="colorTestpressed2">#515151</color>
     <color name="colorTestfocused">#8F8F8F</color>
     <color name="colorTestfocused2">#7A7A7A</color>
+
+    <color name="colorButtonLogindefault">#00B7FF</color>
+    <color name="colorButtonLogindefault2">#36C6FF</color>
+    <color name="colorButtonLoginpressed">#21FFD3</color>
+    <color name="colorButtonLoginpressed2">#4AFFDB</color>
+    <color name="colorButtonLoginfocused">#B8FFE3</color>
+    <color name="colorButtonLoginfocused2">#FAFAFA</color>
 
     <color name="colorSuccessfulTest">#89FB6F</color>
     <color name="colorFailTest">#FF6868</color>
