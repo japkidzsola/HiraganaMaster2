@@ -39,14 +39,10 @@ public class Medium extends AppCompatActivity {
     private long timeLeftInMilliseconds = 10000;
     private long timeRestartInMilliseconds = 10000;
     private boolean timerRunning;
-    private RelativeLayout beginnerrelative;
 
     private Handler mHandler = new Handler();
 
     private Menu menu;
-
-    public int pontokk = 0;
-    //public
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,14 +50,7 @@ public class Medium extends AppCompatActivity {
         setContentView(R.layout.activity_medium);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        RelativeLayout relativeLayout = findViewById(R.id.beginnerrelative);
         setSupportActionBar(toolbar);
-
-        /*LinearLayout linearLayout = findViewById(R.id.layout);
-        AnimationDrawable animationDrawable = (AnimationDrawable) linearLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(2000);
-        animationDrawable.setExitFadeDuration(4000);
-        animationDrawable.start();*/
 
         init();
 
@@ -74,25 +63,7 @@ public class Medium extends AppCompatActivity {
         final int[] pontok = {0};
         final int[] minuszpontok = {0};
 
-        // general();.Resources$NotFoundException: String resource ID #0x1
         do {
-
-            /*final String seged = points.getText().toString();
-            final int pontok = Integer.parseInt(seged);
-            final int seged2 = pontok;
-            points.setText(seged);*/
-
-            /*
-            random(1-6) szam
-            ciklus(1-6;i<=6,i++){
-                if(i==szam){
-                jofunction(+1 betolt)
-                }
-                else{
-                function(betolt)
-                }
-            }
-             */
 
             if(timer.getText().toString().equals("0"))
             {
@@ -103,10 +74,7 @@ public class Medium extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (megoldas[0].equals(first.getText().toString().toLowerCase())){
-                        /*int kiir = sikeres(pontokk);
-                        points.setText(kiir);*/
                         startColorAnim1(first);
-                        //stopColorAnim(first);
                         String seged = Integer.toString(pontHozzaad(pontok[0]));
                         pontok[0] = pontHozzaad(pontok[0]);
                         points.setText(seged);
@@ -410,15 +378,7 @@ public class Medium extends AppCompatActivity {
             }
         };
     }
-    private void animdelay2() {
-        Runnable animdelay2 = new Runnable() {
-            @Override
-            public void run() {
-                startColorAnim2(second);
-                mHandler.postDelayed(this, 3000);
-            }
-        };
-    }
+
     @SuppressLint("RestrictedApi")
     public void startColorAnim1(View v)
     {
@@ -589,12 +549,6 @@ public class Medium extends AppCompatActivity {
         colorAnim.start();
     }
 
-
-    public int pontLevon(int pontlevonas)
-    {
-        return pontlevonas+1;
-    }
-
     public int pontHozzaad(int pont)
     {
         int pontnovel = pont +1;
@@ -608,19 +562,9 @@ public class Medium extends AppCompatActivity {
         int max = 46;
         Random r = new Random();
         int random = r.nextInt(max-min+1) + min;
-        String melyiksazm = Integer.toString(random);
         String megoldas = null;
-        //int random = random();
-
-        //beginnertv.setText(melyiksazm);
-
-        /*fourth.setBackgroundColor(Color.parseColor("F0B3B3B3"));
-        fifth.setBackgroundColor(Color.parseColor("F0B3B3B3"));
-        sixth.setBackgroundColor(Color.parseColor("F0B3B3B3"));*/
-
 
         int elhelyez = randomelhelyez();
-        //String toltelek = toltelek();
 
         if(random == 1) {
             mediumimg.setImageResource(R.drawable.qa);
@@ -900,7 +844,6 @@ public class Medium extends AppCompatActivity {
                 valsztottneve5 = tobbigenereal[valasztott5];
             }
 
-            //if(!megoldas.equals(valsztottneve1) && !megoldas.equals(valsztottneve2) && !megoldas.equals(valsztottneve3) && !megoldas.equals(valsztottneve4) && !megoldas.equals(valsztottneve5)) {
                 if (elhelyez == 0) {
                     first.setText(megoldas);
                     second.setText(valsztottneve1);
@@ -944,10 +887,8 @@ public class Medium extends AppCompatActivity {
                     fourth.setText(valsztottneve4);
                     fifth.setText(valsztottneve5);
                 }
-            //}
             else
             {
-                beginnertv.setText("no");
                 first.setText(megoldas);
                 second.setText(valsztottneve1);
                 third.setText(valsztottneve2);
@@ -960,21 +901,6 @@ public class Medium extends AppCompatActivity {
         return megoldas;
     }
 
-    /*public String toltelek()
-    {
-
-        return tobbigenereal[valasztott];
-    }*/
-
-    public int random()
-    {
-        int min = 2;
-        int max = 4;
-        Random r = new Random();
-        int generalt = r.nextInt(max-min) + min;
-        return generalt;
-    }
-
     public int randomelhelyez()
     {
         int min = 0;
@@ -982,14 +908,6 @@ public class Medium extends AppCompatActivity {
         Random r = new Random();
         int generalt = r.nextInt(max-min) + min;
         return generalt;
-    }
-
-    public int sikeres(int pontokk)
-    {
-        int i = 0;
-        i = i+1;
-        points.setText(i);
-        return i;
     }
 
     public void init()
@@ -1011,16 +929,20 @@ public class Medium extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         stopTimer();
+
+        String yes = getString(R.string.yes);
+        String no = getString(R.string.no2);
+        String exitTest = getString(R.string.exit_test);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Would you like to exit this test?")
+        builder.setMessage(exitTest)
                 .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton(yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Medium.this.finish();
                         CustomIntent.customType(Medium.this,"fadein-to-fadeout");
                     }
                 })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                .setNegativeButton(no, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
                         startTimer();
@@ -1054,18 +976,22 @@ public class Medium extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.pause)
         {
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            String paused = getString(R.string.paused);
+            String pausedToast = getString(R.string.paused_toast);
+            String yes = getString(R.string.yes);
+            String no = getString(R.string.no);
+            Toast.makeText(this, paused, Toast.LENGTH_SHORT).show();
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Paused. Are you ready to continue?")
+            builder.setMessage(pausedToast)
                     .setCancelable(false)
-                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    .setPositiveButton(yes, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             dialog.cancel();
                             startTimer();
                         }
                     })
-                    .setNegativeButton("No, I want to exit", new DialogInterface.OnClickListener() {
+                    .setNegativeButton(no, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             Medium.this.finish();
                         }
@@ -1122,10 +1048,6 @@ public class Medium extends AppCompatActivity {
     {
         countDownTimer.cancel();
         timerRunning = false;
-
-        /**/
-        /*MenuItem menuStart = menu.findItem(R.id.pause);
-        menuStart.setIcon(R.drawable.ic_play_arrow);*/
     }
 
     public void updateTimer()

@@ -72,6 +72,8 @@ public class TestFragment extends Fragment {
         ss.setSpan(italicSpan, 0, dragbar.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         mediumdesc.setText(ss);
 
+        final String press = getString(R.string.press);
+
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -86,7 +88,7 @@ public class TestFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(getContext(), "Press one of the test button to start to the test", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), press, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -109,7 +111,6 @@ public class TestFragment extends Fragment {
                 mediumdesc.setVisibility(View.VISIBLE);
                 Intent intent = new Intent(getContext(), Medium.class);
                 String tovabbad = seekbartv.getText().toString();
-                int itovabbad = Integer.parseInt(tovabbad);
                 intent.putExtra("Value",tovabbad);
                 startActivity(intent);
                 CustomIntent.customType(getContext(),"fadein-to-fadeout");

@@ -1,8 +1,6 @@
 package com.example.hiraganamaster.ui.hiraganamasterhome;
 
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.annotation.SuppressLint;
@@ -18,27 +16,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hiraganamaster.AdatbazisSegito;
 import com.example.hiraganamaster.Beginner;
-import com.example.hiraganamaster.EndingFail;
 import com.example.hiraganamaster.Hardcore;
 import com.example.hiraganamaster.Login;
 import com.example.hiraganamaster.Medium;
 import com.example.hiraganamaster.R;
-import com.example.hiraganamaster.ui.learn.LearnFragment;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import maes.tech.intentanim.CustomIntent;
 
@@ -46,11 +36,6 @@ public class HiraganaMasterHomeFragment extends Fragment {
 
     private Button login,beginnerbtn,mediumbtn,hardcorebtn;
     private AdatbazisSegito db;
-    private TextView apptimer;
-
-    private CountDownTimer countDownTimer;
-    private long timeLeftInMilliseconds = 600000;
-    private boolean timerRunning;
 
     private HiraganaMasterHomeViewModel mViewModel;
 
@@ -73,18 +58,6 @@ public class HiraganaMasterHomeFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(HiraganaMasterHomeViewModel.class);
         db = new AdatbazisSegito(getContext());
-
-        /*FloatingActionButton fab = getView().findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Bruh", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
-
-        final LearnFragment learnFragment = new LearnFragment();
-        HiraganaMasterHomeFragment homeFragment = new HiraganaMasterHomeFragment();
 
         final TextView tw = getView().findViewById(R.id.welcome);
 

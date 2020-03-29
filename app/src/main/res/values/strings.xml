@@ -118,5 +118,24 @@
     <string name="tryagain">Try again</string>
     <string name="empty">You left it empty</string>
     <string name="timeout">Time has ran out</string>
+    <string name="unsuccessful">Unsuccessful query</string>
+    <string name="emptyquery">No recorded data</string>
+    <string name="paused">Paused</string>
+    <string name="paused_toast">Paused. Are you ready to continue?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No, I want to exit</string>
+    <string name="no2">No</string>
+    <string name="exit_test">Would you like to exit this test?</string>
+    <string name="fill">Fill every field</string>
+    <string name="successfull_change">Successfully changed the profile</string>
+    <string name="unsuccessfull_change">Unsuccessful change</string>
+    <string name="id_no_profile">There is no profile with this id</string>
+    <string name="password_not_same">The passwords are not matching!</string>
+    <string name="successful_data_record">Successful registration</string>
+    <string name="unsuccessful_data_record">Unsuccessful registration</string>
+    <string name="press">Press one of the test button to start to the test</string>
+    <string name="cantfav">Unsuccessful favorite record</string>
+    <string name="noid">No id like this</string>
+    <string name="nodata">No recoded data, to prevent errors please registrate</string>
 
 </resources>

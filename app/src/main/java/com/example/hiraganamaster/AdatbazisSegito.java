@@ -37,7 +37,7 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
                 COL_NEV+" VARCHAR(30)," +
                 COL_EMAIL+ " VARCHAR(30)," +
                 COL_JELSZO+ " VARCHAR(30)," +
-                COL_KEDVENCEK+ " VARCHAR(30))";
+                COL_KEDVENCEK+ " VARCHAR(93))";
 
         String createTables2 = "CREATE TABLE IF NOT EXISTS "+TABLE_NAME_KEDVENCEK + "(" +
                 COL_FELHASZ_ID+" INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -60,6 +60,7 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
         values.put(COL_NEV, nev);
         values.put(COL_EMAIL, email);
         values.put(COL_JELSZO, jelszo);
+        values.put(COL_KEDVENCEK, "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0");
 
         //return db.insert(TABLE_NAME, null, values) != -1;
         long erintettSorok = db.insert(TABLE_NAME, null, values);
@@ -88,6 +89,28 @@ public class AdatbazisSegito extends SQLiteOpenHelper {
         values.put(COL_EMAIL, email);
         values.put(COL_JELSZO, jelszo);
 
+
+        return db.update(TABLE_NAME,values,COL_ID+" = ?",new String[]{id});
+    }
+
+    public Cursor kedvencLekerdez(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT kedvencek FROM "+TABLE_NAME, null);
+    }
+
+    public long kedvencmodosit(String id, String kedvencek){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_KEDVENCEK, kedvencek);
+
+        return db.update(TABLE_NAME,values,COL_ID+" = ?",new String[]{id});
+    }
+
+    public long kedvenceknullaz(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_NEV, nev);
+        values.put(COL_KEDVENCEK, "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0");
 
         return db.update(TABLE_NAME,values,COL_ID+" = ?",new String[]{id});
     }

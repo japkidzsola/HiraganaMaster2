@@ -488,7 +488,8 @@ public class LearnFragment extends Fragment {
             }
         });
 
-        Cursor cursorAdatok = dbhelper.adatLekerdezes();
+        String nodata = getString(R.string.nodata);
+        Cursor cursorAdatok = dbhelper.kedvencLekerdez();
         if (cursorAdatok == null){
             Toast.makeText(getContext(),
                     "Sikertlen Adatlekérdezés", Toast.LENGTH_SHORT).show();
@@ -496,24 +497,24 @@ public class LearnFragment extends Fragment {
         }
         if (cursorAdatok.getCount() == 0){
             Toast.makeText(getContext(),
-                    "Nincs még felvéve adat", Toast.LENGTH_SHORT).show();
+                    nodata, Toast.LENGTH_SHORT).show();
             return;
         }
         StringBuffer stringBuffer = new StringBuffer();
         while (cursorAdatok.moveToNext()){
-            stringBuffer.append(cursorAdatok.getString(4));
+            stringBuffer.append(cursorAdatok.getString(0));
         }
-        String adatbaziskedvenc = stringBuffer.toString();
+        String adatbaziskedvenc = /*stringBuffer.toString() +*/ "a";
 
-        String[] sor = adatbaziskedvenc.split(",");
-        String kedvenc = sor[0];
+        //String[] sor = adatbaziskedvenc.split(",");
+        //String kedvenc = sor[0];
         //regikedvencek.add(kedvenc);
-        Toast.makeText(getContext(), "sikeres", Toast.LENGTH_SHORT).show();
+        /*Toast.makeText(getContext(), "sikeres", Toast.LENGTH_SHORT).show();
 
-        SharedPreferences sharedpref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedpref = getActivity().getSharedPreferences("kedvencek",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor  = sharedpref.edit();
         editor.putString((adatbaziskedvenc),adatbaziskedvenc);
-        editor.apply();
+        editor.apply();*/
 
         /*SharedPreferences sharedpref1 = getActivity().getPreferences(Context.MODE_PRIVATE);
         String getkedvenc = getResources().getString(Integer.parseInt(adatbaziskedvenc));

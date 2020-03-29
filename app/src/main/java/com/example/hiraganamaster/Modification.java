@@ -26,15 +26,19 @@ public class Modification extends AppCompatActivity {
         init();
         final AdatbazisSegito dbhelper = new AdatbazisSegito(Modification.this);
 
+        final String unsuccessful = getString(R.string.unsuccessful);
+        final String empty = getString(R.string.emptyquery);
+        final String fill = getString(R.string.fill);
+
         Cursor cursorAdatok = dbhelper.adatLekerdezes();
         if (cursorAdatok == null){
             Toast.makeText(Modification.this,
-                    "Sikertlen Adatlekérdezés", Toast.LENGTH_SHORT).show();
+                    unsuccessful, Toast.LENGTH_SHORT).show();
             return;
         }
         if (cursorAdatok.getCount() == 0){
             Toast.makeText(Modification.this,
-                    "Nincs még felvéve adat", Toast.LENGTH_SHORT).show();
+                    empty, Toast.LENGTH_SHORT).show();
             return;
         }
         StringBuffer stringBuffer = new StringBuffer();
@@ -46,7 +50,7 @@ public class Modification extends AppCompatActivity {
             etEmail.setText(cursorAdatok.getString(2));
             stringBuffer.append("password: "+cursorAdatok.getString(3) + "\r\n");
             if(cursorAdatok.isNull(4)) {
-                Toast.makeText(this, "no favorites proba", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "no fav/nincs kedvenc", Toast.LENGTH_SHORT).show();
             }else
             {
                 stringBuffer.append("favorites: " + cursorAdatok.getString(4) + "\r\n");
@@ -54,7 +58,8 @@ public class Modification extends AppCompatActivity {
             stringBuffer.append("\r\n");
         }
         TextView tw = findViewById(R.id.textAdatok);
-        tw.setText(stringBuffer.toString());
+        //ezzel lehet tesztelni a felhasználó adatait
+        //tw.setText(stringBuffer.toString());
 
 
         btnEdit.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +79,7 @@ public class Modification extends AppCompatActivity {
                 String jelszo = etPassword.getText().toString();
                 if (nev.isEmpty() || email.isEmpty() || jelszo.isEmpty()){
                     Toast.makeText(Modification.this,
-                            "Minden mezőt ki kell tölteni", Toast.LENGTH_SHORT).show();
+                            fill, Toast.LENGTH_SHORT).show();
                     return;
                 }
                 //idLekerdez(nev);
@@ -92,22 +97,17 @@ public class Modification extends AppCompatActivity {
     }
 
     private void adatModosit(String id, String bejelentkezoneve, String bejelentkezoemail, String jelszo) {
+        String idno = getString(R.string.id_no_profile);
+        String unsuccessful = getString(R.string.unsuccessfull_change);
+        String successful = getString(R.string.successfull_change);
         AdatbazisSegito dbHelper = new AdatbazisSegito(this);
         long erintettSorok = dbHelper.adatModositas(id, bejelentkezoneve, bejelentkezoemail ,jelszo);
         switch ((int)erintettSorok){
-            case -1: Toast.makeText(this, "Sikertelen Módosítás", Toast.LENGTH_SHORT).show(); break;
-            case 0: Toast.makeText(this, "Az adott id-val nem szerepel rekord", Toast.LENGTH_SHORT).show(); break;
-            default: Toast.makeText(this, "Sikeres Módosítás", Toast.LENGTH_SHORT).show(); break;
+            case -1: Toast.makeText(this, unsuccessful, Toast.LENGTH_SHORT).show(); break;
+            case 0: Toast.makeText(this, idno, Toast.LENGTH_SHORT).show(); break;
+            default: Toast.makeText(this, successful, Toast.LENGTH_SHORT).show(); break;
         }
     }
-
-    /*private void idLekerdez(String nev)
-    {
-        AdatbazisSegito dbHelper = new AdatbazisSegito(this);
-        if (dbHelper.idLekerdez(nev)) {
-            Toast.makeText(this, "Sikeres Adatfelvétel", Toast.LENGTH_SHORT).show();
-        }
-    }*/
 
     public void init()
     {

@@ -89,14 +89,14 @@
     <string name="notification_title2">Gratulálunk</string>
     <string name="notification_message2">Teljesítetted a napi tanulási időt</string>
     <string name="pause">Pause</string>
-    <string name="beginner_level">Beginner level</string>
+    <string name="beginner_level">Kezdő szint</string>
     <string name="_1">1</string>
-    <string name="medium_level">Medium level</string>
-    <string name="hardcore_level">Hardcore level</string>
-    <string name="test">Test</string>
-    <string name="beginner_desc">I want to test myself but I don\'t think im that good</string>
-    <string name="medium_desc">I know more than a beginner I want a harder test</string>
-    <string name="hardcore_desc">I think I know everything give me everything you\'ve got</string>
+    <string name="medium_level">Közepes szint</string>
+    <string name="hardcore_level">Nehéz szint</string>
+    <string name="test">Teszt</string>
+    <string name="beginner_desc">Le akarom tesztelni magam de még nem vagyok olyan ügyes</string>
+    <string name="medium_desc">Többet tudok mint egy kezdő, mehet a nehezebb</string>
+    <string name="hardcore_desc">Mindent tudok, mehet a legnehezebb</string>
     <string name="ending_with"> , </string>
     <string name="ending_mistakes"> darab hibával </string>
     <string name="percent">százalék</string>
@@ -118,5 +118,24 @@
     <string name="tryagain">Próbáld újra</string>
     <string name="empty">Üresen lett hagyva a megoldás</string>
     <string name="timeout">Lejárt az idő</string>
+    <string name="unsuccessful">Sikertelen lekérdezés</string>
+    <string name="emptyquery">Nincs még felvéve adat</string>
+    <string name="paused">Szünetelve</string>
+    <string name="paused_toast">Szünetelve. Készen állsz, hogy folytasd?</string>
+    <string name="yes">Igen</string>
+    <string name="no">Nem, ki akarok lépni</string>
+    <string name="no2">Nem</string>
+    <string name="exit_test">Biztos ki akarsz lépni a tesztből?</string>
+    <string name="fill">Minden mezőt ki kell tölteni</string>
+    <string name="successfull_change">Sikeres profil módosítás</string>
+    <string name="unsuccessfull_change">Sikertelen módosítás</string>
+    <string name="id_no_profile">Az adott id-val nem szerepel rekord</string>
+    <string name="password_not_same">A jelszavak nem eggyeznek!</string>
+    <string name="successful_data_record">Sikeres regisztráció</string>
+    <string name="unsuccessful_data_record">Sikertelen regisztráció</string>
+    <string name="press">Nyomjon rá valamelyik tesztre hogy elkezdje</string>
+    <string name="cantfav">Sikertelen rekordfelvétel</string>
+    <string name="noid">Adott id-val nincs rekord</string>
+    <string name="nodata">Nincs rekord felvéve, a hibák elkerülése végett kérem vegyen fel adatot</string>
 
 </resources>

@@ -27,6 +27,10 @@ public class Login extends AppCompatActivity {
 
         init();
 
+        final String unsuccessful = getString(R.string.unsuccessful);
+        final String empty = getString(R.string.emptyquery);
+        final String error = getString(R.string.error);
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,12 +38,12 @@ public class Login extends AppCompatActivity {
                 Cursor cursorAdatok = dbhelper.Bejelentkezes();
                 if (cursorAdatok == null){
                     Toast.makeText(Login.this,
-                            "Sikertlen Adatlekérdezés", Toast.LENGTH_SHORT).show();
+                            unsuccessful, Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (cursorAdatok.getCount() == 0){
                     Toast.makeText(Login.this,
-                            "Nincs még felvéve adat", Toast.LENGTH_SHORT).show();
+                            empty, Toast.LENGTH_SHORT).show();
                     return;
                 }
                 StringBuffer stringBuffer = new StringBuffer();
@@ -80,7 +84,7 @@ public class Login extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(Login.this, "Hiba történt", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, error, Toast.LENGTH_SHORT).show();
                 }
             }
             }
