@@ -2494,10 +2494,4 @@ public class HiraganaLearnFragment extends Fragment {
             }
         }
     }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-    }
-
 }

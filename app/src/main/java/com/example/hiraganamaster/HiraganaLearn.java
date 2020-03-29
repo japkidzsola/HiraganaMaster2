@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 public class HiraganaLearn extends AppCompatActivity {
 
-    private final AdatbazisSegito dbhelper = new AdatbazisSegito(this);
     ArrayList<String> regikedvencek = new ArrayList<String>();
 
     @Override
@@ -29,26 +28,5 @@ public class HiraganaLearn extends AppCompatActivity {
                     .commitNow();
         }
 
-        Cursor cursorAdatok = dbhelper.adatLekerdezes();
-        if (cursorAdatok == null){
-            Toast.makeText(this,
-                    "Sikertlen Adatlekérdezés", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (cursorAdatok.getCount() == 0){
-            Toast.makeText(this,
-                    "Nincs még felvéve adat", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        StringBuffer stringBuffer = new StringBuffer();
-        while (cursorAdatok.moveToNext()){
-            stringBuffer.append(cursorAdatok.getString(4));
-        }
-        String adatbaziskedvenc = stringBuffer.toString();
-
-        String[] sor = adatbaziskedvenc.split(",");
-        String kedvenc = sor[0];
-        regikedvencek.add(kedvenc);
-        Toast.makeText(this, "sikeres", Toast.LENGTH_SHORT).show();
     }
 }

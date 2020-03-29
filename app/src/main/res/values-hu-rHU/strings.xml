@@ -4,7 +4,7 @@
     <string name="navigation_drawer_open">A navigációs fiók kinyitása</string>
     <string name="navigation_drawer_close">A navigációs fiókbezárása</string>
     <string name="nav_header_title">Hiragana Master</string>
-    <string name="nav_header_subtitle">Készítette: Suzuki Zsolt</string>
+    <string name="nav_header_subtitle">Készítette: Suzuki Kenta Zsolt</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Beállítás</string>
     <string name="menu_gallery">Galéria</string>
@@ -137,5 +137,7 @@
     <string name="cantfav">Sikertelen rekordfelvétel</string>
     <string name="noid">Adott id-val nincs rekord</string>
     <string name="nodata">Nincs rekord felvéve, a hibák elkerülése végett kérem vegyen fel adatot</string>
+    <string name="favempty">Nincs még kedvenc felvéve</string>
+    <string name="dataqueryerror">Sikertelen adatlekérdezés</string>
 
 </resources>

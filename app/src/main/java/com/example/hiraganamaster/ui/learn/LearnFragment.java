@@ -489,10 +489,11 @@ public class LearnFragment extends Fragment {
         });
 
         String nodata = getString(R.string.nodata);
+        String dataqueryerror = getString(R.string.dataqueryerror);
         Cursor cursorAdatok = dbhelper.kedvencLekerdez();
         if (cursorAdatok == null){
             Toast.makeText(getContext(),
-                    "Sikertlen Adatlekérdezés", Toast.LENGTH_SHORT).show();
+                    dataqueryerror, Toast.LENGTH_SHORT).show();
             return;
         }
         if (cursorAdatok.getCount() == 0){
@@ -504,28 +505,8 @@ public class LearnFragment extends Fragment {
         while (cursorAdatok.moveToNext()){
             stringBuffer.append(cursorAdatok.getString(0));
         }
-        String adatbaziskedvenc = /*stringBuffer.toString() +*/ "a";
-
-        //String[] sor = adatbaziskedvenc.split(",");
-        //String kedvenc = sor[0];
-        //regikedvencek.add(kedvenc);
-        /*Toast.makeText(getContext(), "sikeres", Toast.LENGTH_SHORT).show();
-
-        SharedPreferences sharedpref = getActivity().getSharedPreferences("kedvencek",Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor  = sharedpref.edit();
-        editor.putString((adatbaziskedvenc),adatbaziskedvenc);
-        editor.apply();*/
-
-        /*SharedPreferences sharedpref1 = getActivity().getPreferences(Context.MODE_PRIVATE);
-        String getkedvenc = getResources().getString(Integer.parseInt(adatbaziskedvenc));
-        Toast.makeText(getContext(), getkedvenc, Toast.LENGTH_SHORT).show();
-*/
     }
 
-    public void kedvencment()
-    {
-
-    }
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
@@ -538,7 +519,6 @@ public class LearnFragment extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            Toast.makeText(getContext(), "yo", Toast.LENGTH_SHORT).show();
             return true;
         }
         else {

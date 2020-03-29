@@ -34,7 +34,7 @@ import maes.tech.intentanim.CustomIntent;
 
 public class HiraganaMasterHomeFragment extends Fragment {
 
-    private Button login,beginnerbtn,mediumbtn,hardcorebtn;
+    private Button login,beginnerbtn,mediumbtn,hardcorebtn,languagebtn;
     private AdatbazisSegito db;
 
     private HiraganaMasterHomeViewModel mViewModel;
@@ -85,6 +85,15 @@ public class HiraganaMasterHomeFragment extends Fragment {
             tw.setText(welcome);
         }
         login = getView().findViewById(R.id.login);
+        if (tw.getText().toString().equals("Üdvözöljük null"))
+        {
+            tw.setText(welcome);
+        }
+        if(tw.getText().toString().equals("Üdvözöljük "))
+        {
+            tw.setText(welcome);
+        }
+        login = getView().findViewById(R.id.login);
 
         if(tw.getText().toString().equals(welcomename + " " +getTeljesNev()))
         {
@@ -113,6 +122,16 @@ public class HiraganaMasterHomeFragment extends Fragment {
         beginnerbtn = getView().findViewById(R.id.beginnerhomebtn);
         mediumbtn = getView().findViewById(R.id.mediumhomebtn);
         hardcorebtn = getView().findViewById(R.id.hardcorehomebtn);
+        languagebtn = getView().findViewById(R.id.languagebtn);
+
+        final String tothesettings = getString(R.string.gotosettings);
+        languagebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), tothesettings, Toast.LENGTH_LONG).show();
+                startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
+            }
+        });
 
         beginnerbtn.setOnClickListener(new View.OnClickListener() {
             @Override

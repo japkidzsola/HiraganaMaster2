@@ -2,8 +2,8 @@
     <string name="app_name">HiraganaMaster</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Hiragana Master</string>
+    <string name="nav_header_subtitle">Made by Suzuki Kenta Zsolt</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -137,5 +137,7 @@
     <string name="cantfav">Unsuccessful favorite record</string>
     <string name="noid">No id like this</string>
     <string name="nodata">No recoded data, to prevent errors please registrate</string>
+    <string name="favempty">No favorites has been recoded</string>
+    <string name="dataqueryerror">Unsuccessful query</string>
 
 </resources>

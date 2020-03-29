@@ -413,7 +413,7 @@ public class Hardcore extends AppCompatActivity {
             megoldas = "n";
         }
 
-        hardcoretv.setText(megoldas);
+        //hardcoretv.setText(megoldas);
         return megoldas;
     }
 
@@ -456,4 +456,11 @@ public class Hardcore extends AppCompatActivity {
         }.start();
         timerRunning = true;
     }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        stopTimer();
+    }
+
 }
