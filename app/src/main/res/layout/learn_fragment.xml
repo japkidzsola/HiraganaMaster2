@@ -428,12 +428,21 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ya"
         android:id="@+id/ya"
-        android:layout_marginRight="105dp"
+        android:layout_marginRight="20dp"
         android:layout_marginLeft="10dp"
         android:background="@drawable/roundimgae"
         android:layout_weight="1"
-        android:layout_marginEnd="105dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginStart="10dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mi"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/roundimgae"
+                android:visibility="invisible"
+                android:layout_weight="1"
+                />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -442,16 +451,26 @@
         android:background="@drawable/roundimgae"
         android:layout_weight="1"
         />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/me"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/roundimgae"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/yo"
         android:id="@+id/yo"
-        android:layout_marginLeft="105dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/roundimgae"
         android:layout_weight="1"
-        android:layout_marginStart="105dp"
+        android:layout_marginStart="20dp"
         android:layout_marginEnd="10dp" />
     </LinearLayout>
         <LinearLayout
@@ -531,9 +550,18 @@
                 android:background="@drawable/roundimgae"
                 android:src="@drawable/wa"
                 android:layout_weight="1"
-                android:layout_marginEnd="105dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginStart="10dp"
                 />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ri"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/roundimgae"
+                android:layout_weight="1"
+                android:layout_marginEnd="20dp"
+                android:visibility="invisible"/>
             <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -542,17 +570,28 @@
         android:background="@drawable/roundimgae"
                 android:layout_weight="1"
         />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/re"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/roundimgae"
+                android:layout_weight="1"
+                android:layout_marginStart="20dp"
+                android:visibility="invisible"
+                />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/n"
         android:id="@+id/n"
-        android:layout_marginLeft="105dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/roundimgae"
         android:layout_weight="1"
         />
     </LinearLayout>
+        <!--továbbfejlesztéshez esetleg katakana rész-->
     <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

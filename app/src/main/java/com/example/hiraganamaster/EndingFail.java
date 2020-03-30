@@ -44,7 +44,7 @@ public class EndingFail extends AppCompatActivity {
         failredomedium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EndingFail.this, Beginner.class);
+                Intent intent = new Intent(EndingFail.this, Medium.class);
                 intent.putExtra("Value",testamount);
                 startActivity(intent);
                 finish();
@@ -54,21 +54,18 @@ public class EndingFail extends AppCompatActivity {
         failredobeginner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(EndingFail.this, Beginner.class);
+                intent.putExtra("Value",testamount);
+                startActivity(intent);
                 finish();
             }
         });
 
-        failredobeginner.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
         failredolearn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                finish();
             }
         });
 

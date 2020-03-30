@@ -48,7 +48,7 @@
     <string name="backToTest">I want to try an easier level</string>
     <string name="backToRedoMedium">I want to redo medium level</string>
     <string name="backToLearn">I think I need to go back to learn</string>
-    <string name="backToLearnButton">I want to go back to learn</string>
+    <string name="backToLearnButton">Go back</string>
     <string name="_0">0</string>
     <string name="slash">/</string>
     <string name="_6">6</string>
@@ -139,5 +139,6 @@
     <string name="nodata">No recoded data, to prevent errors please registrate</string>
     <string name="favempty">No favorites has been recoded</string>
     <string name="dataqueryerror">Unsuccessful query</string>
+    <string name="other">Others</string>
 
 </resources>

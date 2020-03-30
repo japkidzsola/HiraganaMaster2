@@ -48,7 +48,7 @@
     <string name="backToTest">Egy egyszerűbb tesztet szeretnék</string>
     <string name="backToRedoMedium">Újra a közepes tesztet akarom megcsinálni</string>
     <string name="backToLearn">Szerintem visszamegyek tanulni</string>
-    <string name="backToLearnButton">A tanuláshoz</string>
+    <string name="backToLearnButton">Kilépés</string>
     <string name="_0">0</string>
     <string name="_6">6</string>
     <string name="hardcore_test">A nehéz teszt</string>
@@ -139,5 +139,6 @@
     <string name="nodata">Nincs rekord felvéve, a hibák elkerülése végett kérem vegyen fel adatot</string>
     <string name="favempty">Nincs még kedvenc felvéve</string>
     <string name="dataqueryerror">Sikertelen adatlekérdezés</string>
+    <string name="other">Egyebek</string>
 
 </resources>

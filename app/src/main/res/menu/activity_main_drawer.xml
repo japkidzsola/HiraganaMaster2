@@ -26,7 +26,7 @@
             android:title="@string/menu_settings" />
     </group>
 
-    <item android:title="Others">
+    <item android:title="@string/other">
         <menu>
             <item
                 android:id="@+id/nav_share"
