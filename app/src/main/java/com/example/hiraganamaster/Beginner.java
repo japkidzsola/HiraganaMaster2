@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import maes.tech.intentanim.CustomIntent;
+
 public class Beginner extends AppCompatActivity {
 
     public Button first, second,third, fourth;
@@ -575,7 +577,30 @@ public class Beginner extends AppCompatActivity {
         }.start();
         timerRunning = true;
     }
+    @Override
+    public void onBackPressed() {
 
+        String yes = getString(R.string.yes);
+        String no = getString(R.string.no2);
+        String exitTest = getString(R.string.exit_test);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(exitTest)
+                .setCancelable(false)
+                .setPositiveButton(yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Beginner.this.finish();
+                        CustomIntent.customType(Beginner.this,"fadein-to-fadeout");
+                    }
+                })
+                .setNegativeButton(no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+
+    }
     /*public void onBackPressed()
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

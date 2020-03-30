@@ -1,7 +1,9 @@
 package com.example.hiraganamaster;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,6 +18,8 @@ import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.Random;
+
+import maes.tech.intentanim.CustomIntent;
 
 public class Hardcore extends AppCompatActivity {
 
@@ -455,6 +459,33 @@ public class Hardcore extends AppCompatActivity {
             }
         }.start();
         timerRunning = true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        stopTimer();
+
+        String yes = getString(R.string.yes);
+        String no = getString(R.string.no2);
+        String exitTest = getString(R.string.exit_test);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(exitTest)
+                .setCancelable(false)
+                .setPositiveButton(yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Hardcore.this.finish();
+                        CustomIntent.customType(Hardcore.this,"fadein-to-fadeout");
+                    }
+                })
+                .setNegativeButton(no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                        startTimer();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+
     }
 
     @Override
